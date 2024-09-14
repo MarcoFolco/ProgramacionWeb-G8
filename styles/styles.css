@@ -338,9 +338,26 @@ body {
 
 /* End carousel styles */
 
+/* Cards styles */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* End cards styles */
+
 /* Card Styles */
 
-/* End card styles */
 .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -348,6 +365,25 @@ body {
   gap: 1rem;
   padding: 1rem;
 }
+
+.card .card__img-container {
+  position: relative;
+}
+
+.card .card__img-container img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* End card styles */
+
+/* Section Styles */
+
+.section > h1 {
+  margin-bottom: 1.6rem;
+  text-align: center;
+}
+
 /* Layout styles */
 
 .page-container {
@@ -365,58 +401,20 @@ body {
 }
 
 /* Enroll Steps styles */
-.enroll-steps > h1 {
-  margin-bottom: 1.6rem;
-  text-align: center;
-}
 
-.enroll-steps .enroll-steps__steps-container {
-  display: flex;
-  gap: 1.6rem;
-  flex-direction: column;
-}
-
-.enroll-steps .steps-container__step-card {
+.enroll-steps .cards .card {
   flex: 1 1 0;
 }
 
-@media screen and (min-width: 64rem) {
-  .enroll-steps .enroll-steps__steps-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
 /* End of enroll steps styles */
 
 /* Highlighted courses styles */
 
-.highlighted-courses > h1 {
-  margin-bottom: 1.6rem;
-  text-align: center;
-}
-
-.highlighted-courses__courses-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.6rem;
-}
-
-.courses-container__course-card {
+.highlighted-courses .cards .card {
   flex: 0 0 90%;
 }
 
-.img-container__img {
-  width: 100%;
-  object-fit: contain;
-}
-
-.course-card__img-container {
-  position: relative;
-}
-
-.course-card__img-container .img-container__price {
+.highlighted-courses .cards .card .card__img-container .course-price {
   position: absolute;
   bottom: 15%;
   right: 0;
@@ -425,15 +423,15 @@ body {
   padding: 0.2rem 1rem;
 }
 
-.course-card__content {
+.highlighted-courses .cards .card .course-content {
   display: flex;
 }
 
-.course-card__content > :first-child {
+.highlighted-courses .cards .card .course-content > :first-child {
   flex: 1 1 0;
 }
 
-.course-card__content .content__course-details {
+.highlighted-courses .cards .card .course-content .course-content__details {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -441,52 +439,29 @@ body {
 }
 
 @media screen and (min-width: 48rem) {
-  .courses-container__course-card {
+  .highlighted-courses .cards .card {
     flex: 0 0 40%;
   }
 }
 
 @media screen and (min-width: 64rem) {
-  .courses-container__course-card {
+  .highlighted-courses .cards .card {
     flex: 0 0 24%;
   }
 }
 /* End of highlighted courses styles */
 
 /* Payment methods styles */
-.payment-methods > h1 {
-  margin-bottom: 1.6rem;
-  text-align: center;
-}
 
-.payment-methods .payment-methods__methods-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.6rem;
-}
-
-.methods-container__method {
+.payment-methods .cards .card {
   flex: 0 0 55%;
   display: flex;
   place-content: center;
 }
 
-.methods-container__method > img {
-  width: 100%;
-  object-fit: contain;
-}
-
 @media screen and (min-width: 48rem) {
-  .methods-container__method {
-    flex: 0 0 25%;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  .methods-container__method {
-    flex: 0 0 24%;
+  .payment-methods .cards .card {
+    flex: 0 0 15rem;
   }
 }
 /* End of payment methods styles */
