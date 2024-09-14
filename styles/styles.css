@@ -1,11 +1,39 @@
 /* Index styles */
 :root {
   --bg-primary: #2d2f31;
+  --bg-primary-color: 45, 47, 49;
   --primary: #fff;
   --bg-secondary: #fff;
   --secondary: #2d2f31;
   --bg-primary-active: #3e4143;
   --bg-secondary-active: rgba(23, 57, 83, 0.12);
+}
+
+@font-face {
+  font-family: "Udemy Sans";
+  font-style: normal;
+  font-weight: 400; /* To match token @font-weight-normal */
+  font-display: fallback;
+  src: local("Udemy Sans Regular"), local("UdemySans-Regular"),
+    url("/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Udemy Sans";
+  font-style: normal;
+  font-weight: 700; /* To match token @font-weight-bold */
+  font-display: fallback;
+  src: local("Udemy Sans Bold"), local("UdemySans-Bold"),
+    url("/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: SuisseWorks;
+  font-style: normal;
+  font-weight: 700; /* To match token @font-weight-bold */
+  font-display: fallback;
+  src: local("SuisseWorks Bold"), local("SuisseWorks-Bold"),
+    url("/staticx/udemy/fonts/SuisseWorks-Bold-v1.woff2") format("woff2");
 }
 
 * {
@@ -356,6 +384,20 @@ body {
 
 /* End cards styles */
 
+/* Img Styles */
+
+.img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.img--round {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* End of img styles */
+
 /* Card Styles */
 
 .card {
@@ -370,12 +412,55 @@ body {
   position: relative;
 }
 
-.card .card__img-container img {
-  width: 100%;
-  object-fit: contain;
+/* End card styles */
+
+/* Course slider styles */
+
+.course-slider.cards .card {
+  flex: 0 0 90%;
 }
 
-/* End card styles */
+@media screen and (min-width: 48rem) {
+  .course-slider.cards .card {
+    flex: 0 0 40%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .course-slider.cards .card {
+    flex: 0 0 31%;
+  }
+}
+
+/* End of course slider styles */
+
+/* Course card styles */
+
+.card.card--course .card__img-container .course-price {
+  position: absolute;
+  bottom: 15%;
+  right: 0;
+  background-color: var(--bg-primary);
+  color: var(--primary);
+  padding: 0.2rem 1rem;
+}
+
+.card.card--course .course-content {
+  display: flex;
+}
+
+.card.card--course .course-content > :first-child {
+  flex: 1 1 0;
+}
+
+.card.card--course .course-content .course-content__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+/* End of course card styles */
 
 /* Section Styles */
 
@@ -408,53 +493,14 @@ body {
 
 /* End of enroll steps styles */
 
-/* Highlighted courses styles */
-
-.highlighted-courses .cards .card {
-  flex: 0 0 90%;
-}
-
-.highlighted-courses .cards .card .card__img-container .course-price {
-  position: absolute;
-  bottom: 15%;
-  right: 0;
-  background-color: var(--bg-primary);
-  color: var(--primary);
-  padding: 0.2rem 1rem;
-}
-
-.highlighted-courses .cards .card .course-content {
-  display: flex;
-}
-
-.highlighted-courses .cards .card .course-content > :first-child {
-  flex: 1 1 0;
-}
-
-.highlighted-courses .cards .card .course-content .course-content__details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.2rem;
-}
-
-@media screen and (min-width: 48rem) {
-  .highlighted-courses .cards .card {
-    flex: 0 0 40%;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  .highlighted-courses .cards .card {
-    flex: 0 0 24%;
-  }
-}
-/* End of highlighted courses styles */
-
 /* Payment methods styles */
 
+.payment-methods .cards {
+  flex-direction: row;
+}
+
 .payment-methods .cards .card {
-  flex: 0 0 55%;
+  flex: 1 1 0;
   display: flex;
   place-content: center;
 }
