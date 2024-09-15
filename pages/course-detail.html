@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/course-detail-styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main class="page-container">
+      <section class="section course-presentation">
+        <img
+          src="../images/course.jpg"
+          alt="Una imagen del curso detallado"
+          class="img"
+        />
+        <article class="course-presentation__content">
+          <h2 class="heading heading--lg">TITULO CURSO</h2>
+          <p class="heading heading--sm">Valor:</p>
+          <p class="heading heading--sm">Tiempo de dedicación necesario:</p>
+          <p class="heading heading--sm">Descripción del curso:</p>
+          <p class="heading heading--sm">Requisitos previos:</p>
+          <a
+            class="course-presentation__subscribe-btn btn btn--sm btn--primary btn--round"
+            >Inscribirse</a
+          >
+        </article>
+      </section>
+      <section class="section course-contents">
+        <h1 class="heading heading--lg">CONTENIDOS POR CLASE</h1>
+        <details class="details">
+          <summary class="summary">INTRODUCCIÓN</summary>
+          <article class="details__content">
+            <p class="course-item text text--sm">
+              <i class="fa-regular fa-circle-play text text--lg"></i>
+              <span
+                class="text course-item__title text--sm"
+                title="1000-1 Introducción a un curso de desarrollo web"
+                >1000-1 Introducción a un curso de desarrollo web</span
+              >
+              <i class="fa-regular fa-clock course-item__clock-icon"></i>
+              5min
+              <input class="item-checkbox" type="checkbox" />
+            </p>
+            <p class="course-item text text--sm">
+              <i class="fa-solid fa-volume-high"></i>
+              <span
+                class="course-item__title"
+                title="1000-1 Introducción a un curso de desarrollo web"
+                >1000-2 ¿Qué es desarrollo web?</span
+              >
+              <i class="fa-regular fa-clock course-item__clock-icon"></i>
+              15min
+              <input class="item-checkbox" type="checkbox" />
+            </p>
+            <p class="course-item text text--sm">
+              <i class="fa-solid fa-file-pdf text text--lg"></i>
+              <span
+                class="course-item__title"
+                title="1000-1 Introducción a un curso de desarrollo web"
+                >1000-3 Historia de la web</span
+              >
+              <i class="fa-regular fa-clock course-item__clock-icon"></i>
+              11min
+              <input class="item-checkbox" type="checkbox" />
+            </p>
+            <p class="course-item text text--sm">
+              <i class="fa-regular fa-square-check text text--lg"></i>
+              <span
+                class="course-item__title"
+                title="1000-1 Introducción a un curso de desarrollo web"
+                >1000-4 Examen</span
+              >
+              <i class="fa-regular fa-clock course-item__clock-icon"></i>
+              30min
+              <input class="item-checkbox" type="checkbox" />
+            </p>
+          </article>
+        </details>
+        <details class="details">
+          <summary class="summary">UNIDAD 1</summary>
+          <article class="details__content">
+            <p class="course-item text text--sm">
+              <i class="fa-regular fa-circle-play text text--lg"></i>
+              <span
+                class="text course-item__title text--sm"
+                title="1000-1 Introducción a un curso de desarrollo web"
+                >1001-1 Introducción a HTML</span
+              >
+              <i class="fa-regular fa-clock course-item__clock-icon"></i>
+              15min
+              <input class="item-checkbox" type="checkbox" />
+            </p>
+          </article>
+        </details>
+        <details class="details">
+          <summary class="summary">UNIDAD 2</summary>
+          <article class="details__content">
+            <p class="course-item text text--sm">
+              <i class="fa-regular fa-circle-play text text--lg"></i>
+              <span
+                class="text course-item__title text--sm"
+                title="1000-1 Introducción a un curso de desarrollo web"
+                >1002-1 Introducción a CSS</span
+              >
+              <i class="fa-regular fa-clock course-item__clock-icon"></i>
+              12min
+              <input class="item-checkbox" type="checkbox" />
+            </p>
+          </article>
+        </details>
+      </section>
+      <section class="section teacher-info">
+        <h1 class="heading heading--lg">DOCENTE</h1>
+        <article class="card">
+          <div class="card__img-container">
+            <img
+              class="img img--round"
+              src="../images/teacher-profile.webp"
+              alt="Una imagen del docente a cargo del curso"
+            />
+          </div>
+          <div class="teacher-data">
+            <h3 class="heading heading--lg">Lisa McLaren</h3>
+            <form class="star-rating">
+              <input type="radio" id="teacher-star5" name="rating" value="5" />
+              <label for="teacher-star5" title="5 stars">★</label>
+              <input type="radio" id="teacher-star4" name="rating" value="4" />
+              <label for="teacher-star4" title="4 stars">★</label>
+              <input type="radio" id="teacher-star3" name="rating" value="3" />
+              <label for="teacher-star3" title="3 stars">★</label>
+              <input type="radio" id="teacher-star2" name="rating" value="2" />
+              <label for="teacher-star2" title="2 stars">★</label>
+              <input type="radio" id="teacher-star1" name="rating" value="1" />
+              <label for="teacher-star1" title="1 star">★</label>
+            </form>
+            <p class="text text--md">
+              Educadora experimentada y apasionada, con formación en Desarrollo
+              Web, comprometida en ayudar a los estudiantes a alcanzar sus metas
+              de aprendizaje. Con un enfoque en la aplicación práctica y métodos
+              de enseñanza interactivos, aporta experiencia del mundo real y una
+              metodología centrada en el estudiante. Reconocida por crear
+              entornos de aprendizaje atractivos y de apoyo, guía a los alumnos
+              hacia el éxito tanto en el ámbito académico como profesional.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section class="section related-courses">
+        <h1 class="heading heading--lg">CURSOS RELACIONADOS</h1>
+        <div class="cards course-slider">
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="../images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a class="btn btn--ghost btn--sm">Ver Detalle</a>
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="../images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a class="btn btn--ghost btn--sm">Ver Detalle</a>
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="../images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a class="btn btn--ghost btn--sm">Ver Detalle</a>
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script
+      src="https://kit.fontawesome.com/0ea2f29246.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
