@@ -23,18 +23,21 @@
                 <img src="../images/login-picture.webp" alt="Imagen de Inicio de Sesión">
             </div>
             <div class="login-container">
-                <h1 class="heading heading--xl">Inicia sesión en tu cuenta!</h1>
+                <h1 class="heading heading--xl">Regístrate y comienza a aprender.</h1>
                 <form class="login-form">
+                    <label for="email" class="text text--md">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required class="input-field">
+
                     <label for="email" class="text text--md">Correo Electrónico</label>
                     <input type="email" id="email" name="email" required class="input-field">
 
                     <label for="password" class="text text--md">Contraseña</label>
                     <input type="password" id="password" name="password" required class="input-field">
 
-                    <button type="submit" class="btn btn--primary btn--lg">Iniciar sesión</button>
+                    <button type="submit" class="btn btn--primary btn--lg">Registrarte</button>
                     <div class="login-options">
-                        <a href="#" class="link">Olvidé mi contraseña...</a>
-                        <span>No tienes cuenta aun? <a href="../pages/register.html" class="link">Registrate!</a></span>
+                        <span>Al registrarte, aceptas nuestras <a href="#" class="link">Condiciones de uso</a> y nuestra <a href="#" class="link">Política de privacidad.</a></span>
+                        <span>Ya tienes una cuenta? <a href="../pages/login.html" class="link">Inicia Sesión!</a></span>
                     </div>
                 </form>
             </div>
