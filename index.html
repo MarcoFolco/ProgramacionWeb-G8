@@ -35,21 +35,80 @@
   </head>
 
   <body>
-    <!-- <header>
-      <a href="#" class="logo">
-        <img src="images/flag.png" alt="logo de la compañia" />
-        <h2 class="nombre-empresa">Nombre compañia</h2>
-      </a>
-      <div class="container">
-        <input type="text" placeholder="Buscar..." />
-        <button class="button"><i class="fas fa-search icon"></i></button>
+    <header class="header">
+      <form action="#" class="header__search-bar-form">
+        <i class="fa-solid fa-search text text--lg"></i>
+        <input
+          type="text"
+          placeholder="Busca cualquier cosa"
+          class="header__search-bar-input text text--md"
+          list="header-search-bar-options"
+        />
+        <datalist id="header-search-bar-options">
+          <option value="JavaScript"></option>
+          <option value="Python"></option>
+          <option value="Java"></option>
+          <option value="C++"></option>
+          <option value="Ruby"></option>
+          <option value="PHP"></option>
+          <option value="Go"></option>
+        </datalist>
+
+        <i class="fa-solid fa-times heading heading--xl"></i>
+      </form>
+      <div class="header__main">
+        <i class="fa-solid fa-bars header__sidebar-button"></i>
+        <a href="#" class="header__logo-link">
+          <img
+            src="./images/logo-big.svg"
+            alt="EL logo de la página."
+            class="img header__logo"
+          />
+        </a>
+        <div class="header__buttons">
+          <i class="fa-solid fa-search text text--lg header__search-button"></i>
+          <div class="header__cart-button-container">
+            <i class="fa-solid fa-cart-shopping text text--lg"></i>
+            <span class="badge cart-button__badge">1</span>
+          </div>
+        </div>
       </div>
-      <nav>
-        <a href="" class="nav-link">Inicio</a>
-        <a href="" class="nav-link">Sobre Nosotros</a>
-        <a href="" class="nav-link">Contacto</a>
+      <nav class="sidebar">
+        <ul class="nav-list login-register-buttons">
+          <li class="nav-item">
+            <a href="#">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Registrate</a>
+          </li>
+        </ul>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Categorías</a>
+            <ul class="sub-menu">
+              <li><a href="#">Desarrollo Web</a></li>
+              <li><a href="#">Data Science</a></li>
+              <li><a href="#">Diseño</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#">Lanzamientos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Mis cursos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Favoritos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Gift Card</a>
+          </li>
+        </ul>
       </nav>
-    </header> -->
+    </header>
     <main class="page-container">
       <div class="carousel">
         <div class="carousel__slider-container">
