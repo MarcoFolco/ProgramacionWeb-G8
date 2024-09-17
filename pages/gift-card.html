@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Card</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/gift-card.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <form action="#" class="header__search-bar-form">
+        <i class="fa-solid fa-search text text--lg"></i>
+        <input
+          type="text"
+          placeholder="Busca cualquier cosa"
+          class="header__search-bar-input text text--md"
+          list="header-search-bar-options"
+        />
+        <datalist id="header-search-bar-options">
+          <option value="JavaScript"></option>
+          <option value="Python"></option>
+          <option value="Java"></option>
+          <option value="C++"></option>
+          <option value="Ruby"></option>
+          <option value="PHP"></option>
+          <option value="Go"></option>
+        </datalist>
+
+        <i class="fa-solid fa-times heading heading--xl"></i>
+      </form>
+      <div class="header__main">
+        <i class="fa-solid fa-bars header__sidebar-button"></i>
+        <a href="#" class="header__logo-link">
+          <img
+            src="../images/logo-big.svg"
+            alt="EL logo de la página."
+            class="img header__logo"
+          />
+        </a>
+        <div class="header__buttons">
+          <i class="fa-solid fa-search text text--lg header__search-button"></i>
+          <div class="header__cart-button-container">
+            <i class="fa-solid fa-cart-shopping text text--lg"></i>
+            <span class="badge cart-button__badge">1</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar">
+        <ul class="nav-list login-register-buttons">
+          <li class="nav-item">
+            <a href="#">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Registrate</a>
+          </li>
+        </ul>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <span>Categorías</span>
+            <ul class="sub-menu">
+              <li><a href="#">Desarrollo Web</a></li>
+              <li><a href="#">Data Science</a></li>
+              <li><a href="#">Diseño</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="./releases-calendar.html">Lanzamientos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Gift Card</a>
+          </li>
+          <li class="nav-item">
+            <a href="./contact.html">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-container">
+      <section class="gift-card">
+        <div class="gift-card__preview">
+          <div class="gift-card__preview-image">
+            <small class="heading heading--sm">GIFT CARD para</small>
+            <h2 class="heading heading--xl">DESTINATARIO</h2>
+          </div>
+          <h4 class="heading heading--sm">
+            VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN
+          </h4>
+        </div>
+        <form class="gift-card__form" action="#">
+          <h3 class="heading heading--lg">Personalización de Giftcard</h3>
+          <input type="text" placeholder="Nombre Destinatario" class="input" />
+          <p class="heading heading--sm">Color</p>
+          <div class="radio-selector radio-selector__font-color">
+            <div class="radio-option">
+              <label for="color1"></label>
+              <input
+                type="radio"
+                id="color1"
+                name="color"
+                value="#00BFFF"
+                checked
+              />
+            </div>
+
+            <div class="radio-option">
+              <label for="color2"></label>
+              <input type="radio" id="color2" name="color" value="#4682B4" />
+            </div>
+
+            <div class="radio-option">
+              <label for="color3"></label>
+              <input type="radio" id="color3" name="color" value="#5F9EA0" />
+            </div>
+
+            <div class="radio-option">
+              <label for="color4"></label>
+              <input type="radio" id="color4" name="color" value="#20B2AA" />
+            </div>
+
+            <div class="radio-option">
+              <label for="color5"></label>
+              <input type="radio" id="color5" name="color" value="#8A2BE2" />
+            </div>
+          </div>
+          <p class="heading heading--md">Tamaño de fuente</p>
+          <div class="radio-selector radio-selector__font-size">
+            <div class="radio-option">
+              <label for="size1" class="heading">20px</label>
+              <input type="radio" id="size1" name="size" value="2rem" checked />
+            </div>
+
+            <div class="radio-option">
+              <label for="size2" class="heading">28px</label>
+              <input type="radio" id="size2" name="size" value="2.8rem" />
+            </div>
+
+            <div class="radio-option">
+              <label for="size3" class="heading">32px</label>
+              <input type="radio" id="size3" name="size" value="3.2rem" />
+            </div>
+
+            <div class="radio-option">
+              <label for="size4" class="heading">48px</label>
+              <input type="radio" id="size4" name="size" value="4.8rem" />
+            </div>
+
+            <div class="radio-option">
+              <label for="size5" class="heading">60px</label>
+              <input type="radio" id="size5" name="size" value="6rem" />
+            </div>
+          </div>
+          <p class="heading heading--md">Ubicación</p>
+          <div class="radio-selector radio-selector__position">
+            <div class="radio-option">
+              <label for="positionBottomRight" class="heading"></label>
+              <input
+                type="radio"
+                id="positionBottomRight"
+                name="position"
+                value="positionBottomRight"
+                checked
+              />
+            </div>
+
+            <div class="radio-option">
+              <label for="positionTopLeft" class="heading"></label>
+              <input
+                type="radio"
+                id="positionTopLeft"
+                name="position"
+                value="positionTopLeft"
+              />
+            </div>
+
+            <div class="radio-option">
+              <label for="positionTopRight" class="heading"></label>
+              <input
+                type="radio"
+                id="positionTopRight"
+                name="position"
+                value="positionTopRight"
+              />
+            </div>
+          </div>
+          <p class="heading heading--md">Fondo</p>
+          <div class="radio-selector radio-selector__background-color">
+            <div class="radio-option">
+              <label for="bgColor1" class="heading"></label>
+              <input
+                type="radio"
+                id="bgColor1"
+                name="bgColor"
+                value=""
+                checked
+              />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor2" class="heading"></label>
+              <input type="radio" id="bgColor2" name="bgColor" value="" />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor3" class="heading"></label>
+              <input type="radio" id="bgColor3" name="bgColor" value="" />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor4" class="heading"></label>
+              <input type="radio" id="bgColor4" name="bgColor" value="" />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor5" class="heading"></label>
+              <input type="radio" id="bgColor5" name="bgColor" value="" />
+            </div>
+          </div>
+          <button
+            class="btn btn--primary btn--round btn--sm gift-card__form-submit-btn"
+            type="submit"
+          >
+            CONFIRMAR
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__group-data">
+        <h2 class="heading heading--lg group-data__title">Integrantes</h2>
+        <ul>
+          <li class="text text--md">Marco Alejo Folco - 42037944</li>
+          <li class="text text--md">Bruno Enrique Bravo</li>
+          <li class="text text--md">Federico Martín Santillán</li>
+        </ul>
+      </div>
+      <div class="footer__navbar">
+        <ul class="footer__navbar-navlist">
+          <li class="footer__navbar-navlist-item">
+            <a href="../index.html" class="text text--md">Inicio</a>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <span class="text text--md">Categorías</span>
+            <ul class="footer__navbar-navlist-item__submenu">
+              <li>
+                <a href="#" class="text text--sm">Desarrollo Web</a>
+              </li>
+              <li>
+                <a href="#" class="text text--sm">Data Science</a>
+              </li>
+              <li>
+                <a href="#" class="text text--sm">Diseño</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./releases-calendar.html" class="text text--md"
+              >Lanzamientos</a
+            >
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="#" class="text text--md">Gift Card</a>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./contact.html" class="text text--md">Contáctanos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__social-media">
+        <h2 class="heading heading--lg social-media__title">Nuestras redes</h2>
+        <div class="social-media__icons">
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-telegram"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/0ea2f29246.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
