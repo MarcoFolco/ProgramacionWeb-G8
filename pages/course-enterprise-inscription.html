@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/contact-page-styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
-    <title>Contacto</title>
-    <link rel="preload" as="font" type="font/woff2"
-        href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2" crossorigin="anonymous" />
-    <link rel="preload" as="font" type="font/woff2"
-        href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2" crossorigin="anonymous" />
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción para empresas</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="../styles/course-enterprise-inscription-styles.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header class="header">
         <form action="#" class="header__search-bar-form">
             <i class="fa-solid fa-search text text--lg"></i>
@@ -78,47 +100,105 @@
             </ul>
         </nav>
     </header>
-    <div class="page-container">
-        <section class="contact-section">
-            <h1 class="heading heading--xxl">CONTACTO</h1>
-            <div class="contact-container">
-                <!-- Formulario de contacto alineado a la izquierda -->
-                <form class="contact-form" action="#" method="post">
-                    <label for="name">Nombre y Apellido</label>
-                    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
-
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
-
-                    <label for="phone">Teléfono (opcional)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Ingresa tu teléfono">
-
-                    <label for="message">Consulta</label>
-                    <textarea id="message" name="message" placeholder="Escribe tu consulta" required></textarea>
-
-                    <button type="submit">Enviar</button>
-                </form>
-
-                <!-- Datos de contacto alineados a la derecha -->
-                <div class="contact-info">
-                    <h2 class="heading heading--lg">DATOS DE CONTACTO</h2>
-                    <p class="text">Teléfono: +54 11 1234 5678</p>
-                    <p class="text">Email: contacto@udeny.com</p>
-                    <p class="text">Sgto. Cabral 3770, B1605 Munro, Provincia de Buenos Aires</p>
-                </div>
+    <main class="page-container">
+      <section class="section course-inscription">
+        <h2 class="heading heading--lg">TITULO CURSO</h2>
+        <h3 class="heading heading--md">INSCRIPCIÓN</h3>
+        <form action="#" method="post" class="course-inscription__fields">
+          <fieldset class="field-group">
+            <div class="field-group__data">
+              <input
+                type="text"
+                name="email1"
+                placeholder="Student's email"
+                required
+              />
+              <input
+                type="text"
+                name="firstName1"
+                placeholder="Student's first name"
+                required
+              />
+              <input
+                type="text"
+                name="lastName1"
+                placeholder="Student's last name"
+                required
+              />
             </div>
-
-            <!-- Sección del mapa ficticio con título centrado -->
-            <div class="map-container">
-                <h2 class="heading heading--xxl map-title">UBICACIÓN</h2>
-                <div class="map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.49047132073!2d-58.528232387806206!3d-34.51579965274912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0e9625ba275%3A0x9c06764847db16fd!2sLumina%20Panamericana!5e0!3m2!1ses-419!2sar!4v1726404667169!5m2!1ses-419!2sar"
-                        allowfullscreen="" loading="lazy"></iframe>
-                </div>
+            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+              ><i class="fa-solid fa-minus text text--xl"></i
+            ></a>
+          </fieldset>
+          <fieldset class="field-group">
+            <div class="field-group__data">
+              <input
+                type="text"
+                name="email1"
+                placeholder="Student's email"
+                required
+              />
+              <input
+                type="text"
+                name="firstName1"
+                placeholder="Student's first name"
+                required
+              />
+              <input
+                type="text"
+                name="lastName1"
+                placeholder="Student's last name"
+                required
+              />
             </div>
-        </section>
-    </div>
+            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+              ><i class="fa-solid fa-minus text text--xl"></i
+            ></a>
+          </fieldset>
+          <fieldset class="field-group">
+            <div class="field-group__data">
+              <input
+                type="text"
+                name="email1"
+                placeholder="Student's email"
+                required
+              />
+              <input
+                type="text"
+                name="firstName1"
+                placeholder="Student's first name"
+                required
+              />
+              <input
+                type="text"
+                name="lastName1"
+                placeholder="Student's last name"
+                required
+              />
+            </div>
+            <button
+              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+            >
+              <i class="fa-solid fa-minus text text--xl"></i>
+            </button>
+          </fieldset>
+          <p class="fields__add-button heading heading--md">
+            <button
+              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+            >
+              <i class="fa-solid fa-plus text text--md"></i>
+            </button>
+            Agregar persona
+          </p>
+          <div class="fields__actions">
+            <span class="tag">$000.-</span>
+            <button class="btn btn--primary btn--round btn--sm" type="submit">
+              Inscribirse
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
     <footer class="footer">
         <div class="footer__group-data">
             <h2 class="heading heading--lg group-data__title">Integrantes</h2>
@@ -172,5 +252,5 @@
     src="https://kit.fontawesome.com/0ea2f29246.js"
     crossorigin="anonymous"
   ></script>
-</body>
+  </body>
 </html>

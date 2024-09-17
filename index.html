@@ -1,36 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/langing-page-styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <title>Cursos en línea</title>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+  <body>
+    <header class="header">
+      <form action="#" class="header__search-bar-form">
+        <i class="fa-solid fa-search text text--lg"></i>
+        <input
+          type="text"
+          placeholder="Busca cualquier cosa"
+          class="header__search-bar-input text text--md"
+          list="header-search-bar-options"
+        />
+        <datalist id="header-search-bar-options">
+          <option value="JavaScript"></option>
+          <option value="Python"></option>
+          <option value="Java"></option>
+          <option value="C++"></option>
+          <option value="Ruby"></option>
+          <option value="PHP"></option>
+          <option value="Go"></option>
+        </datalist>
 
-    <title>Document</title>
-
-</head>
-
-<body>
-    <header>
-        <a href="#" class="logo">
-            <img src="images/flag.png" alt="logo de la compañia">
-            <h2 class="nombre-empresa"> Nombre compañia</h2>
+        <i class="fa-solid fa-times heading heading--xl"></i>
+      </form>
+      <div class="header__main">
+        <i class="fa-solid fa-bars header__sidebar-button"></i>
+        <a href="#" class="header__logo-link">
+          <img
+            src="./images/logo-big.svg"
+            alt="EL logo de la página."
+            class="img header__logo"
+          />
         </a>
-        <div class="container">
-            <input type="text" placeholder="Buscar...">
-            <button><i class="fas fa-search icon"></i></button> <!--rechequear-->
+        <div class="header__buttons">
+          <i class="fa-solid fa-search text text--lg header__search-button"></i>
+          <div class="header__cart-button-container">
+            <i class="fa-solid fa-cart-shopping text text--lg"></i>
+            <span class="badge cart-button__badge">1</span>
+          </div>
         </div>
-        <nav>
-            <a href="" class="nav-link">Inicio</a>
-            <a href="" class="nav-link">Sobre Nosotros</a>
-            <a href="" class="nav-link">Contacto</a>
-        </nav>
+      </div>
+      <nav class="sidebar">
+        <ul class="nav-list login-register-buttons">
+          <li class="nav-item">
+            <a href="#">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Registrate</a>
+          </li>
+        </ul>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <span>Categorías</span>
+            <ul class="sub-menu">
+              <li><a href="#">Desarrollo Web</a></li>
+              <li><a href="#">Data Science</a></li>
+              <li><a href="#">Diseño</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="./pages/releases-calendar.html">Lanzamientos</a>
+          </li>
+          <li class="nav-item">
+            <a href="./pages/gift-card.html">Gift Card</a>
+          </li>
+          <li class="nav-item">
+            <a href="./pages/contact.html">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main> </main>
-    <h1>Programacion Web G11</h1>
-    <footer>
-
+    <main class="page-container">
+      <div class="carousel">
+        <div class="carousel__slider-container">
+          <div class="carousel__slide">
+            <div class="carousel__slide-picture-container">
+              <picture class="carousel__slide-picture">
+                <source
+                  srcset="./images/carousel_slide_1.jpeg"
+                  media="(min-width: 48rem)"
+                />
+                <source
+                  srcset="./images/carousel_slide_1_small.jpeg"
+                  media="(max-width: 48rem)"
+                />
+                <img
+                  src="./images/carousel_slide_1.jpeg"
+                  alt=""
+                  class="carousel__slide-image"
+                />
+              </picture>
+            </div>
+            <article class="carousel__slide-content-box">
+              <h1 class="heading heading--serif heading--xxl">
+                Habilidades que te ayudan a avanzar
+              </h1>
+              <p class="slide-content-box__description text--md">
+                La tecnología y el mundo laboral evolucionan muy rápido, pero
+                con nosotros, podrás mantener el ritmo. Consigue las habilidades
+                que necesitas para lograr tus objetivos y garantizar la
+                competitividad.
+              </p>
+              <div class="slide-content-box__buttons-container">
+                <a
+                  href="#"
+                  class="btn btn--lg btn--primary heading heading--md"
+                >
+                  <span class="btn__label">Plan individual</span>
+                </a>
+                <a
+                  href="#"
+                  class="btn btn--lg btn--secondary heading heading--md"
+                >
+                  <span class="btn__label">Plan para organizaciones</span>
+                </a>
+              </div>
+            </article>
+          </div>
+          <button
+            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <section class="section enroll-steps">
+        <h1 class="heading heading--lg">¿CÓMO COMENZAR UN CURSO?</h1>
+        <div class="cards">
+          <article class="card">
+            <h2 class="heading heading--md">Inicia sesión o crea una cuenta</h2>
+            <p class="text text--sm">
+              Para disfrutar de nuestro amplio catálogo de cursos, debes tener
+              una cuenta y elegir la subscripción que mejor se adapte a tu plan
+              de estudio.
+            </p>
+          </article>
+          <article class="card">
+            <h2 class="heading heading--md">¡Elije tu favorito!</h2>
+            <p class="text text--sm">
+              Busca entre decenas de categorías y elije tu curso preferido.
+              Disponemos de cursos en varios idiomas y con distintos profesores.
+            </p>
+          </article>
+          <article class="card">
+            <h2 class="heading heading--md">Inicia el curso</h2>
+            <p class="text text--sm">
+              Una vez encuentres tu curso ideal, solo necesitas un click para
+              comenzar. ¡Puedes seguir tantos cursos como quieras!
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section highlighted-courses">
+        <h1 class="heading heading--lg">CURSOS DESTACADOS</h1>
+        <div class="cards course-slider">
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="./images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="./pages/course-detail.html"
+                  >Ver Detalle</a
+                >
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="./images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="./pages/course-detail.html"
+                  >Ver Detalle</a
+                >
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="./images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="./pages/course-detail.html"
+                  >Ver Detalle</a
+                >
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="./images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="./pages/course-detail.html"
+                  >Ver Detalle</a
+                >
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="./images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="./pages/course-detail.html"
+                  >Ver Detalle</a
+                >
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--course">
+            <div class="card__img-container">
+              <img
+                src="./images/course.jpg"
+                alt="Una imagen representativa del curso."
+                class="img"
+              />
+              <span class="tag course-price">$000.-</span>
+            </div>
+            <div class="card__content course-content">
+              <p class="heading heading--xl">
+                <strong>60</strong> <small class="text--md">hs</small>
+              </p>
+              <div class="course-content__details">
+                <h2 class="heading heading--md">Nombre del curso</h2>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="./pages/course-detail.html"
+                  >Ver Detalle</a
+                >
+                <a href="#" class="btn btn--primary btn--md">Comprar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section payment-methods">
+        <h1 class="heading heading--lg">MEDIOS DE PAGO</h1>
+        <div class="cards">
+          <article class="card">
+            <div class="card__img-container">
+              <img
+                class="img"
+                src="./images/visa-logo.webp"
+                alt="An image of Visa logo."
+              />
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__img-container">
+              <img
+                class="img"
+                src="./images/mastercard-logo.png"
+                alt="An image of Mastercard logo."
+              />
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__img-container">
+              <img
+                class="img"
+                src="./images/american-express-logo.png"
+                alt="An image of American Express logo."
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__group-data">
+        <h2 class="heading heading--lg group-data__title">Integrantes</h2>
+        <ul>
+          <li class="text text--md">Marco Alejo Folco - 42037944</li>
+          <li class="text text--md">Bruno Enrique Bravo</li>
+          <li class="text text--md">Federico Martín Santillán</li>
+        </ul>
+      </div>
+      <div class="footer__navbar">
+        <ul class="footer__navbar-navlist">
+          <li class="footer__navbar-navlist-item">
+            <a href="#" class="text text--md">Inicio</a>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <span class="text text--md">Categorías</span>
+            <ul class="footer__navbar-navlist-item__submenu">
+              <li>
+                <a href="#" class="text text--sm">Desarrollo Web</a>
+              </li>
+              <li>
+                <a href="#" class="text text--sm">Data Science</a>
+              </li>
+              <li>
+                <a href="#" class="text text--sm">Diseño</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./pages/releases-calendar.html" class="text text--md"
+              >Lanzamientos</a
+            >
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./pages/gift-card.html" class="text text--md">Gift Card</a>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./pages/contact.html" class="text text--md">Contáctanos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__social-media">
+        <h2 class="heading heading--lg social-media__title">Nuestras redes</h2>
+        <div class="social-media__icons">
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-telegram"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+        </div>
+      </div>
     </footer>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/0ea2f29246.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

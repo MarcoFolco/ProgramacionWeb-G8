@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lanzamientos</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/releases-calendar-styles.css" />
+  </head>
+  <body>
+    <header class="header">
+        <form action="#" class="header__search-bar-form">
+            <i class="fa-solid fa-search text text--lg"></i>
+            <input type="text" placeholder="Busca cualquier cosa" class="header__search-bar-input text text--md"
+                list="header-search-bar-options" />
+            <datalist id="header-search-bar-options">
+                <option value="JavaScript"></option>
+                <option value="Python"></option>
+                <option value="Java"></option>
+                <option value="C++"></option>
+                <option value="Ruby"></option>
+                <option value="PHP"></option>
+                <option value="Go"></option>
+            </datalist>
+
+            <i class="fa-solid fa-times heading heading--xl"></i>
+        </form>
+        <div class="header__main">
+            <i class="fa-solid fa-bars header__sidebar-button"></i>
+            <a href="#" class="header__logo-link">
+                <img src="../images/logo-big.svg" alt="EL logo de la página." class="img header__logo" />
+            </a>
+            <div class="header__buttons">
+                <i class="fa-solid fa-search text text--lg header__search-button"></i>
+                <div class="header__cart-button-container">
+                    <i class="fa-solid fa-cart-shopping text text--lg"></i>
+                    <span class="badge cart-button__badge">1</span>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar">
+            <ul class="nav-list login-register-buttons">
+                <li class="nav-item">
+                    <a href="../pages/login.html">Iniciar sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/register.html">Registrate</a>
+                </li>
+            </ul>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <span>Categorías</span>
+                    <ul class="sub-menu">
+                        <li><a href="#">Desarrollo Web</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Diseño</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="./releases-calendar.html">Lanzamientos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./gift-card.html">Gift Card</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./contact.html">Contáctanos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-container">
+      <div class="calendar-container">
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            DOM
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">
+            1 de Sept.
+          </p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            LUN
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">2</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MAR
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">3</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MIÉ
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">4</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            JUE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">5</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            VIE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">6</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            SAB
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">7</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            DOM
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">8</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            LUN
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">9</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MAR
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">10</p>
+          <p class="calendar-container__cell-meet">Nuevo curso de Flexbox</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MIÉ
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">11</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            JUE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">12</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            VIE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">13</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            SAB
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">14</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            DOM
+          </h2>
+          <p
+            class="heading heading--md calendar-container__cell-day calendar-container__cell-day-selected"
+          >
+            15
+          </p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            LUN
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">16</p>
+          <p class="calendar-container__cell-meet">Nuevo curso de HTML5</p>
+          <p class="calendar-container__cell-meet">Nuevo curso de CSS</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MAR
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">17</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MIÉ
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">18</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            JUE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">19</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            VIE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">20</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            SAB
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">21</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            DOM
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">22</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            LUN
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">23</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MAR
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">24</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MIÉ
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">25</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            JUE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">26</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            VIE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">27</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            SAB
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">28</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            DOM
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">29</p>
+        </div>
+        <div class="calendar-container__cell">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            LUN
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">30</p>
+        </div>
+        <div class="calendar-container__cell calendar-container__cell--faded">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MAR
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">
+            1 de Agost.
+          </p>
+        </div>
+        <div class="calendar-container__cell calendar-container__cell--faded">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            MIÉ
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">2</p>
+        </div>
+        <div class="calendar-container__cell calendar-container__cell--faded">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            JUE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">3</p>
+        </div>
+        <div class="calendar-container__cell calendar-container__cell--faded">
+          <h2
+            class="heading heading--md calendar-container__cell-title calendar-container__cell-title--faded"
+          >
+            VIE
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">4</p>
+        </div>
+        <div class="calendar-container__cell calendar-container__cell--faded">
+          <h2 class="heading heading--md calendar-container__cell-title">
+            SAB
+          </h2>
+          <p class="heading heading--md calendar-container__cell-day">5</p>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__group-data">
+            <h2 class="heading heading--lg group-data__title">Integrantes</h2>
+            <ul>
+                <li class="text text--md">Marco Alejo Folco - 42037944</li>
+                <li class="text text--md">Bruno Enrique Bravo - 41543950</li>
+                <li class="text text--md">Federico Martín Santillán - 40007093</li>
+            </ul>
+        </div>
+        <div class="footer__navbar">
+            <ul class="footer__navbar-navlist">
+                <li class="footer__navbar-navlist-item">
+                    <a href="../index.html" class="text text--md">Inicio</a>
+                </li>
+                <li class="footer__navbar-navlist-item">
+                    <span class="text text--md">Categorías</span>
+                    <ul class="footer__navbar-navlist-item__submenu">
+                        <li>
+                            <a href="#" class="text text--sm">Desarrollo Web</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text text--sm">Data Science</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text text--sm">Diseño</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer__navbar-navlist-item">
+                    <a href="./releases-calendar.html" class="text text--md">Lanzamientos</a>
+                </li>
+                <li class="footer__navbar-navlist-item">
+                    <a href="./gift-card.html" class="text text--md">Gift Card</a>
+                </li>
+                <li class="footer__navbar-navlist-item">
+                    <a href="./contact.html" class="text text--md">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__social-media">
+            <h2 class="heading heading--lg social-media__title">Nuestras redes</h2>
+            <div class="social-media__icons">
+                <a href="#" class="text text--lg"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text text--lg"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text text--lg"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="text text--lg"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script
+    src="https://kit.fontawesome.com/0ea2f29246.js"
+    crossorigin="anonymous"
+  ></script>
+  </body>
+</html>

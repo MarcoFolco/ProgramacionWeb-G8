@@ -1,0 +1,26 @@
+/* Enroll Steps styles */
+
+.enroll-steps .cards .card {
+  flex: 1 1 0;
+}
+
+/* End of enroll steps styles */
+
+/* Payment methods styles */
+
+.payment-methods .cards {
+  flex-direction: row;
+}
+
+.payment-methods .cards .card {
+  flex: 1 1 0;
+  display: flex;
+  place-content: center;
+}
+
+@media screen and (min-width: 48rem) {
+  .payment-methods .cards .card {
+    flex: 0 0 15rem;
+  }
+}
+/* End of payment methods styles */

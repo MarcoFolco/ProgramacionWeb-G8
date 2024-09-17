@@ -1,0 +1,298 @@
+:root {
+  --gift-card-bg-1: #00bfff;
+  --gift-card-bg-2: #4682b4;
+  --gift-card-bg-3: #5f9ea0;
+  --gift-card-bg-4: #708090;
+  --gift-card-bg-5: #6d27ae;
+  --gift-card-color-1: var(--bg-primary);
+  --gift-card-color-2: #6edce9;
+  --gift-card-color-3: #712525;
+  --gift-card-color-4: #b2990e;
+  --gift-card-color-5: #6d27ae;
+}
+
+.gift-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .gift-card {
+    flex-direction: row;
+  }
+}
+
+/* Gift card preview styles */
+
+.gift-card .gift-card__preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: center;
+  text-align: center;
+}
+
+.gift-card .gift-card__preview .gift-card__preview-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gift-card-bg-1);
+  width: 30rem;
+  height: 30rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 48rem) {
+  .gift-card .gift-card__preview {
+    align-self: flex-start;
+  }
+}
+
+/* End of gift card preview styles */
+
+/* Gift card form styles */
+
+.gift-card .gift-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gift-card .gift-card__form .gift-card__form-submit-btn {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .gift-card .gift-card__form .gift-card__form-submit-btn {
+    align-self: flex-start;
+  }
+}
+
+/* End of gift card form styles */
+
+/* Radio selector styles */
+
+.radio-selector {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.radio-option {
+  margin: 0 1rem;
+  text-align: center;
+}
+
+.radio-option input[type="radio"] {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.radio-option label {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  display: block;
+}
+
+/* End of radio selector styles */
+
+/* Color options styles */
+.gift-card .gift-card__form .radio-selector__font-color .radio-option label {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-color
+  .radio-option:has(#color1)
+  label {
+  background-color: var(--gift-card-color-1);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-color
+  .radio-option:has(#color2)
+  label {
+  background-color: var(--gift-card-color-2);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-color
+  .radio-option:has(#color3)
+  label {
+  background-color: var(--gift-card-color-3);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-color
+  .radio-option:has(#color4)
+  label {
+  background-color: var(--gift-card-color-4);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-color
+  .radio-option:has(#color5)
+  label {
+  background-color: var(--gift-card-color-5);
+}
+
+/* End of color options styles */
+
+/* Font Size options styles */
+.gift-card .gift-card__form .radio-selector__font-size .radio-option label {
+  height: 2.5rem;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-size
+  .radio-option:has(#size1)
+  label {
+  font-size: 1.2rem;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-size
+  .radio-option:has(#size2)
+  label {
+  font-size: 1.4rem;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-size
+  .radio-option:has(#size3)
+  label {
+  font-size: 1.6rem;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-size
+  .radio-option:has(#size4)
+  label {
+  font-size: 2rem;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__font-size
+  .radio-option:has(#size5)
+  label {
+  font-size: 2.2rem;
+}
+
+/* End of font size options styles */
+
+/* Position options styles */
+
+.gift-card .gift-card__form .radio-selector__position .radio-option label {
+  width: 4.5rem;
+  height: 3rem;
+  border: 1px solid rgba(var(--bg-primary-color), 0.2);
+  position: relative;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__position
+  .radio-option
+  label::before {
+  content: "";
+  position: absolute;
+  width: 1.75rem;
+  height: 0.85rem;
+  background-color: var(--bg-primary);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__position
+  .radio-option:has(#positionBottomRight)
+  label::before {
+  bottom: 0;
+  right: 0;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__position
+  .radio-option:has(#positionTopLeft)
+  label::before {
+  top: 0;
+  left: 0;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__position
+  .radio-option:has(#positionTopRight)
+  label::before {
+  top: 0;
+  right: 0;
+}
+
+/* End of position options styles */
+
+/* Background color options styles */
+.gift-card
+  .gift-card__form
+  .radio-selector__background-color
+  .radio-option
+  label {
+  width: 4rem;
+  height: 4rem;
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__background-color
+  .radio-option:has(#bgColor1)
+  label {
+  background-color: var(--gift-card-bg-1);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__background-color
+  .radio-option:has(#bgColor2)
+  label {
+  background-color: var(--gift-card-bg-2);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__background-color
+  .radio-option:has(#bgColor3)
+  label {
+  background-color: var(--gift-card-bg-3);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__background-color
+  .radio-option:has(#bgColor4)
+  label {
+  background-color: var(--gift-card-bg-4);
+}
+
+.gift-card
+  .gift-card__form
+  .radio-selector__background-color
+  .radio-option:has(#bgColor5)
+  label {
+  background-color: var(--gift-card-bg-5);
+}
+/* End of background color options styles */
