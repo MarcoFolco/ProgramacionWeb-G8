@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
+    <title>Agregar Metodo de Pago</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/login-register-styles.css">
+    <link rel="stylesheet" href="../styles/add-payment-method.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
-    <title>Inicio de Sesión</title>
+    <title>Contacto</title>
     <link rel="preload" as="font" type="font/woff2"
         href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2" crossorigin="anonymous" />
     <link rel="preload" as="font" type="font/woff2"
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-        <header class="header">
+    <header class="header">
         <form action="#" class="header__search-bar-form">
             <i class="fa-solid fa-search text text--lg"></i>
             <input type="text" placeholder="Busca cualquier cosa" class="header__search-bar-input text text--md"
@@ -81,30 +81,35 @@
         </nav>
     </header>
     <div class="page-container">
-        <div class="login-section">
-            <div class="login-image">
-                <img src="../images/login-picture.webp" alt="Imagen de Inicio de Sesión">
-            </div>
-            <div class="login-container">
-                <h1 class="heading heading--xl">Regístrate y comienza a aprender.</h1>
-                <form class="login-form">
-                    <label for="email" class="text text--md">Nombre Completo</label>
-                    <input type="text" id="name" name="name" required class="input-field">
+        <section class="payment-section">
+            <h2>Agregar un metodo de pago</h2>
+            <div class="payment-container">
+                <form class="payment-form" action="#" method="POST">
+                    <label for="card-name">Nombre en la tarjeta:</label>
+                    <input type="text" id="card-name" name="card-name" class="input-field" placeholder="Nombre completo"
+                        required>
 
-                    <label for="email" class="text text--md">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required class="input-field">
+                    <label for="card-number">Número de la tarjeta:</label>
+                    <input type="text" id="card-number" name="card-number" class="input-field"
+                        placeholder="0000 0000 0000 0000" required>
 
-                    <label for="password" class="text text--md">Contraseña</label>
-                    <input type="password" id="password" name="password" required class="input-field">
+                    <label for="expiry-date">Fecha de vencimiento:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" class="input-field" placeholder="MM/AA"
+                        required>
 
-                    <button type="submit" class="btn btn--primary btn--lg">Registrarte</button>
-                    <div class="login-options">
-                        <span>Al registrarte, aceptas nuestras <a href="#" class="link">Condiciones de uso</a> y nuestra <a href="#" class="link">Política de privacidad.</a></span>
-                        <span>Ya tienes una cuenta? <a href="../pages/login.html" class="link">Inicia Sesión!</a></span>
-                    </div>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" class="input-field" placeholder="123" required>
+
+                    <label for="card-type">Tipo de tarjeta:</label>
+                    <select id="card-type" name="card-type" class="input-field">
+                        <option value="credit">Crédito</option>
+                        <option value="debit">Débito</option>
+                    </select>
+
+                    <button type="submit" class="btn btn--primary">Agregar tarjeta</button>
                 </form>
             </div>
-        </div>
+        </section>
     </div>
     <footer class="footer">
         <div class="footer__group-data">
@@ -160,5 +165,4 @@
     crossorigin="anonymous"
   ></script>
 </body>
-
 </html>
