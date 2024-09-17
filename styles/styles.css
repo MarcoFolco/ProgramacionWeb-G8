@@ -796,3 +796,23 @@ hr {
 }
 
 /* End of footer styles */
+
+/* Input styles */
+
+.input {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(var(--bg-primary-color), 0.2);
+  height: 2.5rem;
+  padding: 1rem;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.input:hover,
+.input:focus,
+.input:focus-visible {
+  border-color: var(--bg-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--bg-primary-color), 0.25);
+}
+
+/* End of input syles */

@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscripción para empresas</title>
+    <title>Gift Card</title>
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link
-      rel="stylesheet"
-      href="../styles/course-enterprise-inscription-styles.css"
-    />
+    <link rel="stylesheet" href="../styles/gift-card.css" />
     <link
       rel="icon"
       type="image/png"
@@ -100,7 +97,7 @@
             <a href="./releases-calendar.html">Lanzamientos</a>
           </li>
           <li class="nav-item">
-            <a href="./gift-card.html">Gift Card</a>
+            <a href="#">Gift Card</a>
           </li>
           <li class="nav-item">
             <a href="./contact.html">Contáctanos</a>
@@ -109,101 +106,147 @@
       </nav>
     </header>
     <main class="page-container">
-      <section class="section course-inscription">
-        <h2 class="heading heading--lg">TITULO CURSO</h2>
-        <h3 class="heading heading--md">INSCRIPCIÓN</h3>
-        <form action="#" method="post" class="course-inscription__fields">
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input
-                type="text"
-                name="email1"
-                placeholder="Student's email"
-                required
-              />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Student's first name"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Student's last name"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input
-                type="text"
-                name="email1"
-                placeholder="Student's email"
-                required
-              />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Student's first name"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Student's last name"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input
-                type="text"
-                name="email1"
-                placeholder="Student's email"
-                required
-              />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Student's first name"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Student's last name"
-                required
-              />
-            </div>
-            <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-            >
-              <i class="fa-solid fa-minus text text--xl"></i>
-            </button>
-          </fieldset>
-          <p class="fields__add-button heading heading--md">
-            <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-            >
-              <i class="fa-solid fa-plus text text--md"></i>
-            </button>
-            Agregar persona
-          </p>
-          <div class="fields__actions">
-            <span class="tag">$000.-</span>
-            <button class="btn btn--primary btn--round btn--sm" type="submit">
-              Inscribirse
-            </button>
+      <section class="gift-card">
+        <div class="gift-card__preview">
+          <div class="gift-card__preview-image">
+            <small class="heading heading--sm">GIFT CARD para</small>
+            <h2 class="heading heading--xl">DESTINATARIO</h2>
           </div>
+          <h4 class="heading heading--sm">
+            VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN
+          </h4>
+        </div>
+        <form class="gift-card__form" action="#">
+          <h3 class="heading heading--lg">Personalización de Giftcard</h3>
+          <input type="text" placeholder="Nombre Destinatario" class="input" />
+          <p class="heading heading--sm">Color</p>
+          <div class="radio-selector radio-selector__font-color">
+            <div class="radio-option">
+              <label for="color1"></label>
+              <input
+                type="radio"
+                id="color1"
+                name="color"
+                value="#00BFFF"
+                checked
+              />
+            </div>
+
+            <div class="radio-option">
+              <label for="color2"></label>
+              <input type="radio" id="color2" name="color" value="#4682B4" />
+            </div>
+
+            <div class="radio-option">
+              <label for="color3"></label>
+              <input type="radio" id="color3" name="color" value="#5F9EA0" />
+            </div>
+
+            <div class="radio-option">
+              <label for="color4"></label>
+              <input type="radio" id="color4" name="color" value="#20B2AA" />
+            </div>
+
+            <div class="radio-option">
+              <label for="color5"></label>
+              <input type="radio" id="color5" name="color" value="#8A2BE2" />
+            </div>
+          </div>
+          <p class="heading heading--md">Tamaño de fuente</p>
+          <div class="radio-selector radio-selector__font-size">
+            <div class="radio-option">
+              <label for="size1" class="heading">20px</label>
+              <input type="radio" id="size1" name="size" value="2rem" checked />
+            </div>
+
+            <div class="radio-option">
+              <label for="size2" class="heading">28px</label>
+              <input type="radio" id="size2" name="size" value="2.8rem" />
+            </div>
+
+            <div class="radio-option">
+              <label for="size3" class="heading">32px</label>
+              <input type="radio" id="size3" name="size" value="3.2rem" />
+            </div>
+
+            <div class="radio-option">
+              <label for="size4" class="heading">48px</label>
+              <input type="radio" id="size4" name="size" value="4.8rem" />
+            </div>
+
+            <div class="radio-option">
+              <label for="size5" class="heading">60px</label>
+              <input type="radio" id="size5" name="size" value="6rem" />
+            </div>
+          </div>
+          <p class="heading heading--md">Ubicación</p>
+          <div class="radio-selector radio-selector__position">
+            <div class="radio-option">
+              <label for="positionBottomRight" class="heading"></label>
+              <input
+                type="radio"
+                id="positionBottomRight"
+                name="position"
+                value="positionBottomRight"
+                checked
+              />
+            </div>
+
+            <div class="radio-option">
+              <label for="positionTopLeft" class="heading"></label>
+              <input
+                type="radio"
+                id="positionTopLeft"
+                name="position"
+                value="positionTopLeft"
+              />
+            </div>
+
+            <div class="radio-option">
+              <label for="positionTopRight" class="heading"></label>
+              <input
+                type="radio"
+                id="positionTopRight"
+                name="position"
+                value="positionTopRight"
+              />
+            </div>
+          </div>
+          <p class="heading heading--md">Fondo</p>
+          <div class="radio-selector radio-selector__background-color">
+            <div class="radio-option">
+              <label for="bgColor1" class="heading"></label>
+              <input
+                type="radio"
+                id="bgColor1"
+                name="bgColor"
+                value=""
+                checked
+              />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor2" class="heading"></label>
+              <input type="radio" id="bgColor2" name="bgColor" value="" />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor3" class="heading"></label>
+              <input type="radio" id="bgColor3" name="bgColor" value="" />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor4" class="heading"></label>
+              <input type="radio" id="bgColor4" name="bgColor" value="" />
+            </div>
+            <div class="radio-option">
+              <label for="bgColor5" class="heading"></label>
+              <input type="radio" id="bgColor5" name="bgColor" value="" />
+            </div>
+          </div>
+          <button
+            class="btn btn--primary btn--round btn--sm gift-card__form-submit-btn"
+            type="submit"
+          >
+            CONFIRMAR
+          </button>
         </form>
       </section>
     </main>
@@ -241,7 +284,7 @@
             >
           </li>
           <li class="footer__navbar-navlist-item">
-            <a href="./gift-card.html" class="text text--md">Gift Card</a>
+            <a href="#" class="text text--md">Gift Card</a>
           </li>
           <li class="footer__navbar-navlist-item">
             <a href="./contact.html" class="text text--md">Contáctanos</a>
