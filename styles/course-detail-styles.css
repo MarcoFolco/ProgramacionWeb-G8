@@ -20,7 +20,8 @@
   }
 
   .course-presentation .img {
-    flex: 0 0 25%;
+    flex: 0 0 35%;
+    min-width: 0;
   }
 
   .course-presentation .course-presentation__subscribe-btn {

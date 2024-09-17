@@ -6,6 +6,7 @@
   --secondary: #2d2f31;
   --bg-primary-active: #3e4143;
   --bg-secondary-active: rgba(23, 57, 83, 0.12);
+  --ghost: #5022c3;
 }
 
 @font-face {
@@ -55,6 +56,18 @@ html {
 body {
   font-size: 1.6rem;
   color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+hr {
+  border: 0.5px solid rgba(var(--bg-primary-color), 0.2);
 }
 
 /* Page container styles */
@@ -66,6 +79,7 @@ body {
   flex-direction: column;
   gap: 2.6rem;
   padding: 2.6rem 0;
+  flex: 1 1 0;
 }
 
 @media screen and (min-width: 48rem) {
@@ -138,7 +152,7 @@ body {
 
 .btn--ghost:active,
 .btn--ghost:hover {
-  color: #5022c3;
+  color: var(--ghost);
 }
 
 .btn--round {
@@ -488,9 +502,297 @@ body {
 
 /* End of tag styles */
 
+/* Badge styles */
+
+.badge {
+  background-color: var(--bg-primary);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* End of badge styles */
+
 /* Section Styles */
 
 .section > h1 {
   margin-bottom: 1.6rem;
   text-align: center;
 }
+
+/* End of sections tyles */
+
+/* Header styles */
+
+.header {
+  position: relative;
+}
+
+.header .header__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-wrap: nowrap;
+  padding: 1.5rem;
+}
+
+.header .header__logo-link {
+  font-size: 0;
+}
+
+.header .header__main .img.header__logo {
+  width: 65px;
+}
+
+.header .header__main .header__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 64rem) {
+  .header .header__main .img.header__logo {
+    width: 75px;
+  }
+}
+
+/* Search bar styles */
+
+.header .header__search-bar-form {
+  display: none;
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.08);
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary);
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+.header .header__search-bar-form .header__search-bar-input {
+  width: 100%;
+  height: 6rem;
+  padding: 0 1rem;
+  border-radius: 5px;
+  border: none;
+  flex: 1 1 0;
+}
+
+.header .header__search-bar-form .header__search-bar-input:focus {
+  outline: none;
+}
+
+.header:has(.header__search-button:hover) .header__search-bar-form,
+.header .header__search-bar-form:hover,
+.header .header__search-bar-form:has(*:hover) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* End of search bar styles */
+
+/* Shopping cart badge styles */
+
+.header .header__cart-button-container {
+  position: relative;
+}
+
+.header .header__cart-button-container .cart-button__badge {
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
+}
+
+/* End of shopping cart badge styles */
+
+/* Vertical Sidebar navbar styles */
+
+.sidebar {
+  width: 15rem;
+  background-color: var(--bg-secondary);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  padding-top: 2rem;
+  border-right: 1px solid rgba(var(--bg-primary-color), 0.2);
+  z-index: 1;
+  display: none;
+}
+
+.header .header__main:has(.header__sidebar-button:hover) ~ .sidebar,
+.sidebar:hover,
+.sidebar:has(*:hover) {
+  display: block;
+}
+
+.sidebar .nav-list.login-register-buttons {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(var(--bg-primary-color), 0.2);
+}
+
+.sidebar .nav-list.login-register-buttons .nav-item a {
+  color: var(--ghost);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a,
+.nav-item > span {
+  display: block;
+  padding: 15px 20px;
+  color: var(--secondary);
+  font-weight: bold;
+  border-bottom: 1px solid rgba(var(--bg-primary-color), 0.2);
+}
+
+.nav-item:first-child > a {
+  border-top: 1px solid rgba(var(--bg-primary-color), 0.2);
+}
+
+.nav-item > a:hover,
+.nav-item > span:hover {
+  background-color: var(--bg-secondary-active);
+}
+
+.sub-menu {
+  display: none;
+  background-color: #f1f3f5;
+}
+
+.nav-item:hover .sub-menu,
+.sub-menu:hover,
+.sub-menu:has(*:hover) {
+  display: block;
+}
+
+.sub-menu a {
+  padding: 10px 40px;
+  display: block;
+  color: var(--secondary);
+  border-bottom: 1px solid rgba(var(--bg-primary-color), 0.2);
+}
+
+.sub-menu a:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* End of vertical sidebar navbar styles */
+
+/* End of header styles */
+
+/* Footer styles */
+
+.footer {
+  background-color: var(--bg-primary);
+  color: var(--primary);
+  padding: 3rem;
+  display: grid;
+  grid-template-areas:
+    "group group navbar"
+    "social social social";
+}
+
+.footer .footer__group-data {
+  grid-area: group;
+}
+
+.footer .footer__group-data .group-data__title {
+  margin-bottom: 1rem;
+}
+
+.footer .footer__navbar {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  grid-area: navbar;
+}
+
+.footer .footer__navbar .footer__navbar-navlist .footer__navbar-navlist-item a {
+  color: var(--primary);
+}
+
+.footer
+  .footer__navbar
+  .footer__navbar-navlist
+  .footer__navbar-navlist-item
+  a:hover {
+  text-decoration: underline;
+}
+
+.footer
+  .footer__navbar
+  .footer__navbar-navlist
+  .footer__navbar-navlist-item
+  .footer__navbar-navlist-item__submenu {
+  display: none;
+}
+
+.footer
+  .footer__navbar
+  .footer__navbar-navlist
+  .footer__navbar-navlist-item:hover
+  .footer__navbar-navlist-item__submenu {
+  display: block;
+}
+
+.footer
+  .footer__navbar
+  .footer__navbar-navlist
+  .footer__navbar-navlist-item
+  .footer__navbar-navlist-item__submenu
+  li {
+  margin-left: 1.2rem;
+}
+
+.footer .footer__social-media {
+  grid-area: social;
+  justify-self: center;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid var(--primary);
+}
+
+.footer .footer__social-media .social-media__title {
+  margin-bottom: 1rem;
+}
+
+.footer .footer__social-media .social-media__icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer .footer__social-media .social-media__icons a {
+  color: var(--primary);
+}
+
+@media screen and (min-width: 48rem) {
+  .footer {
+    grid-template-areas: "group navbar social";
+  }
+
+  .footer .footer__social-media {
+    justify-self: end;
+    border-top: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer .footer__social-media .social-media__icons {
+    justify-content: end;
+  }
+}
+
+/* End of footer styles */
