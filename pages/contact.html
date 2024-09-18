@@ -1,176 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/contact-page-styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/contact-page-styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
     <title>Contacto</title>
-    <link rel="preload" as="font" type="font/woff2"
-        href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2" crossorigin="anonymous" />
-    <link rel="preload" as="font" type="font/woff2"
-        href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2" crossorigin="anonymous" />
-</head>
-<body>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header class="header">
-        <form action="#" class="header__search-bar-form">
-            <i class="fa-solid fa-search text text--lg"></i>
-            <input type="text" placeholder="Busca cualquier cosa" class="header__search-bar-input text text--md"
-                list="header-search-bar-options" />
-            <datalist id="header-search-bar-options">
-                <option value="JavaScript"></option>
-                <option value="Python"></option>
-                <option value="Java"></option>
-                <option value="C++"></option>
-                <option value="Ruby"></option>
-                <option value="PHP"></option>
-                <option value="Go"></option>
-            </datalist>
+      <form action="#" class="header__search-bar-form">
+        <i class="fa-solid fa-search text text--lg"></i>
+        <input
+          type="text"
+          placeholder="Busca cualquier cosa"
+          class="header__search-bar-input text text--md"
+          list="header-search-bar-options"
+        />
+        <datalist id="header-search-bar-options">
+          <option value="JavaScript"></option>
+          <option value="Python"></option>
+          <option value="Java"></option>
+          <option value="C++"></option>
+          <option value="Ruby"></option>
+          <option value="PHP"></option>
+          <option value="Go"></option>
+        </datalist>
 
-            <i class="fa-solid fa-times heading heading--xl"></i>
-        </form>
-        <div class="header__main">
-            <i class="fa-solid fa-bars header__sidebar-button"></i>
-            <a href="#" class="header__logo-link">
-                <img src="../images/logo-big.svg" alt="EL logo de la página." class="img header__logo" />
-            </a>
-            <div class="header__buttons">
-                <i class="fa-solid fa-search text text--lg header__search-button"></i>
-                <div class="header__cart-button-container">
-                    <i class="fa-solid fa-cart-shopping text text--lg"></i>
-                    <span class="badge cart-button__badge">1</span>
-                </div>
-            </div>
+        <i class="fa-solid fa-times heading heading--xl"></i>
+      </form>
+      <div class="header__main">
+        <i class="fa-solid fa-bars header__sidebar-button"></i>
+        <a href="../index.html" class="header__logo-link">
+          <img
+            src="../images/logo-big.svg"
+            alt="EL logo de la página."
+            class="img header__logo"
+          />
+        </a>
+        <div class="header__buttons">
+          <i class="fa-solid fa-search text text--lg header__search-button"></i>
+          <div class="header__cart-button-container">
+            <i class="fa-solid fa-cart-shopping text text--lg"></i>
+            <span class="badge cart-button__badge">1</span>
+          </div>
         </div>
-        <nav class="sidebar">
-            <ul class="nav-list login-register-buttons">
-                <li class="nav-item">
-                    <a href="../pages/login.html">Iniciar sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../pages/register.html">Registrate</a>
-                </li>
+      </div>
+      <nav class="sidebar">
+        <ul class="nav-list login-register-buttons">
+          <li class="nav-item">
+            <a href="../pages/login.html">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/register.html">Registrate</a>
+          </li>
+        </ul>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <span>Categorías</span>
+            <ul class="sub-menu">
+              <li><a href="#">Desarrollo Web</a></li>
+              <li><a href="#">Data Science</a></li>
+              <li><a href="#">Diseño</a></li>
             </ul>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <span>Categorías</span>
-                    <ul class="sub-menu">
-                        <li><a href="#">Desarrollo Web</a></li>
-                        <li><a href="#">Data Science</a></li>
-                        <li><a href="#">Diseño</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="./releases-calendar.html">Lanzamientos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./gift-card.html">Gift Card</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./contact.html">Contáctanos</a>
-                </li>
-            </ul>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a href="./releases-calendar.html">Lanzamientos</a>
+          </li>
+          <li class="nav-item">
+            <a href="./gift-card.html">Gift Card</a>
+          </li>
+          <li class="nav-item">
+            <a href="./contact.html">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <div class="page-container">
-        <section class="contact-section">
-            <h1 class="heading heading--xxl">CONTACTO</h1>
-            <div class="contact-container">
-                <!-- Formulario de contacto alineado a la izquierda -->
-                <form class="contact-form" action="#" method="post">
-                    <label for="name">Nombre y Apellido</label>
-                    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+      <section class="contact-section">
+        <h1 class="heading heading--xxl">CONTACTO</h1>
+        <div class="contact-container">
+          <!-- Formulario de contacto alineado a la izquierda -->
+          <form class="contact-form" action="#" method="post">
+            <label for="name">Nombre y Apellido</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ingresa tu nombre"
+              required
+            />
 
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+            <label for="email">Correo Electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu email"
+              required
+            />
 
-                    <label for="phone">Teléfono (opcional)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Ingresa tu teléfono">
+            <label for="phone">Teléfono (opcional)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Ingresa tu teléfono"
+            />
 
-                    <label for="message">Consulta</label>
-                    <textarea id="message" name="message" placeholder="Escribe tu consulta" required></textarea>
+            <label for="message">Consulta</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Escribe tu consulta"
+              required
+            ></textarea>
 
-                    <button type="submit">Enviar</button>
-                </form>
+            <button type="submit">Enviar</button>
+          </form>
 
-                <!-- Datos de contacto alineados a la derecha -->
-                <div class="contact-info">
-                    <h2 class="heading heading--lg">DATOS DE CONTACTO</h2>
-                    <p class="text">Teléfono: +54 11 1234 5678</p>
-                    <p class="text">Email: contacto@udeny.com</p>
-                    <p class="text">Sgto. Cabral 3770, B1605 Munro, Provincia de Buenos Aires</p>
-                </div>
-            </div>
+          <!-- Datos de contacto alineados a la derecha -->
+          <div class="contact-info">
+            <h2 class="heading heading--lg">DATOS DE CONTACTO</h2>
+            <p class="text">Teléfono: +54 11 1234 5678</p>
+            <p class="text">Email: contacto@udeny.com</p>
+            <p class="text">
+              Sgto. Cabral 3770, B1605 Munro, Provincia de Buenos Aires
+            </p>
+          </div>
+        </div>
 
-            <!-- Sección del mapa ficticio con título centrado -->
-            <div class="map-container">
-                <h2 class="heading heading--xxl map-title">UBICACIÓN</h2>
-                <div class="map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.49047132073!2d-58.528232387806206!3d-34.51579965274912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0e9625ba275%3A0x9c06764847db16fd!2sLumina%20Panamericana!5e0!3m2!1ses-419!2sar!4v1726404667169!5m2!1ses-419!2sar"
-                        allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </section>
+        <!-- Sección del mapa ficticio con título centrado -->
+        <div class="map-container">
+          <h2 class="heading heading--xxl map-title">UBICACIÓN</h2>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.49047132073!2d-58.528232387806206!3d-34.51579965274912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0e9625ba275%3A0x9c06764847db16fd!2sLumina%20Panamericana!5e0!3m2!1ses-419!2sar!4v1726404667169!5m2!1ses-419!2sar"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </div>
     <footer class="footer">
-        <div class="footer__group-data">
-            <h2 class="heading heading--lg group-data__title">Integrantes</h2>
-            <ul>
-                <li class="text text--md">Marco Alejo Folco - 42037944</li>
-                <li class="text text--md">Bruno Enrique Bravo - 41543950</li>
-                <li class="text text--md">Federico Martín Santillán - 40007093</li>
+      <div class="footer__group-data">
+        <h2 class="heading heading--lg group-data__title">Integrantes</h2>
+        <ul>
+          <li class="text text--md">Marco Alejo Folco - 42037944</li>
+          <li class="text text--md">Bruno Enrique Bravo - 41543950</li>
+          <li class="text text--md">Federico Martín Santillán - 40007093</li>
+        </ul>
+      </div>
+      <div class="footer__navbar">
+        <ul class="footer__navbar-navlist">
+          <li class="footer__navbar-navlist-item">
+            <a href="../index.html" class="text text--md">Inicio</a>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <span class="text text--md">Categorías</span>
+            <ul class="footer__navbar-navlist-item__submenu">
+              <li>
+                <a href="#" class="text text--sm">Desarrollo Web</a>
+              </li>
+              <li>
+                <a href="#" class="text text--sm">Data Science</a>
+              </li>
+              <li>
+                <a href="#" class="text text--sm">Diseño</a>
+              </li>
             </ul>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./releases-calendar.html" class="text text--md"
+              >Lanzamientos</a
+            >
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./gift-card.html" class="text text--md">Gift Card</a>
+          </li>
+          <li class="footer__navbar-navlist-item">
+            <a href="./contact.html" class="text text--md">Contáctanos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__social-media">
+        <h2 class="heading heading--lg social-media__title">Nuestras redes</h2>
+        <div class="social-media__icons">
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-telegram"></i
+          ></a>
+          <a href="#" class="text text--lg"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
         </div>
-        <div class="footer__navbar">
-            <ul class="footer__navbar-navlist">
-                <li class="footer__navbar-navlist-item">
-                    <a href="../index.html" class="text text--md">Inicio</a>
-                </li>
-                <li class="footer__navbar-navlist-item">
-                    <span class="text text--md">Categorías</span>
-                    <ul class="footer__navbar-navlist-item__submenu">
-                        <li>
-                            <a href="#" class="text text--sm">Desarrollo Web</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text text--sm">Data Science</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text text--sm">Diseño</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer__navbar-navlist-item">
-                    <a href="./releases-calendar.html" class="text text--md">Lanzamientos</a>
-                </li>
-                <li class="footer__navbar-navlist-item">
-                    <a href="./gift-card.html" class="text text--md">Gift Card</a>
-                </li>
-                <li class="footer__navbar-navlist-item">
-                    <a href="./contact.html" class="text text--md">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer__social-media">
-            <h2 class="heading heading--lg social-media__title">Nuestras redes</h2>
-            <div class="social-media__icons">
-                <a href="#" class="text text--lg"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text text--lg"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="text text--lg"><i class="fa-brands fa-telegram"></i></a>
-                <a href="#" class="text text--lg"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-        </div>
+      </div>
     </footer>
     <script
-    src="https://kit.fontawesome.com/0ea2f29246.js"
-    crossorigin="anonymous"
-  ></script>
-</body>
+      src="https://kit.fontawesome.com/0ea2f29246.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
