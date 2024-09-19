@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agregar Metodo de Pago</title>
+    <title>Efectuar pago</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/add-payment-method.css" />
     <link
@@ -109,10 +109,12 @@
     </header>
     <div class="page-container">
       <section class="payment-section">
-        <h2>Agregar un metodo de pago</h2>
+        <h2>Agregue un método para el pago</h2>
         <div class="payment-container">
           <form class="payment-form" action="#" method="POST">
-            <label for="card-name">Nombre en la tarjeta:</label>
+            <label class="text text--primary text--md" for="card-name"
+              >Nombre en la tarjeta:</label
+            >
             <input
               type="text"
               id="card-name"
@@ -122,7 +124,9 @@
               required
             />
 
-            <label for="card-number">Número de la tarjeta:</label>
+            <label class="text text--primary text--md" for="card-number"
+              >Número de la tarjeta:</label
+            >
             <input
               type="text"
               id="card-number"
@@ -132,7 +136,9 @@
               required
             />
 
-            <label for="expiry-date">Fecha de vencimiento:</label>
+            <label class="text text--primary text--md" for="expiry-date"
+              >Fecha de vencimiento:</label
+            >
             <input
               type="text"
               id="expiry-date"
@@ -142,7 +148,7 @@
               required
             />
 
-            <label for="cvv">CVV:</label>
+            <label class="text text--primary text--md" for="cvv">CVV:</label>
             <input
               type="text"
               id="cvv"
@@ -152,14 +158,27 @@
               required
             />
 
-            <label for="card-type">Tipo de tarjeta:</label>
+            <label class="text text--primary text--md" for="card-type"
+              >Tipo de tarjeta:</label
+            >
             <select id="card-type" name="card-type" class="input-field">
               <option value="credit">Crédito</option>
               <option value="debit">Débito</option>
             </select>
 
-            <button type="submit" class="btn btn--primary">
-              Agregar tarjeta
+            <p
+              class="heading heading--lg text--primary payment-section__total-price"
+            >
+              $000.-
+            </p>
+
+            <button
+              type="submit"
+              class="btn btn--primary payment-section__submit-button"
+            >
+              <a class="heading heading--lg text--primary" href="../index.html"
+                >Pagar</a
+              >
             </button>
           </form>
         </div>
