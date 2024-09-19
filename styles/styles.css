@@ -117,11 +117,6 @@ form button[type="submit"] a {
   border: none;
 }
 
-.btn__label {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .btn--sm {
   height: 3.4rem;
 }
@@ -366,7 +361,7 @@ form button[type="submit"] a {
 
 @media screen and (min-width: 48rem) {
   .carousel {
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
   }
 
   .carousel__slide-content-box {
@@ -389,7 +384,7 @@ form button[type="submit"] a {
 
 @media screen and (min-width: 64rem) {
   .carousel {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
   }
 
   .carousel__slide-content-box {
