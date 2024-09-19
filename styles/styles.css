@@ -361,7 +361,7 @@ form button[type="submit"] a {
 
 @media screen and (min-width: 48rem) {
   .carousel {
-    margin-bottom: 3rem;
+    margin-bottom: 7rem;
   }
 
   .carousel__slide-content-box {
@@ -490,6 +490,12 @@ form button[type="submit"] a {
   right: 0;
 }
 
+.card.card--course .card__img-container .course-mode {
+  position: absolute;
+  top: 5%;
+  left: 0;
+}
+
 .card.card--course .course-content {
   display: flex;
 }
@@ -513,6 +519,14 @@ form button[type="submit"] a {
   background-color: var(--bg-primary);
   color: var(--primary);
   padding: 0.2rem 1rem;
+}
+
+.tag.tag--presential {
+  background-color: #ad7306;
+}
+
+.tag.tag--online {
+  background-color: #8a2be2;
 }
 
 /* End of tag styles */
