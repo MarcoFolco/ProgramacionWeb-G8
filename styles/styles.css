@@ -292,6 +292,14 @@ hr {
   font-size: 1.2rem;
 }
 
+.text--primary {
+  color: var(--primary);
+}
+
+.text--secondary {
+  color: var(--secondary);
+}
+
 /* End of text styles */
 
 /* Carousel styles */

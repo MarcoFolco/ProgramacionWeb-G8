@@ -118,7 +118,12 @@
         </div>
         <form class="gift-card__form" action="#">
           <h3 class="heading heading--lg">Personalización de Giftcard</h3>
-          <input type="text" placeholder="Nombre Destinatario" class="input" />
+          <input
+            type="text"
+            placeholder="Nombre Destinatario"
+            class="input"
+            required
+          />
           <p class="heading heading--sm">Color</p>
           <div class="radio-selector radio-selector__font-color">
             <div class="radio-option">
@@ -166,7 +171,13 @@
 
             <div class="radio-option">
               <label for="size3" class="heading">32px</label>
-              <input type="radio" id="size3" name="size" value="3.2rem" />
+              <input
+                type="radio"
+                id="size3"
+                name="size"
+                value="3.2rem"
+                checked
+              />
             </div>
 
             <div class="radio-option">
@@ -209,6 +220,7 @@
                 id="positionTopRight"
                 name="position"
                 value="positionTopRight"
+                checked
               />
             </div>
           </div>
@@ -245,7 +257,11 @@
             class="btn btn--primary btn--round btn--sm gift-card__form-submit-btn"
             type="submit"
           >
-            CONFIRMAR
+            <a
+              class="text text--sm text--primary"
+              href="./add-payment-method.html"
+              >CONFIRMAR</a
+            >
           </button>
         </form>
       </section>
