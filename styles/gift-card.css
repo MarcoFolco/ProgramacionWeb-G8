@@ -44,6 +44,16 @@
   height: 30rem;
   padding: 2.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.gift-card
+  .gift-card__preview
+  .gift-card__preview-image
+  .gift-card__preview-price {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media screen and (min-width: 48rem) {
