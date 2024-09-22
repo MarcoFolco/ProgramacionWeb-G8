@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/langing-page-styles.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Cursos de "categoría"</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/gift-card.css" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="../images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./images/favicon-16x16.png"
+      href="../images/favicon-16x16.png"
     />
-    <title>Cursos en línea</title>
     <link
       rel="preload"
       as="font"
@@ -33,7 +33,6 @@
       crossorigin="anonymous"
     />
   </head>
-
   <body>
     <header class="header">
       <form action="#" class="header__search-bar-form">
@@ -58,9 +57,9 @@
       </form>
       <div class="header__main">
         <i class="fa-solid fa-bars header__sidebar-button"></i>
-        <a href="#" class="header__logo-link">
+        <a href="../index.html" class="header__logo-link">
           <img
-            src="./images/logo-big.svg"
+            src="../images/logo-big.svg"
             alt="EL logo de la página."
             class="img header__logo"
           />
@@ -76,125 +75,41 @@
       <nav class="sidebar">
         <ul class="nav-list login-register-buttons">
           <li class="nav-item">
-            <a href="./pages/login.html">Iniciar sesión</a>
+            <a href="./login.html">Iniciar sesión</a>
           </li>
         </ul>
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="#">Inicio</a>
+            <a href="../index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <span>Categorías</span>
             <ul class="sub-menu">
-              <li><a href="./pages/courses-list.html">Desarrollo Web</a></li>
-              <li><a href="./pages/courses-list.html">Data Science</a></li>
-              <li><a href="./pages/courses-list.html">Diseño</a></li>
+              <li><a href="#">Desarrollo Web</a></li>
+              <li><a href="#">Data Science</a></li>
+              <li><a href="#">Diseño</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="./pages/releases-calendar.html">Lanzamientos</a>
+            <a href="./releases-calendar.html">Lanzamientos</a>
           </li>
           <li class="nav-item">
-            <a href="./pages/gift-card.html">Gift Card</a>
+            <a href="./gift-card.html">Gift Card</a>
           </li>
           <li class="nav-item">
-            <a href="./pages/contact.html">Contáctanos</a>
+            <a href="./contact.html">Contáctanos</a>
           </li>
         </ul>
       </nav>
     </header>
     <main class="page-container">
-      <div class="carousel">
-        <div class="carousel__slider-container">
-          <div class="carousel__slide">
-            <div class="carousel__slide-picture-container">
-              <picture class="carousel__slide-picture">
-                <source
-                  srcset="./images/carousel_slide_1.jpeg"
-                  media="(min-width: 48rem)"
-                />
-                <source
-                  srcset="./images/carousel_slide_1_small.jpeg"
-                  media="(max-width: 48rem)"
-                />
-                <img
-                  src="./images/carousel_slide_1.jpeg"
-                  alt=""
-                  class="carousel__slide-image"
-                />
-              </picture>
-            </div>
-            <article class="carousel__slide-content-box">
-              <h1 class="heading heading--serif heading--xxl">
-                Habilidades que te ayudan a avanzar
-              </h1>
-              <p class="slide-content-box__description text text--md">
-                El desarrollo web avanza a gran velocidad. Ponte al día con
-                tecnologías modernas y da inicio a tu carrera como desarrollador
-                web con este increíble curso introductorio.
-              </p>
-              <div class="slide-content-box__buttons-container">
-                <a
-                  href="./pages/course-detail-presential.html"
-                  class="btn btn--lg btn--primary heading heading--md"
-                >
-                  Ver presencial
-                </a>
-                <a
-                  href="./pages/course-detail-online.html"
-                  class="btn btn--lg btn--secondary heading heading--md"
-                >
-                  Ver online
-                </a>
-              </div>
-            </article>
-          </div>
-          <button
-            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
-          >
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <section class="section enroll-steps">
-        <h1 class="heading heading--lg">¿CÓMO COMENZAR UN CURSO?</h1>
-        <div class="cards">
-          <article class="card">
-            <h2 class="heading heading--md">Inicia sesión o crea una cuenta</h2>
-            <p class="text text--sm">
-              Para disfrutar de nuestro amplio catálogo de cursos, debes tener
-              una cuenta y elegir la subscripción que mejor se adapte a tu plan
-              de estudio.
-            </p>
-          </article>
-          <article class="card">
-            <h2 class="heading heading--md">¡Elije tu favorito!</h2>
-            <p class="text text--sm">
-              Busca entre decenas de categorías y elije tu curso preferido.
-              Disponemos de cursos en varios idiomas y con distintos profesores.
-            </p>
-          </article>
-          <article class="card">
-            <h2 class="heading heading--md">Inicia el curso</h2>
-            <p class="text text--sm">
-              Una vez encuentres tu curso ideal, solo necesitas un click para
-              comenzar. ¡Puedes seguir tantos cursos como quieras!
-            </p>
-          </article>
-        </div>
-      </section>
-      <section class="section highlighted-courses">
-        <h1 class="heading heading--lg">CURSOS DESTACADOS</h1>
+      <section class="section">
+        <h1 class="heading heading--lg">CURSOS DE "CATEGORÍA"</h1>
         <div class="cards course-slider">
           <article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/course.jpg"
+                src="../images/course.jpg"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -211,11 +126,11 @@
                 <h2 class="heading heading--md">Nombre del curso</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-online.html"
+                  href="./course-detail-online.html"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/add-payment-method.html"
+                  href="./add-payment-method.html"
                   class="btn btn--primary btn--md"
                   >Comprar</a
                 >
@@ -225,7 +140,7 @@
           <article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/course.jpg"
+                src="../images/course.jpg"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -242,11 +157,11 @@
                 <h2 class="heading heading--md">Nombre del curso</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-online.html"
+                  href="./course-detail-online.html"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/add-payment-method.html"
+                  href="./add-payment-method.html"
                   class="btn btn--primary btn--md"
                   >Comprar</a
                 >
@@ -256,7 +171,7 @@
           <article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/course.jpg"
+                src="../images/course.jpg"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -273,11 +188,11 @@
                 <h2 class="heading heading--md">Nombre del curso</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-online.html"
+                  href="./course-detail-online.html"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/add-payment-method.html"
+                  href="./add-payment-method.html"
                   class="btn btn--primary btn--md"
                   >Comprar</a
                 >
@@ -287,7 +202,7 @@
           <article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/course.jpg"
+                src="../images/course.jpg"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -304,11 +219,11 @@
                 <h2 class="heading heading--md">Nombre del curso</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-presential.html"
+                  href="./course-detail-presential.html"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/course-enterprise-inscription.html"
+                  href="./course-enterprise-inscription.html"
                   class="btn btn--primary btn--md"
                   >Inscribirse</a
                 >
@@ -318,7 +233,7 @@
           <article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/course.jpg"
+                src="../images/course.jpg"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -335,11 +250,11 @@
                 <h2 class="heading heading--md">Nombre del curso</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-presential.html"
+                  href="./course-detail-presential.html"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/course-enterprise-inscription.html"
+                  href="./course-enterprise-inscription.html"
                   class="btn btn--primary btn--md"
                   >Inscribirse</a
                 >
@@ -349,7 +264,7 @@
           <article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/course.jpg"
+                src="../images/course.jpg"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -366,47 +281,15 @@
                 <h2 class="heading heading--md">Nombre del curso</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-presential.html"
+                  href="./course-detail-presential.html"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/course-enterprise-inscription.html"
+                  href="./course-enterprise-inscription.html"
                   class="btn btn--primary btn--md"
                   >Inscribirse</a
                 >
               </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="section payment-methods">
-        <h1 class="heading heading--lg">MEDIOS DE PAGO</h1>
-        <div class="cards">
-          <article class="card">
-            <div class="card__img-container">
-              <img
-                class="img"
-                src="./images/visa-logo.webp"
-                alt="An image of Visa logo."
-              />
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__img-container">
-              <img
-                class="img"
-                src="./images/mastercard-logo.png"
-                alt="An image of Mastercard logo."
-              />
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__img-container">
-              <img
-                class="img"
-                src="./images/american-express-logo.png"
-                alt="An image of American Express logo."
-              />
             </div>
           </article>
         </div>
@@ -417,45 +300,39 @@
         <h2 class="heading heading--lg group-data__title">Integrantes</h2>
         <ul>
           <li class="text text--md">Marco Alejo Folco - 42037944</li>
-          <li class="text text--md">Bruno Enrique Bravo</li>
-          <li class="text text--md">Federico Martín Santillán</li>
+          <li class="text text--md">Bruno Enrique Bravo - 41543950</li>
+          <li class="text text--md">Federico Martín Santillán - 40007093</li>
         </ul>
       </div>
       <div class="footer__navbar">
         <ul class="footer__navbar-navlist">
           <li class="footer__navbar-navlist-item">
-            <a href="#" class="text text--md">Inicio</a>
+            <a href="../index.html" class="text text--md">Inicio</a>
           </li>
           <li class="footer__navbar-navlist-item">
             <span class="text text--md">Categorías</span>
             <ul class="footer__navbar-navlist-item__submenu">
               <li>
-                <a href="./pages/courses-list.html" class="text text--sm"
-                  >Desarrollo Web</a
-                >
+                <a href="#" class="text text--sm">Desarrollo Web</a>
               </li>
               <li>
-                <a href="./pages/courses-list.html" class="text text--sm"
-                  >Data Science</a
-                >
+                <a href="#" class="text text--sm">Data Science</a>
               </li>
               <li>
-                <a href="./pages/courses-list.html" class="text text--sm"
-                  >Diseño</a
-                >
+                <a href="#" class="text text--sm">Diseño</a>
               </li>
             </ul>
           </li>
           <li class="footer__navbar-navlist-item">
-            <a href="./pages/releases-calendar.html" class="text text--md"
+            <a href="./releases-calendar.html" class="text text--md"
               >Lanzamientos</a
             >
           </li>
           <li class="footer__navbar-navlist-item">
-            <a href="./pages/gift-card.html" class="text text--md">Gift Card</a>
+            <a href="./gift-card.html" class="text text--md">Gift Card</a>
           </li>
           <li class="footer__navbar-navlist-item">
-            <a href="./pages/contact.html" class="text text--md">Contáctanos</a>
+            <a href="./contact.html" class="text text--md">Contáctanos</a>
           </li>
         </ul>
       </div>
