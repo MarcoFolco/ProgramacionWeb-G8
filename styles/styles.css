@@ -435,8 +435,9 @@ form button[type="submit"] a {
 /* Img Styles */
 
 .img {
-  width: 100%;
+  max-width: 100%;
   object-fit: contain;
+  height: auto;
 }
 
 .img--round {
