@@ -50,7 +50,12 @@
 @media screen and (min-width: 48rem) {
   .calendar-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: 20rem;
+    grid-auto-rows: auto;
+  }
+
+  .calendar-container .calendar-container__cell {
+    aspect-ratio: 1/1;
+    overflow: hidden;
   }
 
   .calendar-container
@@ -62,7 +67,6 @@
 @media screen and (min-width: 64rem) {
   .calendar-container {
     grid-template-columns: repeat(7, minmax(0, 1fr));
-    grid-auto-rows: 13rem;
   }
 
   .calendar-container
