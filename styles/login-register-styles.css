@@ -1,72 +1,92 @@
 /* Contenedor para la sección de inicio de sesión (imagen y formulario) */
 .login-section {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* Espacio entre la imagen y el formulario */
+}
+
+/* Estilo para la imagen de inicio de sesión */
+.login-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilo para el contenedor del formulario */
+.login-container {
+  flex: 1; /* Ocupa el espacio restante en el contenedor padre */
+  max-width: 100%;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Estilo para el formulario de inicio de sesión */
+.login-form {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%; /* Asegura que el formulario use todo el ancho disponible */
+}
+
+/* Estilo para los campos de entrada */
+.input-field {
+  padding: 1rem;
+  border: 1px solid var(--bg-primary);
+  border-radius: 4px;
+  font-size: 1.6rem;
+  color: var(--secondary);
+  width: 100%; /* Asegura que los campos de entrada usen todo el ancho disponible */
+}
+
+/* Estilo para el botón de envío */
+.login-form button {
+  align-self: center; /* Alinea el botón al centro */
+  width: 100%; /* Asegura que el botón use todo el ancho disponible */
+}
+
+/* Estilo para las opciones adicionales (contraseña y registro) */
+.login-options {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  text-underline-offset: .4rem;
+  color: #8072e6;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.link:hover {
+  color: var(--bg-primary);
+}
+
+
+@media screen and (max-width: 768px) {
+  .login-section {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem; /* Espacio entre la imagen y el formulario */
   }
-  
-  /* Estilo para la imagen de inicio de sesión */
-  .login-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  /* Estilo para el contenedor del formulario */
+
   .login-container {
-    flex: 1; /* Ocupa el espacio restante en el contenedor padre */
-    max-width: 100%;
-    padding: 2rem;
-    border-radius: 8px;
-    background-color: var(--bg-secondary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
   }
-  
-  /* Estilo para el formulario de inicio de sesión */
+
+  .login-image img {
+    margin-bottom: 2rem;
+    width: 100%; 
+  }
+
   .login-form {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%; /* Asegura que el formulario use todo el ancho disponible */
+    width: 100%;
   }
-  
-  /* Estilo para los campos de entrada */
-  .input-field {
-    padding: 1rem;
-    border: 1px solid var(--bg-primary);
-    border-radius: 4px;
-    font-size: 1.6rem;
-    color: var(--secondary);
-    width: 100%; /* Asegura que los campos de entrada usen todo el ancho disponible */
-  }
-  
-  /* Estilo para el botón de envío */
-  .login-form button {
-    align-self: center; /* Alinea el botón al centro */
-    width: 100%; /* Asegura que el botón use todo el ancho disponible */
-  }
-  
-  /* Estilo para las opciones adicionales (contraseña y registro) */
-  .login-options {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .link {
-    text-underline-offset: .4rem;
-    color: #8072e6;
-    text-decoration: underline;
-    font-weight: 700;
-  }
-  
-  .link:hover {
-    color: var(--bg-primary);
-  }
-  
+}
