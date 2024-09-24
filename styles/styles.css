@@ -53,6 +53,24 @@ html {
     "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 65%; /* Increase for larger screens */
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  html {
+    font-size: 70%; /* Further increase */
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
   font-size: 1.6rem;
   color: var(--secondary);
@@ -361,7 +379,7 @@ form button[type="submit"] a {
 
 @media screen and (min-width: 48rem) {
   .carousel {
-    margin-bottom: 7rem;
+    margin-bottom: 9rem;
   }
 
   .carousel__slide-content-box {
@@ -384,7 +402,7 @@ form button[type="submit"] a {
 
 @media screen and (min-width: 64rem) {
   .carousel {
-    margin-bottom: 5rem;
+    margin-bottom: 6.5rem;
   }
 
   .carousel__slide-content-box {
