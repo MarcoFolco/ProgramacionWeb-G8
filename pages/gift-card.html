@@ -104,7 +104,7 @@
     </header>
     <main class="page-container">
       <section class="gift-card">
-        <div class="gift-card__preview">
+        <article class="gift-card__preview">
           <div class="gift-card__preview-image">
             <span class="gift-card__preview-price tag">$000.-</span>
             <small class="heading heading--sm">GIFT CARD para</small>
@@ -113,7 +113,7 @@
           <h4 class="heading heading--sm">
             VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN
           </h4>
-        </div>
+        </article>
         <form
           class="gift-card__form"
           action="./add-payment-method.html"
@@ -191,6 +191,10 @@
               <label for="size5" class="heading">60px</label>
               <input type="radio" id="size5" name="size" value="6rem" />
             </div>
+          </div>
+          <div class="inline-field">
+            <label class="heading heading--md" for="amount">Monto $ </label>
+            <input id="amount" type="number" required class="input" />
           </div>
           <p class="heading heading--md">Ubicación</p>
           <div class="radio-selector radio-selector__position">

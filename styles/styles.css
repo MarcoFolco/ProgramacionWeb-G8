@@ -864,4 +864,15 @@ form button[type="submit"] a {
   box-shadow: 0 0 0 0.2rem rgba(var(--bg-primary-color), 0.25);
 }
 
+.inline-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inline-field input {
+  flex: 1 1 0;
+}
+
 /* End of input syles */
