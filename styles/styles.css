@@ -9,33 +9,6 @@
   --ghost: #5022c3;
 }
 
-@font-face {
-  font-family: "Udemy Sans";
-  font-style: normal;
-  font-weight: 400; /* To match token @font-weight-normal */
-  font-display: fallback;
-  src: local("Udemy Sans Regular"), local("UdemySans-Regular"),
-    url("/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Udemy Sans";
-  font-style: normal;
-  font-weight: 700; /* To match token @font-weight-bold */
-  font-display: fallback;
-  src: local("Udemy Sans Bold"), local("UdemySans-Bold"),
-    url("/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: SuisseWorks;
-  font-style: normal;
-  font-weight: 700; /* To match token @font-weight-bold */
-  font-display: fallback;
-  src: local("SuisseWorks Bold"), local("SuisseWorks-Bold"),
-    url("/staticx/udemy/fonts/SuisseWorks-Bold-v1.woff2") format("woff2");
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -48,9 +21,7 @@ a {
 
 html {
   font-size: 62.5%;
-  font-family: "Udemy Sans", -apple-system, BlinkMacSystemFont, Roboto,
-    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media screen and (min-width: 48rem) {
