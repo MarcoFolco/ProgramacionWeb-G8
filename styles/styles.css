@@ -565,7 +565,8 @@ form button[type="submit"] a {
 
 /* Section Styles */
 
-.section > h1 {
+.section > h1,
+.section > h2 {
   margin-bottom: 1.6rem;
   text-align: center;
 }
