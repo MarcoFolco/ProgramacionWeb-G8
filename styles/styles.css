@@ -55,13 +55,13 @@ html {
 
 @media screen and (min-width: 48rem) {
   html {
-    font-size: 65%; /* Increase for larger screens */
+    font-size: 65%;
   }
 }
 
 @media screen and (min-width: 64rem) {
   html {
-    font-size: 70%; /* Further increase */
+    font-size: 70%;
   }
 }
 
@@ -485,6 +485,7 @@ form button[type="submit"] a {
 
 .course-slider.cards .card {
   flex: 0 0 90%;
+  min-width: 0;
 }
 
 @media screen and (min-width: 48rem) {
@@ -517,10 +518,7 @@ form button[type="submit"] a {
 
 .card.card--course .course-content {
   display: flex;
-}
-
-.card.card--course .course-content > :first-child {
-  flex: 1 1 0;
+  gap: 1rem;
 }
 
 .card.card--course .course-content .course-content__details {
@@ -528,6 +526,15 @@ form button[type="submit"] a {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.2rem;
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.card.card--course .course-content .course-content__details > h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
 }
 
 /* End of course card styles */
