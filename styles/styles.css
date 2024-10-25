@@ -91,6 +91,12 @@ form button[type="submit"] a {
 
 /* End of temporal style */
 
+/* Hidden class */
+.hidden {
+  display: none;
+}
+/* End of hidden class */
+
 /* Button styles */
 .btn {
   position: relative;
@@ -516,6 +522,10 @@ form button[type="submit"] a {
   background-color: var(--bg-primary);
   color: var(--primary);
   padding: 0.2rem 1rem;
+}
+
+.tag.tag--warning {
+  background-color: #ffa500;
 }
 
 .tag.tag--presential {
