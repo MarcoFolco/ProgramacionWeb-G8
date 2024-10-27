@@ -91,12 +91,6 @@ form button[type="submit"] a {
 
 /* End of temporal style */
 
-/* Hidden class */
-.hidden {
-  display: none;
-}
-/* End of hidden class */
-
 /* Button styles */
 .btn {
   position: relative;
@@ -864,3 +858,73 @@ form button[type="submit"] a {
 }
 
 /* End of input syles */
+
+/* UI messages styles */
+
+@keyframes messageFadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+    height: 5rem;
+    margin-bottom: 1em;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+    height: 5rem;
+    margin-bottom: 1em;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+    height: 0;
+    margin-bottom: 0;
+  }
+}
+
+section.ui-messages {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  z-index: 10;
+}
+
+article.ui-message {
+  width: 75vw;
+  border-radius: 2rem;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: messageFadeInOut 5s ease-in-out forwards;
+  overflow: hidden;
+}
+
+article.ui-message.ui-message--success {
+  background-color: #28a745;
+}
+
+article.ui-message.ui-message--error {
+  background-color: #dc3545;
+}
+
+article.ui-message.ui-message--info {
+  background-color: #17a2b8;
+}
+
+article.ui-message.ui-message--warn {
+  background-color: #ffc107;
+}
+/* End of UI messages styles */
+
+/* JS classes */
+
+/* End of JS classes */
