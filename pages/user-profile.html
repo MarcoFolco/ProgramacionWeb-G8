@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscripción para empresas</title>
+    <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link
-      rel="stylesheet"
-      href="../styles/course-enterprise-inscription-styles.css"
-    />
+    <link rel="stylesheet" href="../styles/profile.css" />
     <link
       rel="icon"
       type="image/png"
@@ -21,7 +18,9 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <title>Inicio de Sesión</title>
   </head>
+
   <body>
     <header class="header">
       <form action="#" class="header__search-bar-form">
@@ -61,7 +60,7 @@
           </div>
           <a
             class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
-            href="./user-profile.html"
+            href="#"
           ></a>
         </div>
       </div>
@@ -96,91 +95,81 @@
       </nav>
     </header>
     <main class="page-container">
-      <section class="section course-inscription">
-        <h2 class="heading heading--lg">TITULO CURSO</h2>
-        <h3 class="heading heading--md">INSCRIPCIÓN</h3>
-        <form
-          action="./add-payment-method.html"
-          method="get"
-          class="course-inscription__fields"
-        >
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+      <section class="ui-messages"></section>
+      <section class="profile">
+        <h2 class="heading heading--xxl">¡Bienvenido a tu perfil!</h2>
+        <i class="fa-solid fa-user profile__user-logo"></i>
+        <article class="profile__forms">
+          <form action="#" class="form profile__user-data-form">
+            <h3 class="heading heading--lg">Modificar datos personales</h3>
+            <label for="email" class="heading heading--sm label"
+              >Correo Electrónico</label
             >
-              <i class="fa-solid fa-minus text text--xl"></i>
-            </button>
-          </fieldset>
-          <p class="fields__add-button heading heading--md">
-            <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input input--block"
+              disabled
+            />
+            <label for="name" class="heading heading--sm label"
+              >Nombre completo</label
             >
-              <i class="fa-solid fa-plus text text--md"></i>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="input input--block"
+              maxlength="30"
+              required
+            />
+            <button
+              type="submit"
+              class="btn btn--primary btn--lg text text--sm"
+            >
+              Modificar
             </button>
-            Agregar persona
-          </p>
-          <div class="fields__actions">
-            <span class="tag">$15.000.-</span>
-            <button class="btn btn--primary btn--round btn--sm" type="submit">
-              Inscribirse
+          </form>
+          <form action="#" class="form profile__user-password-form">
+            <h3 class="heading heading--lg">Cambiar contraseña</h3>
+            <label for="email" class="heading heading--sm label"
+              >Contraseña actual</label
+            >
+            <input
+              type="password"
+              id="currentPassword"
+              name="currentPassword"
+              class="input input--block"
+              required
+            />
+            <label for="email" class="heading heading--sm label"
+              >Contraseña nueva</label
+            >
+            <input
+              type="password"
+              id="newPassword"
+              name="newPassword"
+              class="input input--block"
+              required
+            />
+            <label for="email" class="heading heading--sm label"
+              >Repita contraseña nueva</label
+            >
+            <input
+              type="password"
+              id="newPasswordRepeated"
+              name="newPasswordRepeated"
+              class="input input--block"
+              required
+            />
+            <button
+              type="submit"
+              class="btn btn--primary btn--lg text text--sm"
+            >
+              Cambiar
             </button>
-          </div>
-        </form>
+          </form>
+        </article>
       </section>
     </main>
     <footer class="footer">
@@ -251,5 +240,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/mf-app.js"></script>
+    <script src="../js/user-profile.js"></script>
   </body>
 </html>

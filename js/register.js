@@ -1,24 +1,3 @@
-function getUsers() {
-  return JSON.parse(localStorage.getItem("users")) || [];
-}
-
-function setUsers(usersArray) {
-  if (!Array.isArray(usersArray)) {
-    return false;
-  }
-  try {
-    localStorage.setItem("users", JSON.stringify(usersArray));
-    return true;
-  } catch (error) {
-    console.error(error);
-    addUIMessage({
-      message: "Ocurrió un error interno, contacte a soporte",
-      severity: "error",
-    });
-    return false;
-  }
-}
-
 function userExists(username, password) {
   const users = getUsers();
   if (!users) return false;

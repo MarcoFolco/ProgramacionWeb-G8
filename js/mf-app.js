@@ -1,6 +1,42 @@
 function userIsLoggedIn() {
-  const isLoggedIn = localStorage.getItem("loggedUser");
+  const isLoggedIn = JSON.parse(localStorage.getItem("loggedUser"));
   return !!isLoggedIn;
+}
+
+function getUsers() {
+  return JSON.parse(localStorage.getItem("users")) || [];
+}
+
+function setUsers(usersArray) {
+  if (!Array.isArray(usersArray)) {
+    return false;
+  }
+  try {
+    localStorage.setItem("users", JSON.stringify(usersArray));
+    return true;
+  } catch (error) {
+    console.error(error);
+    addUIMessage({
+      message: "Ocurrió un error interno, contacte a soporte",
+      severity: "error",
+    });
+    return false;
+  }
+}
+
+function getLoggedUser() {
+  return JSON.parse(localStorage.getItem("loggedUser"));
+}
+
+function updateLoggedUser(updatedUser) {
+  localStorage.setItem("loggedUser", JSON.stringify(updatedUser));
+  // También actualizar en lista de usuarios
+  const users = getUsers();
+  const updatedUserIndex = users.findIndex(
+    (user) => user.username === updatedUser.username
+  );
+  users[updatedUserIndex] = updatedUser;
+  setUsers(users);
 }
 
 // Mostramos mensajes pendientes al usuario
@@ -41,11 +77,6 @@ const forbiddenLoggedInURLs = [
   "/pages/password-recovery.html",
 ];
 
-function userIsLoggedIn() {
-  const loggedUser = localStorage.getItem("loggedUser");
-  return !!loggedUser;
-}
-
 function loggedUserCanViewPage() {
   const currentURL = new URL(window.location.href);
   // Verifica solo lo que está luego de la / en la URL.
@@ -60,6 +91,26 @@ function loggedUserCanViewPage() {
 
 loggedUserCanViewPage();
 
+// Verificamos aquellas páginas que el usuario no debería ver si no está logueado
+const forbiddenAnonymousURLs = ["/pages/user-profile.html"];
+
+function anonymousUserCanViewPage() {
+  const currentURL = new URL(window.location.href);
+  // Verifica solo lo que está luego de la / en la URL.
+  if (
+    !userIsLoggedIn() &&
+    forbiddenAnonymousURLs.includes(currentURL.pathname)
+  ) {
+    queueMessage({
+      message: "No puedes ver esa página si no estás logueado",
+      severity: "warn",
+    });
+    window.location.href = "/";
+  }
+}
+
+anonymousUserCanViewPage();
+
 // Ocultamos botón de Iniciar sesión si el usuario ya está logueado
 const loginSidebarUl = document.querySelector("ul.login-register-buttons");
 
@@ -70,3 +121,16 @@ function hideLoginSidebarButtonIfLogged() {
 }
 
 hideLoginSidebarButtonIfLogged();
+
+// Ocultamos el botón de profile si no estamos logueados
+const userProfileButton = document.querySelector(
+  ".header__user-profile-button"
+);
+
+function hideUserProfileButtonIfNotLogged() {
+  if (!userIsLoggedIn()) {
+    userProfileButton.classList.toggle("js--hidden");
+  }
+}
+
+hideUserProfileButtonIfNotLogged();

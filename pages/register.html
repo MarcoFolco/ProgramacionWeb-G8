@@ -58,6 +58,10 @@
             <i class="fa-solid fa-cart-shopping text text--lg"></i>
             <span class="badge cart-button__badge">1</span>
           </div>
+          <a
+            class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
+            href="./user-profile.html"
+          ></a>
         </div>
       </div>
       <nav class="sidebar">
@@ -92,15 +96,15 @@
     </header>
     <main class="page-container">
       <section class="ui-messages"></section>
-      <div class="login-section">
-        <div class="login-image">
+      <section class="login-section">
+        <article class="login-image">
           <img
             src="../images/login-picture.webp"
             alt="Imagen de Inicio de Sesión"
           />
-        </div>
-        <div class="login-container">
-          <h1 class="heading heading--xl">Regístrate y comienza a aprender</h1>
+        </article>
+        <article class="login-container">
+          <h2 class="heading heading--xl">Regístrate y comienza a aprender</h2>
           <form class="register-form">
             <label for="email" class="text text--md">Nombre Completo</label>
             <input
@@ -109,6 +113,7 @@
               name="name"
               required
               class="input-field"
+              maxlength="30"
             />
 
             <label for="email" class="text text--md">Correo Electrónico</label>
@@ -144,8 +149,8 @@
               >
             </div>
           </form>
-        </div>
-      </div>
+        </article>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__group-data">
