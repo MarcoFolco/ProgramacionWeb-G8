@@ -88,3 +88,37 @@ userPasswordForm.addEventListener("submit", (submitEvent) => {
   });
   userPasswordForm.reset();
 });
+
+// Desloguear usuario
+const logoutUserButton = document.querySelector(".profile__logout-button");
+
+logoutUserButton.addEventListener("click", () => {
+  logoutUser();
+  queueMessage({
+    message: "Salió de la cuenta con éxito",
+    severity: "success",
+  });
+  window.location.href = "/";
+});
+
+// Borrar la cuenta del usuario
+const deleteAccountButton = document.querySelector(
+  ".profile__delete-account-button"
+);
+
+function removeLoggedUser() {
+  const loggedUser = getLoggedUser();
+  let users = getUsers();
+  users = users.filter((user) => user.username !== loggedUser.username);
+  setUsers(users);
+  logoutUser();
+}
+
+deleteAccountButton.addEventListener("click", () => {
+  removeLoggedUser();
+  queueMessage({
+    message: "Cuenta eliminada con éxito",
+    severity: "success",
+  });
+  window.location.href = "/";
+});

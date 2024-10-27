@@ -99,77 +99,91 @@
       <section class="profile">
         <h2 class="heading heading--xxl">¡Bienvenido a tu perfil!</h2>
         <i class="fa-solid fa-user profile__user-logo"></i>
-        <article class="profile__forms">
-          <form action="#" class="form profile__user-data-form">
-            <h3 class="heading heading--lg">Modificar datos personales</h3>
-            <label for="email" class="heading heading--sm label"
-              >Correo Electrónico</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="input input--block"
-              disabled
-            />
-            <label for="name" class="heading heading--sm label"
-              >Nombre completo</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="input input--block"
-              maxlength="30"
-              required
-            />
-            <button
-              type="submit"
-              class="btn btn--primary btn--lg text text--sm"
-            >
-              Modificar
-            </button>
-          </form>
-          <form action="#" class="form profile__user-password-form">
-            <h3 class="heading heading--lg">Cambiar contraseña</h3>
-            <label for="email" class="heading heading--sm label"
-              >Contraseña actual</label
-            >
-            <input
-              type="password"
-              id="currentPassword"
-              name="currentPassword"
-              class="input input--block"
-              required
-            />
-            <label for="email" class="heading heading--sm label"
-              >Contraseña nueva</label
-            >
-            <input
-              type="password"
-              id="newPassword"
-              name="newPassword"
-              class="input input--block"
-              required
-            />
-            <label for="email" class="heading heading--sm label"
-              >Repita contraseña nueva</label
-            >
-            <input
-              type="password"
-              id="newPasswordRepeated"
-              name="newPasswordRepeated"
-              class="input input--block"
-              required
-            />
-            <button
-              type="submit"
-              class="btn btn--primary btn--lg text text--sm"
-            >
-              Cambiar
-            </button>
-          </form>
-        </article>
+        <div class="profile__forms">
+          <article class="profile__user-data">
+            <form action="#" class="form profile__user-data-form">
+              <h3 class="heading heading--lg">Modificar datos personales</h3>
+              <label for="email" class="heading heading--sm label"
+                >Correo Electrónico</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input input--block"
+                disabled
+              />
+              <label for="name" class="heading heading--sm label"
+                >Nombre completo</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="input input--block"
+                maxlength="30"
+                required
+              />
+              <button
+                type="submit"
+                class="btn btn--primary btn--lg text text--sm"
+              >
+                Modificar
+              </button>
+            </form>
+          </article>
+          <article class="profile__user-password">
+            <form action="#" class="form profile__user-password-form">
+              <h3 class="heading heading--lg">Cambiar contraseña</h3>
+              <label for="email" class="heading heading--sm label"
+                >Contraseña actual</label
+              >
+              <input
+                type="password"
+                id="currentPassword"
+                name="currentPassword"
+                class="input input--block"
+                required
+              />
+              <label for="email" class="heading heading--sm label"
+                >Contraseña nueva</label
+              >
+              <input
+                type="password"
+                id="newPassword"
+                name="newPassword"
+                class="input input--block"
+                required
+              />
+              <label for="email" class="heading heading--sm label"
+                >Repita contraseña nueva</label
+              >
+              <input
+                type="password"
+                id="newPasswordRepeated"
+                name="newPasswordRepeated"
+                class="input input--block"
+                required
+              />
+              <button
+                type="submit"
+                class="btn btn--primary btn--lg text text--sm"
+              >
+                Cambiar
+              </button>
+            </form>
+          </article>
+          <button
+            class="btn btn--secondary btn--lg heading heading--md profile__logout-button"
+          >
+            Salir de la cuenta
+          </button>
+          <button
+            class="btn btn--danger btn--lg text text--md profile__delete-account-button"
+          >
+            Eliminar cuenta
+          </button>
+        </div>
       </section>
     </main>
     <footer class="footer">

@@ -13,9 +13,17 @@
 }
 
 .profile .profile__forms {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "user-data"
+    "user-password"
+    "logout-button"
+    "delete-account-button";
   gap: 2rem;
+}
+
+.profile .profile__forms .profile__user-data {
+  grid-area: user-data;
 }
 
 .profile .profile__forms .profile__user-data-form {
@@ -23,9 +31,28 @@
   padding-bottom: 2rem;
 }
 
+.profile .profile__forms .profile__user-password {
+  grid-area: user-password;
+}
+
+.profile .profile__forms .profile__user-password-form {
+  grid-area: user-password-form;
+}
+
+.profile .profile__forms .profile__delete-account-button {
+  grid-area: delete-account-button;
+}
+
+.profile .profile__forms .profile__logout-button {
+  grid-area: logout-button;
+}
+
 @media screen and (min-width: 48rem) {
   .profile .profile__forms {
-    flex-direction: row;
+    grid-template-areas:
+      "user-data user-password"
+      "logout-button logout-button"
+      "delete-account-button delete-account-button";
   }
 
   .profile .profile__forms .profile__user-data-form {

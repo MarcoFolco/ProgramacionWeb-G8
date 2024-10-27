@@ -140,6 +140,11 @@ form button[type="submit"] a {
   background-color: var(--bg-secondary-active);
 }
 
+.btn--danger {
+  color: var(--primary);
+  background-color: #dc3545;
+}
+
 .btn--ghost {
   color: var(--bg-primary);
   background-color: transparent;

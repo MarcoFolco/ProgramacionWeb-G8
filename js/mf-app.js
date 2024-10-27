@@ -3,6 +3,10 @@ function userIsLoggedIn() {
   return !!isLoggedIn;
 }
 
+function logoutUser() {
+  localStorage.setItem("loggedUser", null);
+}
+
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
 }
