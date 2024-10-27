@@ -1,28 +1,3 @@
-// Muestra el mensaje la próxima vez que se carge una página (para redireccionar y luego mostrar mensaje)
-function queueMessage(messageData) {
-  const messages = JSON.parse(sessionStorage.getItem("UIMessages") || "[]");
-  messages.push(messageData);
-  sessionStorage.setItem("UIMessages", JSON.stringify(messages));
-}
-
-// Muestra el mensaje en UI.
-// Severity es el color del mensaje: info (azul), success (verde), warn (amarillo), error (rojo)
-function addUIMessage(messageData) {
-  const { message, severity } = messageData;
-  const messageElement = document.createElement("article");
-  messageElement.classList.add("ui-message", `ui-message--${severity}`);
-  messageElement.innerHTML = `<p class="ui-message--text text text--lg text--primary">${message}</p>`;
-  messagesElement.appendChild(messageElement);
-  setTimeout(() => {
-    messagesElement.removeChild(messageElement);
-  }, 5100);
-}
-
-function userIsLoggedIn() {
-  const isLoggedIn = localStorage.getItem("userLogged");
-  return !!isLoggedIn;
-}
-
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
 }
@@ -65,7 +40,7 @@ function logInUser(username, password) {
   return true;
 }
 
-function addNewUser(userData) {
+function signUpUser(userData) {
   const { username } = userData;
   if (usernameAlreadyExists(username)) {
     console.warn("El usuario ya existe");
@@ -79,18 +54,8 @@ function addNewUser(userData) {
   return setUsers([...users, userData]);
 }
 
-function signUpUser(userData) {
-  return addNewUser(userData);
-}
-
-// Verificamos que el usuario no esté logueado, de otra forma no debe poder acceder a esta página
-const loggedIn = userIsLoggedIn();
-if (loggedIn) {
-  window.location.href = "/";
-}
-
 // Capturamos elementos del formulario
-const registerForm = document.querySelector(".login-form");
+const registerForm = document.querySelector(".register-form");
 const nameField = document.querySelector("#name");
 const emailField = document.querySelector("#email");
 const passwordField = document.querySelector("#password");

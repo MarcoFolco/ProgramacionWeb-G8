@@ -866,7 +866,8 @@ form button[type="submit"] a {
     opacity: 0;
     transform: translateY(-10rem);
     height: 5rem;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+    padding: 3rem;
   }
   20% {
     opacity: 1;
@@ -876,13 +877,15 @@ form button[type="submit"] a {
     opacity: 1;
     transform: translateY(0);
     height: 5rem;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+    padding: 3rem;
   }
   100% {
     opacity: 0;
     transform: translateY(0);
     height: 0;
     margin-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -906,6 +909,7 @@ article.ui-message {
   align-items: center;
   animation: messageFadeInOut 5s ease-in-out forwards;
   overflow: hidden;
+  text-align: center;
 }
 
 article.ui-message.ui-message--success {
@@ -926,5 +930,9 @@ article.ui-message.ui-message--warn {
 /* End of UI messages styles */
 
 /* JS classes */
+
+.js--hidden {
+  display: none;
+}
 
 /* End of JS classes */
