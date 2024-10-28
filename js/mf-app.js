@@ -11,6 +11,16 @@ function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
 }
 
+function getUser(username) {
+  const users = getUsers();
+  return users.find((user) => user.username === username);
+}
+
+function getUserGiftCodes(username) {
+  const user = getUser(username);
+  return user.giftCodes || [];
+}
+
 function setUsers(usersArray) {
   if (!Array.isArray(usersArray)) {
     return false;
@@ -26,6 +36,14 @@ function setUsers(usersArray) {
     });
     return false;
   }
+}
+
+function updateUser(updatedUser) {
+  let users = getUsers();
+  users = users.map((user) =>
+    user.username === updatedUser.username ? updatedUser : user
+  );
+  setUsers(users);
 }
 
 function getLoggedUser() {
@@ -96,7 +114,10 @@ function loggedUserCanViewPage() {
 loggedUserCanViewPage();
 
 // Verificamos aquellas páginas que el usuario no debería ver si no está logueado
-const forbiddenAnonymousURLs = ["/pages/user-profile.html"];
+const forbiddenAnonymousURLs = [
+  "/pages/user-profile.html",
+  "/pages/gift-card.html",
+];
 
 function anonymousUserCanViewPage() {
   const currentURL = new URL(window.location.href);
@@ -109,7 +130,7 @@ function anonymousUserCanViewPage() {
       message: "No puedes ver esa página si no estás logueado",
       severity: "warn",
     });
-    window.location.href = "/";
+    window.location.href = "/pages/login.html";
   }
 }
 
