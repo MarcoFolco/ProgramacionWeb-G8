@@ -102,80 +102,61 @@
         <form
           action="./add-payment-method.html"
           method="get"
-          class="course-inscription__fields"
+          class="course-inscription__form"
         >
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
+          <div class="course-inscription__form-rows">
+            <fieldset class="field-group">
+              <div class="field-group__data">
+                <input
+                  type="email"
+                  name="email1"
+                  id="email1"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="text"
+                  name="fullName1"
+                  id="fullName1"
+                  placeholder="Nombre y apellido"
+                  required
+                />
+                <input
+                  type="text"
+                  name="dni1"
+                  id="dni1"
+                  placeholder="DNI (con puntos)"
+                  pattern="^\d{1,2}\.\d{3}\.\d{3}$"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone1"
+                  id="phone1"
+                  placeholder="Telefono, ej.  4030-2025"
+                  pattern="^\d{4}-?\d{4}$"
+                  required
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn--primary btn--icon btn--icon-round btn--icon-xs field-group__remove-button"
+              >
+                <i class="fa-solid fa-minus text text--xl"></i>
+              </button>
+            </fieldset>
+          </div>
+          <p class="form__add-action heading heading--md">
             <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-            >
-              <i class="fa-solid fa-minus text text--xl"></i>
-            </button>
-          </fieldset>
-          <p class="fields__add-button heading heading--md">
-            <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+              type="button"
+              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs form__add-button"
             >
               <i class="fa-solid fa-plus text text--md"></i>
             </button>
             Agregar persona
           </p>
-          <div class="fields__actions">
-            <span class="tag">$15.000.-</span>
+          <div class="form__actions">
+            <span class="tag form__price-tag">$0.000.-</span>
             <button class="btn btn--primary btn--round btn--sm" type="submit">
               Inscribirse
             </button>
@@ -251,5 +232,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/mf-app.js"></script>
+    <script src="../js/course-enterprise-inscription.js"></script>
   </body>
 </html>
