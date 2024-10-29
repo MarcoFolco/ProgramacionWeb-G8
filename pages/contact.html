@@ -93,8 +93,10 @@
       <section class="contact-section">
         <h1 class="heading heading--xxl">CONTACTO</h1>
         <div class="contact-container">
+
           <!-- Formulario de contacto alineado a la izquierda -->
-          <form class="contact-form" action="../index.html" method="get">
+
+          <form class="contact-form" id="form" action="../index.html" method="get">
             <label for="name">Nombre y Apellido</label>
             <input
               type="text"
@@ -125,9 +127,15 @@
             <textarea
               id="message"
               name="message"
+              maxlength="1000"
+              oninput="updateCharacterCount()"
               placeholder="Escribe tu consulta"
               required
             ></textarea>
+            <div class="counter">
+              Caracteres ingresados: <span id="entered">0</span> /
+              Restantes: <span id="remaining">1000</span>
+          </div>
 
             <button
               type="submit"
@@ -228,5 +236,6 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/fs-contact-form.js"></script>
   </body>
 </html>

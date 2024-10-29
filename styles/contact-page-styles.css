@@ -43,6 +43,10 @@
     border-radius: 5px;
     font-size: 1.6rem;
   }
+
+  .counter {
+    margin-top: 5px;
+}
   
   .contact-form button {
     align-self: flex-end; /* Alinea el botón a la izquierda */

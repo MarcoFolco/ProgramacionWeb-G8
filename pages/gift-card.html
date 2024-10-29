@@ -56,6 +56,10 @@
             <i class="fa-solid fa-cart-shopping text text--lg"></i>
             <span class="badge cart-button__badge">1</span>
           </div>
+          <a
+            class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
+            href="./user-profile.html"
+          ></a>
         </div>
       </div>
       <nav class="sidebar">
@@ -89,12 +93,15 @@
       </nav>
     </header>
     <main class="page-container">
+      <section class="ui-messages"></section>
       <section class="gift-card">
         <article class="gift-card__preview">
           <div class="gift-card__preview-image">
-            <span class="gift-card__preview-price tag">$000.-</span>
+            <span class="gift-card__preview-price tag text text--lg"
+              >$000.-</span
+            >
             <small class="heading heading--sm">GIFT CARD para</small>
-            <h2 class="heading heading--xl">DESTINATARIO</h2>
+            <h2 class="heading gift-card__preview-name">DESTINATARIO</h2>
           </div>
           <h4 class="heading heading--sm">
             VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN
@@ -106,55 +113,64 @@
           method="get"
         >
           <h3 class="heading heading--lg">Personalización de Giftcard</h3>
+          <label for="name" class="label heading heading--md"
+            >Destinatario</label
+          >
           <input
             type="text"
             placeholder="Nombre Destinatario"
             class="input"
+            maxlength="30"
             required
+            name="name"
+            id="name"
           />
-          <p class="heading heading--sm">Color</p>
+          <label for="name" class="label heading heading--md">Email</label>
+          <input
+            type="email"
+            placeholder="Email del destinatario"
+            class="input"
+            required
+            name="email"
+            id="email"
+          />
+          <p class="heading heading--sm label">Color</p>
           <div class="radio-selector radio-selector__font-color">
             <div class="radio-option">
               <label for="color1"></label>
-              <input
-                type="radio"
-                id="color1"
-                name="color"
-                value="#00BFFF"
-                checked
-              />
+              <input type="radio" id="color1" name="color" value="1" checked />
             </div>
 
             <div class="radio-option">
               <label for="color2"></label>
-              <input type="radio" id="color2" name="color" value="#4682B4" />
+              <input type="radio" id="color2" name="color" value="2" />
             </div>
 
             <div class="radio-option">
               <label for="color3"></label>
-              <input type="radio" id="color3" name="color" value="#5F9EA0" />
+              <input type="radio" id="color3" name="color" value="3" />
             </div>
 
             <div class="radio-option">
               <label for="color4"></label>
-              <input type="radio" id="color4" name="color" value="#20B2AA" />
+              <input type="radio" id="color4" name="color" value="4" />
             </div>
 
             <div class="radio-option">
               <label for="color5"></label>
-              <input type="radio" id="color5" name="color" value="#8A2BE2" />
+              <input type="radio" id="color5" name="color" value="5" />
             </div>
           </div>
-          <p class="heading heading--md">Tamaño de fuente</p>
+          <p class="heading heading--md label">Tamaño de fuente</p>
           <div class="radio-selector radio-selector__font-size">
             <div class="radio-option">
               <label for="size1" class="heading">20px</label>
-              <input type="radio" id="size1" name="size" value="2rem" checked />
+              <input type="radio" id="size1" name="size" value="1rem" checked />
             </div>
 
             <div class="radio-option">
               <label for="size2" class="heading">28px</label>
-              <input type="radio" id="size2" name="size" value="2.8rem" />
+              <input type="radio" id="size2" name="size" value="1.2rem" />
             </div>
 
             <div class="radio-option">
@@ -163,26 +179,35 @@
                 type="radio"
                 id="size3"
                 name="size"
-                value="3.2rem"
+                value="1.4rem"
                 checked
               />
             </div>
 
             <div class="radio-option">
               <label for="size4" class="heading">48px</label>
-              <input type="radio" id="size4" name="size" value="4.8rem" />
+              <input type="radio" id="size4" name="size" value="1.6rem" />
             </div>
 
             <div class="radio-option">
               <label for="size5" class="heading">60px</label>
-              <input type="radio" id="size5" name="size" value="6rem" />
+              <input type="radio" id="size5" name="size" value="1.8rem" />
             </div>
           </div>
           <div class="inline-field">
             <label class="heading heading--md" for="amount">Monto $ </label>
-            <input id="amount" type="number" required class="input" />
+            <input
+              id="amount"
+              type="number"
+              required
+              class="input"
+              name="amount"
+              placeholder="Entre 1 y 1000"
+              min="1"
+              max="1000"
+            />
           </div>
-          <p class="heading heading--md">Ubicación</p>
+          <p class="heading heading--md label">Ubicación</p>
           <div class="radio-selector radio-selector__position">
             <div class="radio-option">
               <label for="positionBottomRight" class="heading"></label>
@@ -191,7 +216,6 @@
                 id="positionBottomRight"
                 name="position"
                 value="positionBottomRight"
-                checked
               />
             </div>
 
@@ -216,7 +240,7 @@
               />
             </div>
           </div>
-          <p class="heading heading--md">Fondo</p>
+          <p class="heading heading--md label">Fondo</p>
           <div class="radio-selector radio-selector__background-color">
             <div class="radio-option">
               <label for="bgColor1" class="heading"></label>
@@ -224,25 +248,25 @@
                 type="radio"
                 id="bgColor1"
                 name="bgColor"
-                value=""
+                value="1"
                 checked
               />
             </div>
             <div class="radio-option">
               <label for="bgColor2" class="heading"></label>
-              <input type="radio" id="bgColor2" name="bgColor" value="" />
+              <input type="radio" id="bgColor2" name="bgColor" value="2" />
             </div>
             <div class="radio-option">
               <label for="bgColor3" class="heading"></label>
-              <input type="radio" id="bgColor3" name="bgColor" value="" />
+              <input type="radio" id="bgColor3" name="bgColor" value="3" />
             </div>
             <div class="radio-option">
               <label for="bgColor4" class="heading"></label>
-              <input type="radio" id="bgColor4" name="bgColor" value="" />
+              <input type="radio" id="bgColor4" name="bgColor" value="4" />
             </div>
             <div class="radio-option">
               <label for="bgColor5" class="heading"></label>
-              <input type="radio" id="bgColor5" name="bgColor" value="" />
+              <input type="radio" id="bgColor5" name="bgColor" value="5" />
             </div>
           </div>
           <button
@@ -321,5 +345,7 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/mf-app.js"></script>
+    <script src="../js/gift-card.js"></script>
   </body>
 </html>
