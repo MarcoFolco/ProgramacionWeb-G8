@@ -91,10 +91,7 @@ function renderCourses() {
               class="btn btn--ghost btn--sm"
               href="./pages/course-detail-online.html"
             >Ver Detalle</a>
-            <a
-              href="./pages/add-payment-method.html"
-              class="btn btn--primary btn--md"
-            >Comprar</a>
+            <a class="btn btn--primary btn--md" id="btn-buy">Comprar</a>
           </div>
         </div>
       `;
@@ -104,3 +101,5 @@ function renderCourses() {
   }
   
   document.addEventListener("DOMContentLoaded", renderCourses);
+
+  //Incrementar numero de carrito

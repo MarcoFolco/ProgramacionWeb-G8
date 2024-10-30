@@ -147,12 +147,25 @@
           </h2>
           <p class="heading heading--md calendar-container__cell-day">9</p>
         </div>
+
         <div class="calendar-container__cell">
           <h2 class="heading heading--md calendar-container__cell-title">
             MAR
-          </h2>
+          </h2> 
           <p class="heading heading--md calendar-container__cell-day">10</p>
-          <a class="calendar-container__cell-meet" id="open-popup">Nuevo curso de Flexbox</a>
+          <a class="calendar-container__cell-meet">Desarrollo Web Básico</a>
+
+          <div id="course-popup" class="popup hidden">
+            <div class="popup-content">
+              <span class="close-btn" id="close-popup">&times;</span>
+              <h2 id="popup-course-name"></h2>
+              <p id="popup-description"></p>
+              <p><strong>Duración:</strong> <span id="popup-duration"></span></p>
+              <p><strong>Precio:</strong> $<span id="popup-price"></span></p>
+              <p><strong>Modalidad:</strong> <span id="popup-modality"></span></p>
+            </div>
+          </div>
+
         </div>
         <div class="calendar-container__cell">
           <h2 class="heading heading--md calendar-container__cell-title">
@@ -194,7 +207,31 @@
           </h2>
           <p class="heading heading--md calendar-container__cell-day">16</p>
           <a class="calendar-container__cell-meet" id="open-popup">Nuevo curso de HTML5</a>
+
+          <div id="course-popup" class="popup hidden">
+            <div class="popup-content">
+              <span class="close-btn" id="close-popup">&times;</span>
+              <h2 id="popup-course-name"></h2>
+              <p id="popup-description"></p>
+              <p><strong>Duración:</strong> <span id="popup-duration"></span></p>
+              <p><strong>Precio:</strong> $<span id="popup-price"></span></p>
+              <p><strong>Modalidad:</strong> <span id="popup-modality"></span></p>
+            </div>
+          </div>
+
           <a class="calendar-container__cell-meet" id="open-popup">Nuevo curso de CSS</a>
+
+          <div id="course-popup" class="popup hidden">
+            <div class="popup-content">
+              <span class="close-btn" id="close-popup">&times;</span>
+              <h2 id="popup-course-name"></h2>
+              <p id="popup-description"></p>
+              <p><strong>Duración:</strong> <span id="popup-duration"></span></p>
+              <p><strong>Precio:</strong> $<span id="popup-price"></span></p>
+              <p><strong>Modalidad:</strong> <span id="popup-modality"></span></p>
+            </div>
+          </div>
+
         </div>
         <div class="calendar-container__cell">
           <h2 class="heading heading--md calendar-container__cell-title">
@@ -381,6 +418,6 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/js/calendar.js"></script>
+    <script src="/js/fs-calendar.js"></script>
   </body>
 </html>
