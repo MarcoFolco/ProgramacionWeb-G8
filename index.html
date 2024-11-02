@@ -96,61 +96,39 @@
     <main class="page-container">
       <section class="ui-messages"></section>
       <section class="carousel">
-        <div class="carousel__slider-container">
-          <div class="carousel__slide">
-            <div class="carousel__slide-picture-container">
-              <picture class="carousel__slide-picture">
-                <source
-                  srcset="./images/carousel_slide_1.jpeg"
-                  media="(min-width: 48rem)"
-                />
-                <source
-                  srcset="./images/carousel_slide_1_small.jpeg"
-                  media="(max-width: 48rem)"
-                />
-                <img
-                  src="./images/carousel_slide_1.jpeg"
-                  alt=""
-                  class="carousel__slide-image"
-                />
-              </picture>
-            </div>
-            <article class="carousel__slide-content-box">
-              <h1 class="heading heading--serif heading--xxl">
-                Habilidades que te ayudan a avanzar
-              </h1>
-              <p class="slide-content-box__description text text--md">
-                El desarrollo web avanza a gran velocidad. Ponte al día con
-                tecnologías modernas y da inicio a tu carrera como desarrollador
-                web con este increíble curso introductorio.
-              </p>
-              <div class="slide-content-box__buttons-container">
-                <a
-                  href="./pages/course-detail-presential.html"
-                  class="btn btn--lg btn--primary heading heading--md"
-                >
-                  Ver presencial
-                </a>
-                <a
-                  href="./pages/course-detail-online.html"
-                  class="btn btn--lg btn--secondary heading heading--md"
-                >
-                  Ver online
-                </a>
-              </div>
-            </article>
+        <article class="carousel__slide-image-container">
+          <div class="carousel__slide-image-steps"></div>
+          <img
+            alt="Una imagen descriptiva del curso promocionado"
+            class="carousel__slide-image"
+          />
+          <button
+            id="leftCarouselArrow"
+            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
+          >
+            <i class="fa-solid fa-chevron-left text text--lg"></i>
+          </button>
+          <button
+            id="rightCarouselArrow"
+            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
+          >
+            <i class="fa-solid fa-chevron-right text text--lg"></i>
+          </button>
+        </article>
+        <article class="carousel__slide-content-box">
+          <h1
+            class="slide-content-box__description-title heading heading--serif heading--xl"
+          ></h1>
+          <p class="slide-content-box__description-content text text--md"></p>
+          <div class="slide-content-box__buttons-container">
+            <a
+              href="./pages/course-detail-presential.html"
+              class="btn btn--lg btn--primary heading heading--md slide-content-box__course-detail-button"
+            >
+              Ver más
+            </a>
           </div>
-          <button
-            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
-          >
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            class="btn btn--md btn--primary btn--icon btn--icon-round btn--icon-md heading heading--lg carousel__pager-button"
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
+        </article>
       </section>
       <section class="section enroll-steps">
         <h2 class="heading heading--lg">¿CÓMO COMENZAR UN CURSO?</h2>
@@ -158,9 +136,9 @@
           <article class="card">
             <h3 class="heading heading--md">Inicia sesión o crea una cuenta</h3>
             <p class="text text--sm">
-              Para disfrutar de nuestro amplio catálogo de cursos, debes tener
-              una cuenta y elegir la subscripción que mejor se adapte a tu plan
-              de estudio.
+              Para disfrutar de nuestro amplio catálogo de cursos, primero debes
+              tener una cuenta. Registrarte es muy simple, solo necesitas de un
+              email y una contraseña.
             </p>
           </article>
           <article class="card">
@@ -173,8 +151,9 @@
           <article class="card">
             <h3 class="heading heading--md">Inicia el curso</h3>
             <p class="text text--sm">
-              Una vez encuentres tu curso ideal, solo necesitas un click para
-              comenzar. ¡Puedes seguir tantos cursos como quieras!
+              Una vez encuentres tu curso ideal, solo necesitas agregarlo a tu
+              carrito, indicando los participantes de ser presencial, y luego
+              realizar el pago para poder acceder al curso.
             </p>
           </article>
         </div>
@@ -473,5 +452,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/mf-app.js"></script>
+    <script src="./js/landing-page.js"></script>
   </body>
 </html>

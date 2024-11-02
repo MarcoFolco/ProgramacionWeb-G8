@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 400">
+  <!-- Background -->
+  <rect width="1340" height="400" fill="#2C3E50"/>
+  
+  <!-- Scatter Plot Points -->
+  <circle cx="200" cy="150" r="4" fill="#3498DB" opacity="0.8"/>
+  <circle cx="220" cy="180" r="4" fill="#3498DB" opacity="0.8"/>
+  <circle cx="240" cy="140" r="4" fill="#3498DB" opacity="0.8"/>
+  <circle cx="260" cy="200" r="4" fill="#3498DB" opacity="0.8"/>
+  <circle cx="280" cy="160" r="4" fill="#3498DB" opacity="0.8"/>
+  
+  <!-- Line Graph -->
+  <path d="M1000 200 L1050 150 L1100 180 L1150 130 L1200 160" 
+        stroke="#E74C3C" 
+        stroke-width="3" 
+        fill="none"/>
+  
+  <!-- Bar Chart -->
+  <rect x="800" y="150" width="20" height="100" fill="#2ECC71" opacity="0.8"/>
+  <rect x="830" y="120" width="20" height="130" fill="#2ECC71" opacity="0.8"/>
+  <rect x="860" y="180" width="20" height="70" fill="#2ECC71" opacity="0.8"/>
+  <rect x="890" y="140" width="20" height="110" fill="#2ECC71" opacity="0.8"/>
+  
+  <!-- Central Neural Network Representation -->
+  <circle cx="670" cy="120" r="15" fill="#9B59B6"/>
+  <circle cx="620" cy="180" r="15" fill="#9B59B6"/>
+  <circle cx="720" cy="180" r="15" fill="#9B59B6"/>
+  <circle cx="670" cy="240" r="15" fill="#9B59B6"/>
+  
+  <!-- Neural Network Connections -->
+  <line x1="670" y1="120" x2="620" y2="180" stroke="#9B59B6" stroke-width="2"/>
+  <line x1="670" y1="120" x2="720" y2="180" stroke="#9B59B6" stroke-width="2"/>
+  <line x1="620" y1="180" x2="670" y2="240" stroke="#9B59B6" stroke-width="2"/>
+  <line x1="720" y1="180" x2="670" y2="240" stroke="#9B59B6" stroke-width="2"/>
+  
+  <!-- Python Logo Suggestion -->
+  <path d="M400 160 C400 140, 380 140, 380 160 L380 180 C380 200, 400 200, 400 180 Z" 
+        fill="#FFD43B"/>
+  <path d="M400 180 C400 200, 420 200, 420 180 L420 160 C420 140, 400 140, 400 160 Z" 
+        fill="#3776AB"/>
+  
+  <!-- Decorative Circles -->
+  <circle cx="100" cy="200" r="60" fill="#3498DB" opacity="0.3"/>
+  <circle cx="1240" cy="200" r="60" fill="#3498DB" opacity="0.3"/>
+  
+  <!-- Text -->
+  <text x="670" y="340" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">Complete Data Science Masterclass</text>
+  <text x="670" y="380" font-family="Arial, sans-serif" font-size="24" fill="#ECF0F1" text-anchor="middle">Python, Machine Learning &amp; Analytics</text>
+</svg>

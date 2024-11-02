@@ -305,7 +305,8 @@ form button[type="submit"] a {
 /* End of text styles */
 
 /* Carousel styles */
-.carousel {
+.carousel,
+.carousel .carousel__slide-image-container {
   position: relative;
 }
 
@@ -315,10 +316,40 @@ form button[type="submit"] a {
   object-position: initial;
 }
 
+.carousel__slide-image-steps {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.carousel__slide-image-step {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.8s ease;
+}
+
+.carousel__slide-image-step:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.3);
+}
+
+.carousel__slide-image-step.js--active {
+  background: white;
+  transform: scale(1.3);
+}
+
 .carousel .carousel__pager-button {
   position: absolute;
   transform: translateY(-50%);
-  top: 25%;
+  top: 50%;
   border: 1px solid #6a6f73;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -331,20 +362,6 @@ form button[type="submit"] a {
   right: 1.6rem;
 }
 
-@media screen and (min-width: 48rem) {
-  .carousel .carousel__pager-button {
-    top: 50%;
-  }
-}
-
-.carousel__slide-content-box {
-  display: flex;
-  flex-direction: column;
-  box-shadow: none;
-  background: #fff;
-  width: 100%;
-}
-
 .carousel .slide-content-box__buttons-container {
   margin-top: 1.6rem;
   flex: 1;
@@ -352,51 +369,6 @@ form button[type="submit"] a {
   flex-direction: column;
   padding: 0 2.4rem 1.6rem;
   gap: 0.8rem;
-}
-
-@media screen and (min-width: 48rem) {
-  .carousel {
-    margin-bottom: 9rem;
-  }
-
-  .carousel__slide-content-box {
-    position: absolute;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
-    left: 6.8rem;
-    padding: 2.4rem;
-    width: 34rem;
-    top: 2.4rem;
-  }
-
-  .carousel__slide-content-box h1 {
-    font-size: 2.4rem;
-  }
-
-  .carousel__slide-content-box .slide-content-box__description {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  .carousel {
-    margin-bottom: 6.5rem;
-  }
-
-  .carousel__slide-content-box {
-    left: 7.2rem;
-    top: 4.4rem;
-    width: 48rem;
-  }
-
-  .carousel__slide-content-box .slide-content-box__description {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 90rem) {
-  .carousel {
-    margin-bottom: 1rem;
-  }
 }
 
 @media screen and (min-width: 64rem) {
