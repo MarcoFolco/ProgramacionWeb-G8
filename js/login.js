@@ -35,7 +35,7 @@ loginForm.addEventListener("submit", (submitEvent) => {
       "loggedUser",
       JSON.stringify(getUser(credentials.email))
     );
-    window.location.href = "/";
+    loginForm.submit();
   } else {
     addUIMessage({
       message: "Correo electrónico o contraseña incorrectos",

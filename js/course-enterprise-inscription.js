@@ -50,7 +50,7 @@ updatePriceTag();
 function addInscriptionFieldset() {
   inscriptionNumber += 1;
   const fieldset = document.createElement("fieldset");
-  fieldset.classList.add("field-group");
+  fieldset.classList.add("field-group", `js--subscriber-${inscriptionNumber}`);
   const fieldsetInnerHTML = `
     <div class="field-group__data">
               <input
@@ -72,7 +72,7 @@ function addInscriptionFieldset() {
                 name="dni${inscriptionNumber}"
                 id="dni${inscriptionNumber}"
                 placeholder="DNI (con puntos)"
-                pattern="^\d{1,2}\.\d{3}\.\d{3}$"
+                pattern="^\\d{1,2}\\.\\d{3}\\.\\d{3}$"
                 required
               />
               <input
@@ -80,7 +80,7 @@ function addInscriptionFieldset() {
                 name="phone${inscriptionNumber}"
                 id="phone${inscriptionNumber}"
                 placeholder="Telefono, ej.  4030-2025"
-                pattern="^\d{4}-?\d{4}$"
+                pattern="^\\d{4}-?\\d{4}$"
                 required
               />
             </div>
@@ -98,13 +98,45 @@ function addInscriptionFieldset() {
   updatePriceTag();
 }
 
+function generateSubscribersArray(formElement) {
+  const subscribers = [];
+  for (
+    let subscriberIndex = 1;
+    subscriberIndex <= inscriptionNumber;
+    subscriberIndex++
+  ) {
+    const fieldsetElement = document.querySelector(
+      `.js--subscriber-${subscriberIndex}`
+    );
+    if (fieldsetElement) {
+      const email = document.querySelector(`#email${subscriberIndex}`).value;
+      const fullName = document.querySelector(
+        `#fullName${subscriberIndex}`
+      ).value;
+      const dni = document.querySelector(`#dni${subscriberIndex}`).value;
+      const phone = document.querySelector(`#phone${subscriberIndex}`).value;
+      subscribers.push({
+        email,
+        fullName,
+        dni,
+        phone,
+      });
+    }
+  }
+  return subscribers;
+}
+
 inscriptionForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
+  console.log(submitEvent);
   const totalPrice = calculateTotalPrice();
+  const subscribers = generateSubscribersArray(submitEvent.target);
   // Aca va la logica para agregar al carrito, con el curso y el precio total
+  console.log(totalPrice);
+  console.log(subscribers);
   queueMessage({
     message: "Inscripción completada con éxito",
     severity: "success",
   });
-  window.location.href = "/";
+  inscriptionForm.submit();
 });

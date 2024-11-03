@@ -54,7 +54,6 @@ registerForm.addEventListener("submit", (event) => {
       message: "Usuario creado con éxito",
       severity: "success",
     });
-    registerForm.reset();
-    window.location.href = "/pages/login.html";
+    registerForm.submit();
   }
 });

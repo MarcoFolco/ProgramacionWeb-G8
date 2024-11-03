@@ -96,20 +96,17 @@
       </nav>
     </header>
     <main class="page-container">
+      <section class="ui-messages"></section>
       <section class="section course-inscription">
         <h2 class="heading heading--lg">TITULO CURSO</h2>
         <h3 class="heading heading--md">INSCRIPCIÓN</h3>
-        <form
-          action="./add-payment-method.html"
-          method="get"
-          class="course-inscription__form"
-        >
+        <form action="/" method="GET" class="course-inscription__form">
           <div class="course-inscription__form-rows">
-            <fieldset class="field-group">
+            <fieldset class="field-group js--subscriber-1">
               <div class="field-group__data">
                 <input
                   type="email"
-                  name="email1"
+                  name="subscribers[0][name]"
                   id="email1"
                   placeholder="Email"
                   required
