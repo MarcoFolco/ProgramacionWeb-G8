@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1340 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="1340" height="400" fill="#34495e"/>
+  
+  <!-- Logo de Vue estilizado -->
+  <g transform="translate(670,200)">
+    <path d="M-100,-50 L0,50 L100,-50 L60,-50 L0,20 L-60,-50 Z" fill="#42b883"/>
+    <path d="M-60,-50 L0,20 L60,-50 L30,-50 L0,0 L-30,-50 Z" fill="#35495e"/>
+  </g>
+  
+  <!-- Decoración -->
+  <g fill="#42b883" opacity="0.1">
+    <circle cx="200" cy="100" r="80"/>
+    <circle cx="1100" cy="300" r="120"/>
+  </g>
+  
+  <!-- Texto -->
+  <text x="100" y="180" fill="white" font-family="Arial" font-size="48" font-weight="bold">Vue.js desde Cero</text>
+  <text x="100" y="230" fill="#a0aec0" font-family="Arial" font-size="24">Framework Progresivo de JavaScript</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1340 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="1340" height="400" fill="#333333"/>
+  
+  <!-- Logo de Node.js estilizado -->
+  <g transform="translate(670,200) scale(2)">
+    <path d="M-30,-30 L30,-30 L60,0 L30,30 L-30,30 L-60,0 Z" fill="#539e43"/>
+    <text x="-25" y="10" fill="white" font-family="Arial" font-size="20">N</text>
+  </g>
+  
+  <!-- Líneas de conexión -->
+  <g stroke="#539e43" stroke-width="2" fill="none">
+    <path d="M400,100 C500,100 500,300 600,300"/>
+    <path d="M700,300 C800,300 800,100 900,100"/>
+  </g>
+  
+  <!-- Texto -->
+  <text x="100" y="180" fill="white" font-family="Arial" font-size="48" font-weight="bold">Node.js y Express</text>
+  <text x="100" y="230" fill="#a0aec0" font-family="Arial" font-size="24">Desarrollo Backend y APIs</text>
+</svg>

@@ -1,27 +1,23 @@
-// Deberiamos tomar esto del localStorage directo
-const carouselItems = [
-  {
-    courseId: 1,
-    courseName: "Data Warehouse",
-    shortDescription:
-      "Transforma datos en decisiones clave. Aprende a gestionar y optimizar la información de tu empresa",
-    image: "carousel-data-warehouse.svg",
-  },
-  {
-    courseId: 2,
-    courseName: "Angular avanzado",
-    shortDescription:
-      "Lleva tus habilidades al siguiente nivel: profundiza en arquitecturas avanzadas, optimización de rendimiento y desarrollo de aplicaciones complejas",
-    image: "carousel-angular-avanzado.svg",
-  },
-  {
-    courseId: 3,
-    courseName: "Data Science",
-    shortDescription:
-      "Aprende a extraer insights valiosos y tomar decisiones basadas en datos. Domina Python, análisis estadístico y machine learning",
-    image: "carousel-data-science.svg",
-  },
-];
+const carouselCourses = [];
+
+// Tomamos 3 cursos random del listado
+function generateRandomCoursesArray(amountOfCourses) {
+  const randomCourses = [];
+  const courses = getCourses();
+  while (amountOfCourses) {
+    const courseIndex = Math.floor(Math.random() * courses.length);
+    const [course] = courses.splice(courseIndex, 1);
+    randomCourses.push(course);
+    amountOfCourses--;
+  }
+  return randomCourses;
+}
+function pickcarouselCourses(amountOfCourses = 3) {
+  const randomCourses = generateRandomCoursesArray(amountOfCourses);
+  carouselCourses.push(...randomCourses);
+}
+
+pickcarouselCourses();
 
 const carouselElement = document.querySelector(".carousel");
 const carouselSlideImage = document.querySelector(".carousel__slide-image");
@@ -53,13 +49,13 @@ function generateCarouselStepElement(index) {
   );
   carouselStep.addEventListener("click", () => {
     displayedItemIndex = index;
-    setNewSlide(carouselItems[index], true);
+    setNewSlide(carouselCourses[index], true);
   });
   return carouselStep;
 }
 
 function addCarouselSteps() {
-  for (let index = 0; index < carouselItems.length; index++) {
+  for (let index = 0; index < carouselCourses.length; index++) {
     const carouselStepElement = generateCarouselStepElement(index);
     carouselSlideImageSteps.appendChild(carouselStepElement);
   }
@@ -68,17 +64,17 @@ function addCarouselSteps() {
 function getPreviousCarouselItem() {
   displayedItemIndex -= 1;
   if (displayedItemIndex < 0) {
-    displayedItemIndex = carouselItems.length - 1;
+    displayedItemIndex = carouselCourses.length - 1;
   }
-  return carouselItems[displayedItemIndex];
+  return carouselCourses[displayedItemIndex];
 }
 
 function getNextCarouselItem() {
   displayedItemIndex += 1;
-  if (carouselItems.length == displayedItemIndex) {
+  if (carouselCourses.length == displayedItemIndex) {
     displayedItemIndex = 0;
   }
-  return carouselItems[displayedItemIndex];
+  return carouselCourses[displayedItemIndex];
 }
 
 function updateActiveCarouselStep() {
@@ -109,7 +105,7 @@ function setNewSlide(courseItem, resetInterval = false) {
 
 function initCarousel() {
   displayedItemIndex = 0;
-  setNewSlide(carouselItems[displayedItemIndex]);
+  setNewSlide(carouselCourses[displayedItemIndex]);
 }
 
 function initSlideInterval(duration = 3000) {
@@ -133,3 +129,23 @@ addCarouselSteps();
 initCarousel();
 initSlideInterval();
 addCarouselArrowListeners();
+
+// Generamos las cards de la landing
+const highlightedCourses = [];
+
+function pickHighlightedCourses(amountOfCourses = 6) {
+  const randomCourses = generateRandomCoursesArray(amountOfCourses);
+  highlightedCourses.push(...randomCourses);
+}
+
+function renderHighlightedCourses() {
+  const coursesContainerElement = document.querySelector(
+    ".highlighted-courses .course-slider"
+  );
+  highlightedCourses.forEach((course) => {
+    coursesContainerElement.innerHTML += generateCourseCardHTML(course);
+  });
+}
+
+pickHighlightedCourses();
+renderHighlightedCourses();

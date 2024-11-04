@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1340 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="1340" height="400" fill="#2d3748"/>
+  
+  <!-- Red neuronal estilizada -->
+  <g transform="translate(670,200)" stroke="#805ad5" stroke-width="2">
+    <!-- Nodos -->
+    <g fill="#805ad5">
+      <circle cx="-100" cy="-50" r="10"/>
+      <circle cx="-100" cy="0" r="10"/>
+      <circle cx="-100" cy="50" r="10"/>
+      
+      <circle cx="0" cy="-25" r="10"/>
+      <circle cx="0" cy="25" r="10"/>
+      
+      <circle cx="100" cy="0" r="10"/>
+    </g>
+    
+    <!-- Conexiones -->
+    <g fill="none">
+      <path d="M-90,-50 L-10,-25"/>
+      <path d="M-90,0 L-10,-25"/>
+      <path d="M-90,50 L-10,-25"/>
+      <path d="M-90,-50 L-10,25"/>
+      <path d="M-90,0 L-10,25"/>
+      <path d="M-90,50 L-10,25"/>
+      <path d="M10,-25 L90,0"/>
+      <path d="M10,25 L90,0"/>
+    </g>
+  </g>
+  
+  <!-- Texto -->
+  <text x="100" y="180" fill="white" font-family="Arial" font-size="48" font-weight="bold">Machine Learning Fundamentals</text>
+  <text x="100" y="230" fill="#a0aec0" font-family="Arial" font-size="24">Algoritmos y Predicción de Datos</text>
+</svg>

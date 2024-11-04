@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1340 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="1340" height="400" fill="#1a365d"/>
+  
+  <!-- Patrón de puntos -->
+  <g fill="#2a4365" opacity="0.3">
+    <circle cx="100" cy="50" r="2"/>
+    <circle cx="150" cy="80" r="2"/>
+    <circle cx="200" cy="60" r="2"/>
+    <circle cx="250" cy="90" r="2"/>
+    <circle cx="300" cy="70" r="2"/>
+    <!-- Repetir patrón -->
+  </g>
+  
+  <!-- Elementos de código -->
+  <g fill="none" stroke="#63b3ed" stroke-width="2" opacity="0.6">
+    <path d="M50,150 L150,150"/>
+    <path d="M70,170 L180,170"/>
+    <path d="M90,190 L160,190"/>
+    <path d="M60,210 L140,210"/>
+  </g>
+  
+  <!-- Iconos representativos -->
+  <g transform="translate(900,150)">
+    <!-- HTML5 -->
+    <polygon points="0,0 30,0 35,-35 -5,-35" fill="#e34f26"/>
+    <text x="12" y="-15" fill="white" font-family="Arial" font-size="14">H</text>
+    
+    <!-- CSS3 -->
+    <polygon points="50,0 80,0 85,-35 45,-35" fill="#1572b6"/>
+    <text x="62" y="-15" fill="white" font-family="Arial" font-size="14">C</text>
+    
+    <!-- JS -->
+    <rect x="95" y="-35" width="35" height="35" fill="#f7df1e"/>
+    <text x="107" y="-15" fill="black" font-family="Arial" font-size="14">JS</text>
+  </g>
+  
+  <!-- Texto -->
+  <text x="100" y="300" fill="white" font-family="Arial" font-size="32" font-weight="bold">Desarrollo Web Full Stack</text>
+  <text x="100" y="340" fill="#a0aec0" font-family="Arial" font-size="18">Frontend + Backend + Bases de datos</text>
+</svg>
