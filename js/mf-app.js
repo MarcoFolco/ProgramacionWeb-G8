@@ -606,7 +606,15 @@ function getCourses() {
 
 function getCourseById(courseId) {
   const courses = getCourses();
-  return courses.find((course) => course.id === courseId);
+  return courses.find((course) => course.id == courseId);
+}
+
+function generateModalityTagHTML(modality) {
+  return `<span class="tag tag--${
+    modality === "presencial" ? "presential" : "online"
+  } course-mode heading heading--md"
+                >${modality.charAt(0).toUpperCase() + modality.slice(1)}</span
+              >`;
 }
 
 function generateCourseCardHTML(course) {
@@ -618,14 +626,7 @@ function generateCourseCardHTML(course) {
                 class="img"
               />
               <span class="tag course-price">$${course.price}.-</span>
-              <span class="tag tag--${
-                course.modality === "presencial" ? "presential" : "online"
-              } course-mode heading heading--md"
-                >${
-                  course.modality.charAt(0).toUpperCase() +
-                  course.modality.slice(1)
-                }</span
-              >
+              ${generateModalityTagHTML(course.modality)}
             </div>
             <div class="card__content course-content">
               <p class="heading heading--xl">
@@ -637,7 +638,7 @@ function generateCourseCardHTML(course) {
                 <h2 class="heading heading--md">${course.name}</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail-online.html?id=${course.id}"
+                  href="./pages/course-detail.html?id=${course.id}"
                   >Ver Detalle</a
                 >
                 <a
