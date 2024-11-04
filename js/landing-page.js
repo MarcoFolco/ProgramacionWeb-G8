@@ -1,17 +1,5 @@
 const carouselCourses = [];
 
-// Tomamos 3 cursos random del listado
-function generateRandomCoursesArray(amountOfCourses) {
-  const randomCourses = [];
-  const courses = getCourses();
-  while (amountOfCourses) {
-    const courseIndex = Math.floor(Math.random() * courses.length);
-    const [course] = courses.splice(courseIndex, 1);
-    randomCourses.push(course);
-    amountOfCourses--;
-  }
-  return randomCourses;
-}
 function pickcarouselCourses(amountOfCourses = 3) {
   const randomCourses = generateRandomCoursesArray(amountOfCourses);
   carouselCourses.push(...randomCourses);

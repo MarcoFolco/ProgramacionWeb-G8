@@ -18,12 +18,12 @@ const courses = [
           {
             title: "Introducción al Desarrollo Web",
             duration: 45,
-            icon: "fa-play",
+            icon: "fa-regular fa-circle-play",
           },
           {
             title: "HTML5 y CSS3 Básico",
             duration: 60,
-            icon: "fa-code",
+            icon: "fa-solid fa-code",
           },
         ],
       },
@@ -33,12 +33,12 @@ const courses = [
           {
             title: "Fundamentos de JavaScript",
             duration: 90,
-            icon: "fa-js",
+            icon: "fa-brands fa-js",
           },
           {
             title: "ES6+ y características modernas",
             duration: 75,
-            icon: "fa-code",
+            icon: "fa-solid fa-code",
           },
         ],
       },
@@ -47,7 +47,7 @@ const courses = [
       fullName: "Carlos Rodríguez",
       description:
         "Desarrollador Senior con más de 10 años de experiencia en desarrollo web. Especialista en JavaScript y arquitecturas modernas.",
-      avatar: "carlos-rodriguez.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -68,12 +68,12 @@ const courses = [
           {
             title: "Hooks Personalizados",
             duration: 60,
-            icon: "fa-code",
+            icon: "fa-solid fa-code",
           },
           {
             title: "Patrones de Renderizado",
             duration: 45,
-            icon: "fa-laptop-code",
+            icon: "fa-solid fa-laptop-code",
           },
         ],
       },
@@ -82,7 +82,7 @@ const courses = [
       fullName: "Ana Martínez",
       description:
         "Desarrolladora Frontend especialista en React. Contribuidora activa en proyectos open source.",
-      avatar: "ana-martinez.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
   {
@@ -103,12 +103,12 @@ const courses = [
           {
             title: "Fundamentos de Node.js",
             duration: 60,
-            icon: "fa-node",
+            icon: "fa-brands fa-node",
           },
           {
             title: "Express.js Básico",
             duration: 45,
-            icon: "fa-server",
+            icon: "fa-solid fa-server",
           },
         ],
       },
@@ -117,7 +117,7 @@ const courses = [
       fullName: "Miguel Ángel Torres",
       description:
         "Arquitecto de software especializado en aplicaciones Node.js a gran escala.",
-      avatar: "miguel-torres.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -138,12 +138,12 @@ const courses = [
           {
             title: "Introducción a Vue 3",
             duration: 50,
-            icon: "fa-play",
+            icon: "fa-solid fa-play",
           },
           {
             title: "Composition API",
             duration: 70,
-            icon: "fa-code",
+            icon: "fa-solid fa-code",
           },
         ],
       },
@@ -152,7 +152,7 @@ const courses = [
       fullName: "Laura Sánchez",
       description:
         "Desarrolladora Frontend y formadora especializada en Vue.js y ecosistema frontend.",
-      avatar: "laura-sanchez.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
 
@@ -175,12 +175,12 @@ const courses = [
           {
             title: "Fundamentos de Python",
             duration: 60,
-            icon: "fa-python",
+            icon: "fa-brands fa-python",
           },
           {
             title: "NumPy y Pandas",
             duration: 90,
-            icon: "fa-table",
+            icon: "fa-solid fa-table",
           },
         ],
       },
@@ -189,7 +189,7 @@ const courses = [
       fullName: "David López",
       description:
         "Data Scientist con experiencia en grandes empresas tecnológicas. Experto en Python y análisis estadístico.",
-      avatar: "david-lopez.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -210,12 +210,12 @@ const courses = [
           {
             title: "Introducción al ML",
             duration: 45,
-            icon: "fa-brain",
+            icon: "fa-solid fa-brain",
           },
           {
             title: "Regresión y Clasificación",
             duration: 90,
-            icon: "fa-chart-line",
+            icon: "fa-solid fa-chart-line",
           },
         ],
       },
@@ -224,7 +224,7 @@ const courses = [
       fullName: "Elena Ramírez",
       description:
         "PhD en Inteligencia Artificial y Machine Learning Engineer con amplia experiencia en proyectos reales.",
-      avatar: "elena-ramirez.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
   {
@@ -245,12 +245,12 @@ const courses = [
           {
             title: "Fundamentos de Deep Learning",
             duration: 60,
-            icon: "fa-network-wired",
+            icon: "fa-solid fa-network-wired",
           },
           {
             title: "CNN y Visión por Computador",
             duration: 120,
-            icon: "fa-camera",
+            icon: "fa-solid fa-camera",
           },
         ],
       },
@@ -259,7 +259,7 @@ const courses = [
       fullName: "Roberto García",
       description:
         "Investigador en Deep Learning y profesor universitario. Especialista en visión por computador.",
-      avatar: "roberto-garcia.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -280,12 +280,12 @@ const courses = [
           {
             title: "Introducción a Spark",
             duration: 45,
-            icon: "fa-database",
+            icon: "fa-solid fa-database",
           },
           {
             title: "SparkSQL y DataFrames",
             duration: 90,
-            icon: "fa-table",
+            icon: "fa-solid fa-table",
           },
         ],
       },
@@ -294,7 +294,7 @@ const courses = [
       fullName: "Patricia Moreno",
       description:
         "Data Engineer con experiencia en proyectos de Big Data. Experta en Apache Spark y ecosistema Hadoop.",
-      avatar: "patricia-moreno.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
 
@@ -317,12 +317,12 @@ const courses = [
           {
             title: "Principios de UI/UX",
             duration: 60,
-            icon: "fa-pen-ruler",
+            icon: "fa-solid fa-pen-ruler",
           },
           {
             title: "Wireframing",
             duration: 45,
-            icon: "fa-pencil-alt",
+            icon: "fa-solid fa-pencil-alt",
           },
         ],
       },
@@ -331,7 +331,7 @@ const courses = [
       fullName: "Marina Costa",
       description:
         "Diseñadora UI/UX con más de 8 años de experiencia. Especialista en diseño centrado en el usuario.",
-      avatar: "marina-costa.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
   {
@@ -352,12 +352,12 @@ const courses = [
           {
             title: "Sistema de Componentes",
             duration: 75,
-            icon: "fa-object-group",
+            icon: "fa-solid fa-object-group",
           },
           {
             title: "Auto-layout Avanzado",
             duration: 60,
-            icon: "fa-layer-group",
+            icon: "fa-solid fa-layer-group",
           },
         ],
       },
@@ -366,7 +366,7 @@ const courses = [
       fullName: "Jorge Mendoza",
       description:
         "UI Designer y experto en Figma. Creador de sistemas de diseño para startups y grandes empresas.",
-      avatar: "jorge-mendoza.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -387,12 +387,12 @@ const courses = [
           {
             title: "Principios de Diseño Responsive",
             duration: 45,
-            icon: "fa-mobile-alt",
+            icon: "fa-solid fa-mobile-alt",
           },
           {
             title: "Media Queries Avanzadas",
             duration: 60,
-            icon: "fa-desktop",
+            icon: "fa-solid fa-desktop",
           },
         ],
       },
@@ -401,7 +401,7 @@ const courses = [
       fullName: "Carolina Herrera",
       description:
         "Frontend Designer especializada en diseño responsive y arquitecturas CSS modernas.",
-      avatar: "carolina-herrera.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
   {
@@ -422,12 +422,12 @@ const courses = [
           {
             title: "CSS Animations",
             duration: 60,
-            icon: "fa-film",
+            icon: "fa-solid fa-film",
           },
           {
             title: "SVG Animation",
             duration: 75,
-            icon: "fa-vector-square",
+            icon: "fa-solid fa-vector-square",
           },
         ],
       },
@@ -436,7 +436,7 @@ const courses = [
       fullName: "Fernando Ruiz",
       description:
         "Motion Designer especializado en animaciones web y experiencias interactivas.",
-      avatar: "fernando-ruiz.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -458,12 +458,12 @@ const courses = [
           {
             title: "Introducción al Data Warehousing",
             duration: 60,
-            icon: "fa-database",
+            icon: "fa-solid fa-database",
           },
           {
             title: "Modelado Dimensional",
             duration: 90,
-            icon: "fa-cube",
+            icon: "fa-solid fa-cube",
           },
         ],
       },
@@ -473,12 +473,12 @@ const courses = [
           {
             title: "Procesos ETL",
             duration: 120,
-            icon: "fa-exchange-alt",
+            icon: "fa-solid fa-exchange-alt",
           },
           {
             title: "Optimización y Mejores Prácticas",
             duration: 90,
-            icon: "fa-tachometer-alt",
+            icon: "fa-solid fa-tachometer-alt",
           },
         ],
       },
@@ -487,7 +487,7 @@ const courses = [
       fullName: "Ricardo Mendoza",
       description:
         "Arquitecto de Datos con más de 12 años de experiencia en implementación de soluciones de Data Warehouse para grandes empresas.",
-      avatar: "ricardo-mendoza.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
   {
@@ -509,12 +509,12 @@ const courses = [
           {
             title: "Patrones de Diseño en Angular",
             duration: 90,
-            icon: "fa-sitemap",
+            icon: "fa-solid fa-sitemap",
           },
           {
             title: "Estado y NgRx",
             duration: 120,
-            icon: "fa-project-diagram",
+            icon: "fa-solid fa-project-diagram",
           },
         ],
       },
@@ -524,12 +524,12 @@ const courses = [
           {
             title: "Optimización de Rendimiento",
             duration: 75,
-            icon: "fa-tachometer-alt",
+            icon: "fa-solid fa-tachometer-alt",
           },
           {
             title: "Despliegue y CI/CD",
             duration: 60,
-            icon: "fa-rocket",
+            icon: "fa-solid fa-rocket",
           },
         ],
       },
@@ -538,7 +538,7 @@ const courses = [
       fullName: "Lucía Vega",
       description:
         "Desarrolladora Senior especializada en Angular. Google Developer Expert y ponente internacional en conferencias de desarrollo web.",
-      avatar: "lucia-vega.jpg",
+      avatar: "female-teacher-profile-avatar.webp",
     },
   },
   {
@@ -560,12 +560,12 @@ const courses = [
           {
             title: "Introducción a Python para Data Science",
             duration: 90,
-            icon: "fa-python",
+            icon: "fa-brands fa-python",
           },
           {
             title: "Estadística y Probabilidad",
             duration: 120,
-            icon: "fa-chart-bar",
+            icon: "fa-solid fa-chart-bar",
           },
         ],
       },
@@ -575,12 +575,12 @@ const courses = [
           {
             title: "Algoritmos Supervisados",
             duration: 150,
-            icon: "fa-brain",
+            icon: "fa-solid fa-brain",
           },
           {
             title: "Algoritmos No Supervisados",
             duration: 120,
-            icon: "fa-network-wired",
+            icon: "fa-solid fa-network-wired",
           },
         ],
       },
@@ -589,7 +589,7 @@ const courses = [
       fullName: "Alberto Campos",
       description:
         "PhD en Ciencia de Datos y consultor internacional. Especialista en aplicación de ML en entornos empresariales.",
-      avatar: "alberto-campos.jpg",
+      avatar: "male-teacher-profile-avatar.webp",
     },
   },
 ];
@@ -617,11 +617,11 @@ function generateModalityTagHTML(modality) {
               >`;
 }
 
-function generateCourseCardHTML(course) {
+function generateCourseCardHTML(course, fromPage = false) {
   return `<article class="card card--course">
             <div class="card__img-container">
               <img
-                src="./images/${course.image}"
+                src="${fromPage ? ".." : "."}/images/${course.image}"
                 alt="Una imagen representativa del curso."
                 class="img"
               />
@@ -638,15 +638,17 @@ function generateCourseCardHTML(course) {
                 <h2 class="heading heading--md">${course.name}</h2>
                 <a
                   class="btn btn--ghost btn--sm"
-                  href="./pages/course-detail.html?id=${course.id}"
+                  href=".${fromPage ? "" : "/pages"}/course-detail.html?id=${
+    course.id
+  }"
                   >Ver Detalle</a
                 >
                 <a
-                  href="./pages/${
-                    course.modality === "online"
-                      ? "add-payment-method"
-                      : "course-enterprise-inscription"
-                  }.html"
+                  href=".${fromPage ? "" : "/pages"}/${
+    course.modality === "online"
+      ? "add-payment-method"
+      : "course-enterprise-inscription"
+  }.html"
                   class="btn btn--primary btn--md"
                   >${
                     course.modality === "online" ? "Comprar" : "Inscribirte"
@@ -655,6 +657,39 @@ function generateCourseCardHTML(course) {
               </div>
             </div>
           </article>`;
+}
+
+// Tomamos N cursos random del listado
+function generateRandomCoursesArray(amountOfCourses) {
+  const randomCourses = [];
+  const courses = getCourses();
+  while (amountOfCourses) {
+    const courseIndex = Math.floor(Math.random() * courses.length);
+    const [course] = courses.splice(courseIndex, 1);
+    randomCourses.push(course);
+    amountOfCourses--;
+  }
+  return randomCourses;
+}
+
+// Tomamos N cursos random del listado
+function generateRandomCoursesOfCategoryArray(
+  amountOfCourses,
+  category,
+  ignoreIds = []
+) {
+  const randomCourses = [];
+  const courses = getCourses();
+  const categoryCourses = courses.filter(
+    (course) => course.category == category && !ignoreIds.includes(course.id)
+  );
+  while (amountOfCourses) {
+    const courseIndex = Math.floor(Math.random() * categoryCourses.length);
+    const [course] = categoryCourses.splice(courseIndex, 1);
+    randomCourses.push(course);
+    amountOfCourses--;
+  }
+  return randomCourses;
 }
 
 function userIsLoggedIn() {
