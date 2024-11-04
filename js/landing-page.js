@@ -95,11 +95,11 @@ function setNewSlide(courseItem, resetInterval = false) {
     clearInterval(slideInterval);
     initSlideInterval();
   }
-  const { courseId, courseName, shortDescription, image } = courseItem;
+  const { id, name, shortDescription, image } = courseItem;
   carouselSlideImage.src = `./images/${image}`;
-  carouselSlideDescriptionTitle.textContent = courseName;
+  carouselSlideDescriptionTitle.textContent = name;
   carouselSlideDescriptionContent.textContent = shortDescription;
-  carouselSlideDescriptionDetailButton.href = `/pages/course-detail-online.html?courseId=${courseId}`;
+  carouselSlideDescriptionDetailButton.href = `/pages/course-detail.html?id=${id}`;
   updateActiveCarouselStep();
 }
 
