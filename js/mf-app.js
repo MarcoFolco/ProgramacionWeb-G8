@@ -609,6 +609,11 @@ function getCourseById(courseId) {
   return courses.find((course) => course.id == courseId);
 }
 
+function getCoursesByCategory(category) {
+  const courses = getCourses();
+  return courses.filter((course) => course.category == category);
+}
+
 function generateModalityTagHTML(modality) {
   return `<span class="tag tag--${
     modality === "presencial" ? "presential" : "online"
