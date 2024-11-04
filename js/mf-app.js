@@ -640,7 +640,9 @@ function generateCourseCardHTML(course, fromPage = false) {
                 }</strong> <small class="text--md">hs</small>
               </p>
               <div class="course-content__details">
-                <h2 class="heading heading--md">${course.name}</h2>
+                <h2 class="heading heading--md" title="${course.name}">${
+    course.name
+  }</h2>
                 <a
                   class="btn btn--ghost btn--sm"
                   href=".${fromPage ? "" : "/pages"}/course-detail.html?id=${
