@@ -17,8 +17,6 @@ function loadCourseList() {
   const url = new URL(location.href);
   const category = url.searchParams.get("category");
   if (category) {
-    console.log(category, typeof category);
-
     updateListTitle(category);
     const categoryCourses = getCoursesByCategory(category);
     if (categoryCourses.length > 0) {
