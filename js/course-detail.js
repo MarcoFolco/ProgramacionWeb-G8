@@ -75,6 +75,13 @@ function fillCourseData(course) {
   durationElement.textContent = `Tiempo de dedicación necesario: ${duration} horas.`;
   buyButtonElement.textContent =
     modality === "online" ? "Comprar" : "Inscribirse";
+  if (modality === "presencial") {
+    buyButtonElement.href = "./course-enterprise-inscription.html";
+  } else {
+    buyButtonElement.addEventListener("click", () => {
+      addOnlineCourseToCart(course);
+    });
+  }
   buyButtonElement.classList.add(
     `js--${course.modality === "online" ? "buy" : "subscribe"}-btn`
   );

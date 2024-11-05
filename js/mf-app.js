@@ -651,14 +651,16 @@ function generateCourseCardHTML(course, fromPage = false) {
                   >Ver Detalle</a
                 >
                 <a
-                  href=".${fromPage ? "" : "/pages"}/${
-    course.modality === "online"
-      ? "add-payment-method"
-      : "course-enterprise-inscription"
-  }.html"
+                  ${
+                    course.modality == "presencial"
+                      ? `href=".${
+                          fromPage ? "" : "/pages"
+                        }/course-enterprise-inscription.html"`
+                      : ""
+                  }
                   class="btn btn--primary btn--md js--${
                     course.modality === "online" ? "buy" : "subscribe"
-                  }-btn"
+                  }-btn" data-course-id="${course.id}"
                   >${
                     course.modality === "online" ? "Comprar" : "Inscribirte"
                   }</a
@@ -968,18 +970,221 @@ function setCartItemCounterBadge(numberOfItems) {
   }
 }
 
-function initCartButtonBadge() {
+function getLoggedUserCartItems() {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    return loggedUser.cartItems || [];
+  }
+  return [];
+}
+
+function updateCartButtonBadge() {
   if (userIsLoggedIn()) {
-    const loggedUser = getLoggedUser();
-    const cartItems = loggedUser.cartItems || [];
+    const cartItems = getLoggedUserCartItems();
     setCartItemCounterBadge(cartItems.length);
   }
 }
 
-initCartButtonBadge();
+updateCartButtonBadge();
+
+// Renderizar items en el cart
+const cartItemListElement = document.querySelector(".cart-sidebar__item-list");
+
+function updateLoggedUserCartItem(cartItem, index) {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    const cartItems = loggedUser.cartItems;
+    cartItems[index] = cartItem;
+    updateLoggedUser(loggedUser);
+  }
+  renderCartItems();
+}
+
+function removeLoggedUserCartItem(index) {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    const cartItems = loggedUser.cartItems;
+    cartItems.splice(index, 1);
+    updateLoggedUser(loggedUser);
+  }
+  renderCartItems();
+}
+
+// Esto solo aplica para cursos online
+
+function addCartItemQuantity(cartItem, index) {
+  cartItem.quantity++;
+  cartItem.total = cartItem.quantity * cartItem.course.price;
+  updateLoggedUserCartItem(cartItem, index);
+}
+
+// Esto solo aplica para cursos online
+
+function substractCartItemQuantity(cartItem, index) {
+  cartItem.quantity--;
+  if (cartItem.quantity > 0) {
+    cartItem.total = cartItem.quantity * cartItem.course.price;
+    updateLoggedUserCartItem(cartItem, index);
+  } else {
+    removeLoggedUserCartItem(index);
+  }
+}
+
+function addRemoveCartItemListener(removeBtnElement, itemIndex) {
+  removeBtnElement.addEventListener("click", () => {
+    removeLoggedUserCartItem(itemIndex);
+  });
+}
+
+function generateOnlineCourseCartItem(cartItem, index) {
+  const onlineCourse = cartItem.course;
+  const liElement = document.createElement("li");
+  liElement.classList.add("card");
+  liElement.dataset.index = index;
+  liElement.innerHTML = `<div class="cart-sidebar__item">
+              <i
+                class="fa-solid fa-book-open text tex--secondary cart-sidebar__item-icon"
+              ></i>
+              <p class="cart-sidebar__item-main-content">
+                <span class="heading heading--sm">${onlineCourse.name}</span>
+                <span class="text text--sm">Cantidad: ${cartItem.quantity}  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add"></i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract"></i></span>
+              </p>
+              <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
+              <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
+            </div>`;
+  const addBtn = liElement.querySelector(".cart-sidebar__item-add");
+  const substractBtn = liElement.querySelector(".cart-sidebar__item-substract");
+  addBtn.addEventListener("click", () => {
+    addCartItemQuantity(cartItem, index);
+  });
+  substractBtn.addEventListener("click", () => {
+    substractCartItemQuantity(cartItem, index);
+  });
+  addRemoveCartItemListener(
+    liElement.querySelector(".cart-sidebar__item-remove"),
+    index
+  );
+  return liElement;
+}
+
+function generateParticipantCardHTML(participant) {
+  return `<li class="card cart-sidebar__item-participant">
+                <p class="cart-sidebar__item-participant-data text text--sm">
+                  <i class="fa-solid fa-user text text--sm"></i> ${participant.fullName}
+                </p>
+                <p class="cart-sidebar__item-participant-data text text--sm">
+                  <i class="fa-solid fa-envelope"></i> ${participant.email}
+                </p>
+                <p class="cart-sidebar__item-participant-data text text--sm">
+                  <i class="fa-solid fa-phone"></i> ${participant.phone}
+                </p>
+                <p class="cart-sidebar__item-participant-data text text--sm">
+                  <i class="fa-solid fa-address-card"></i> ${participant.dni}
+                </p>
+              </li>`;
+}
+
+function generatePresentialCourseCartItem(cartItem, index) {
+  const presentialCourse = cartItem.course;
+  const liElement = document.createElement("li");
+  liElement.classList.add("card");
+  liElement.dataset.index = index;
+  liElement.innerHTML = `<div class="cart-sidebar__item">
+              <i
+                class="fa-solid fa-users text tex--secondary cart-sidebar__item-icon"
+              ></i>
+              <p class="cart-sidebar__item-main-content">
+                <span class="text text--sm">${presentialCourse.name}</span>
+                <span class="text text--sm">Participantes: ${
+                  cartItem.participants.length
+                }</span>
+              </p>
+              <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
+              <i
+                class="fa-solid fa-eye cart-sidebar__item-display-participants-btn"
+              ></i>
+              <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
+            </div>
+            <ul class="cart-sidebar__item-participants">
+              ${cartItem.participants.reduce(
+                (participantsHTML, participant) => {
+                  return (
+                    participantsHTML + generateParticipantCardHTML(participant)
+                  );
+                },
+                ""
+              )}
+            </ul>`;
+  const eyeBtnElement = liElement.querySelector(
+    ".cart-sidebar__item-display-participants-btn"
+  );
+  const participantsListElement = liElement.querySelector(
+    ".cart-sidebar__item-participants"
+  );
+  eyeBtnElement.addEventListener("click", () => {
+    participantsListElement.classList.toggle("js--visible");
+    if (participantsListElement.classList.contains("js--visible")) {
+      eyeBtnElement.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      eyeBtnElement.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  });
+  addRemoveCartItemListener(
+    liElement.querySelector(".cart-sidebar__item-remove"),
+    index
+  );
+  return liElement;
+}
+
+function generateGiftCardCartItem(cartItem, index) {
+  const receiverName = cartItem.receiverName;
+  const liElement = document.createElement("li");
+  liElement.classList.add("card");
+  liElement.dataset.index = index;
+  liElement.innerHTML = `<li class="card">
+            <div class="cart-sidebar__item">
+              <i
+                class="fa-solid fa-gift text tex--secondary cart-sidebar__item-icon"
+              ></i>
+              <p class="cart-sidebar__item-main-content">
+                <span class="text text--sm">Gift card para "${receiverName}"</span>
+              </p>
+              <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
+              <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
+            </div>
+          </li>`;
+  addRemoveCartItemListener(
+    liElement.querySelector(".cart-sidebar__item-remove"),
+    index
+  );
+  return liElement;
+}
+
+function renderCartItems() {
+  updateCartButtonBadge();
+  const cartItems = getLoggedUserCartItems();
+  cartItemListElement.innerHTML = "";
+  cartItems.forEach((cartItem, index) => {
+    let itemListElement;
+    switch (cartItem.type) {
+      case "buy":
+        itemListElement = generateOnlineCourseCartItem(cartItem, index);
+        break;
+      case "gift":
+        itemListElement = generateGiftCardCartItem(cartItem, index);
+        break;
+      case "subscription":
+        itemListElement = generatePresentialCourseCartItem(cartItem, index);
+        break;
+    }
+    cartItemListElement.appendChild(itemListElement);
+  });
+}
+
+renderCartItems();
 
 // Agregamos una función que puede ser usada desde cualquier JS para agregar una condición de log-only a todo botón de compra/inscribirse.
-function addBuyBtnElementLoggedInListener(buyButtonElements) {
+function addBuyBtnElementsLoggedInListener(buyButtonElements) {
   buyButtonElements.forEach((buyButton) => {
     buyButton.addEventListener("click", (event) => {
       if (!userIsLoggedIn()) {
@@ -994,7 +1199,7 @@ function addBuyBtnElementLoggedInListener(buyButtonElements) {
   });
 }
 
-function addSubscribeBtnElementLoggedInListener(subscribeButtonElements) {
+function addSubscribeBtnElementsLoggedInListener(subscribeButtonElements) {
   subscribeButtonElements.forEach((subscribeButton) => {
     subscribeButton.addEventListener("click", (event) => {
       if (!userIsLoggedIn()) {
@@ -1014,7 +1219,60 @@ function applyLogOnlyConditionToAllBuyOrSubscribeBtns() {
   const subscribeButtonElements =
     document.querySelectorAll(".js--subscribe-btn");
 
-  addBuyBtnElementLoggedInListener(buyButtonElements);
+  addBuyBtnElementsLoggedInListener(buyButtonElements);
 
-  addSubscribeBtnElementLoggedInListener(subscribeButtonElements);
+  addSubscribeBtnElementsLoggedInListener(subscribeButtonElements);
+}
+
+// Agregamos una función que puede ser usada desde cualquier JS para que el botón comprar de las cards agregue al carrito.
+
+// Esta función puede ser usada en otros JS que permitan comprar cursos online, como el detalle de curso
+function addOnlineCourseToCart(onlineCourse) {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    const cartItems = loggedUser.cartItems || [];
+    const existingItem = cartItems.find(
+      (item) => item.type === "buy" && item.course.id === onlineCourse.id
+    );
+    if (existingItem) {
+      addCartItemQuantity(existingItem);
+    } else {
+      const newCartItem = {
+        type: "buy",
+        course: onlineCourse,
+        quantity: 1,
+        total: onlineCourse.price,
+      };
+      cartItems.push(newCartItem);
+    }
+    addUIMessage({
+      message: "Elemento agregado al carrito exitosamente",
+      severity: "success",
+    });
+    loggedUser.cartItems = cartItems;
+    updateLoggedUser(loggedUser);
+    renderCartItems();
+  }
+}
+
+function addBuyBtnElementsAddToCartListener(buyButtonElements) {
+  buyButtonElements.forEach((buyBtnElement) => {
+    buyBtnElement.addEventListener("click", () => {
+      const { courseId } = buyBtnElement.dataset;
+      if (courseId === null || courseId === undefined) {
+        addUIMessage({
+          message: "Este curso no tiene un ID, no se puede agregar al carrito",
+          severity: "error",
+        });
+      } else {
+        const course = getCourseById(courseId);
+        addOnlineCourseToCart(course);
+      }
+    });
+  });
+}
+
+function applyAddToCartBehaviorToAllBuyBtns() {
+  const buyButtonElements = document.querySelectorAll(".js--buy-btn");
+  addBuyBtnElementsAddToCartListener(buyButtonElements);
 }

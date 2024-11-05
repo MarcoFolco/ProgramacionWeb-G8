@@ -140,3 +140,5 @@ renderHighlightedCourses();
 
 // Agregamos una condición de logged only para todos los botones de Comprar e Inscribirte, en cualquier página
 applyLogOnlyConditionToAllBuyOrSubscribeBtns();
+
+applyAddToCartBehaviorToAllBuyBtns();

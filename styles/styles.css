@@ -711,16 +711,11 @@ form button[type="submit"] a {
   gap: 1rem;
 }
 
-.cart-sidebar__item-icon,
-.cart-sidebar__item-price,
-.cart-sidebar__item-display-participants-btn {
-  align-self: center;
-}
-
 .cart-sidebar__item {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  align-items: center;
 }
 
 .cart-sidebar__item-main-content {
