@@ -100,7 +100,7 @@
     </header>
     <main class="page-container">
       <section class="payment-section">
-        <h2>Agregue un método para el pago</h2>
+        <h2>Ingrese un método para el pago</h2>
         <div class="payment-container">
           <form class="payment-form" action="../index.html" method="get">
             <label class="text text--primary text--md" for="card-name"
@@ -124,6 +124,7 @@
               name="card-number"
               class="input-field"
               placeholder="0000 0000 0000 0000"
+              pattern="^\d{4}\s\d{4}\s\d{4}\s\d{4}$"
               required
             />
 
@@ -136,6 +137,7 @@
               name="expiry-date"
               class="input-field"
               placeholder="MM/AA"
+              pattern="^(0[1-9]|1[0-2])\/\d{2}$"
               required
             />
 
@@ -146,6 +148,7 @@
               name="cvv"
               class="input-field"
               placeholder="123"
+              pattern="^\d{3}$"
               required
             />
 
@@ -153,7 +156,7 @@
               >Tipo de tarjeta:</label
             >
             <select id="card-type" name="card-type" class="input-field">
-              <option value="credit">Crédito</option>
+              <option value="credit" selected>Crédito</option>
               <option value="debit">Débito</option>
             </select>
 
