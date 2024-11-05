@@ -891,8 +891,10 @@ function generateSearchDropdownItemsHTML(courses, fromPage = false) {
     innerHTML += `<li class="header__search-dropdown-item">
             <a href=".${fromPage ? "" : "/pages"}/course-detail.html?id=${
       course.id
-    }" class="btn btn--sm btn--secondary heading heading--md"
-              >${course.name}</a
+    }" class="btn btn--sm btn--secondary heading heading--md header__search-dropdown-item__course-link"
+              ><span class="header__search-dropdown-item__course-title" title="${
+                course.name
+              }">${course.name}</span></a
             >
           </li>`;
     return innerHTML;
