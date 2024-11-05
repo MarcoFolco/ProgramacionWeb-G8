@@ -655,7 +655,7 @@ function generateCourseCardHTML(course, fromPage = false) {
                     course.modality == "presencial"
                       ? `href=".${
                           fromPage ? "" : "/pages"
-                        }/course-enterprise-inscription.html"`
+                        }/course-enterprise-inscription.html?id=${course.id}"`
                       : ""
                   }
                   class="btn btn--primary btn--md js--${
@@ -933,6 +933,38 @@ searchBarInput.addEventListener("input", () => {
   }
 });
 
+// Funcionalidad genérica de cursos
+function getCourseIdFromURL() {
+  const url = new URL(location.href);
+  const courseId = url.searchParams.get("id");
+  if (courseId) {
+    return courseId;
+  } else {
+    queueMessage({
+      message: "No se indicó un ID de curso",
+      severity: "error",
+    });
+    location.href = "/";
+  }
+}
+
+function getCourseFromURL() {
+  const courseId = getCourseIdFromURL();
+  if (courseId) {
+    const course = getCourseById(courseId);
+    if (course) {
+      return course;
+    } else {
+      queueMessage({
+        message: "No existe un curso con el ID indicado",
+        severity: "error",
+      });
+      location.href = "/";
+    }
+  }
+  return null;
+}
+
 // Cart functionalities
 const cartButtonElement = document.querySelector(
   ".header__cart-button-container .fa-cart-shopping"
@@ -1016,6 +1048,10 @@ function addCartItemQuantity(cartItem, index) {
   cartItem.quantity++;
   cartItem.total = cartItem.quantity * cartItem.course.price;
   updateLoggedUserCartItem(cartItem, index);
+  addUIMessage({
+    message: "Item actualizado exitosamente",
+    severity: "success",
+  });
 }
 
 // Esto solo aplica para cursos online
@@ -1028,6 +1064,10 @@ function substractCartItemQuantity(cartItem, index) {
   } else {
     removeLoggedUserCartItem(index);
   }
+  addUIMessage({
+    message: "Item actualizado exitosamente",
+    severity: "success",
+  });
 }
 
 function addRemoveCartItemListener(removeBtnElement, itemIndex) {
@@ -1101,7 +1141,7 @@ function generatePresentialCourseCartItem(cartItem, index) {
               </p>
               <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
               <i
-                class="fa-solid fa-eye cart-sidebar__item-display-participants-btn"
+                class="fa-solid fa-eye cart-sidebar__item-display-participants-btn btn btn--icon btn--paddingless"
               ></i>
               <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
             </div>
@@ -1227,6 +1267,19 @@ function applyLogOnlyConditionToAllBuyOrSubscribeBtns() {
 // Agregamos una función que puede ser usada desde cualquier JS para que el botón comprar de las cards agregue al carrito.
 
 // Esta función puede ser usada en otros JS que permitan comprar cursos online, como el detalle de curso
+function addLoggedUserCartItem(newCartItem) {
+  const loggedUser = getLoggedUser();
+  const cartItems = loggedUser.cartItems || [];
+  cartItems.push(newCartItem);
+  loggedUser.cartItems = cartItems;
+  updateLoggedUser(loggedUser);
+  addUIMessage({
+    message: "Elemento agregado al carrito exitosamente",
+    severity: "success",
+  });
+  renderCartItems();
+}
+
 function addOnlineCourseToCart(onlineCourse) {
   const loggedUser = getLoggedUser();
   if (loggedUser) {
@@ -1235,7 +1288,10 @@ function addOnlineCourseToCart(onlineCourse) {
       (item) => item.type === "buy" && item.course.id === onlineCourse.id
     );
     if (existingItem) {
-      addCartItemQuantity(existingItem);
+      const existingItemIndex = cartItems.findIndex(
+        (item) => item.type === "buy" && item.course.id === onlineCourse.id
+      );
+      addCartItemQuantity(existingItem, existingItemIndex);
     } else {
       const newCartItem = {
         type: "buy",
@@ -1243,15 +1299,8 @@ function addOnlineCourseToCart(onlineCourse) {
         quantity: 1,
         total: onlineCourse.price,
       };
-      cartItems.push(newCartItem);
+      addLoggedUserCartItem(newCartItem);
     }
-    addUIMessage({
-      message: "Elemento agregado al carrito exitosamente",
-      severity: "success",
-    });
-    loggedUser.cartItems = cartItems;
-    updateLoggedUser(loggedUser);
-    renderCartItems();
   }
 }
 

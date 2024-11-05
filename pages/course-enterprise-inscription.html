@@ -35,6 +35,12 @@
           class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
         ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+      </div>
       <nav class="header__search-dropdown">
         <ul class="header__search-dropdown-list"></ul>
       </nav>
@@ -102,7 +108,9 @@
     <main class="page-container">
       <section class="ui-messages"></section>
       <section class="section course-inscription">
-        <h2 class="heading heading--lg">TITULO CURSO</h2>
+        <h2 class="heading heading--lg course-inscription__course-title">
+          TITULO CURSO
+        </h2>
         <h3 class="heading heading--md">INSCRIPCIÓN</h3>
         <form action="/" method="GET" class="course-inscription__form">
           <div class="course-inscription__form-rows">

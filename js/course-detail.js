@@ -76,7 +76,7 @@ function fillCourseData(course) {
   buyButtonElement.textContent =
     modality === "online" ? "Comprar" : "Inscribirse";
   if (modality === "presencial") {
-    buyButtonElement.href = "./course-enterprise-inscription.html";
+    buyButtonElement.href = `./course-enterprise-inscription.html?id=${course.id}`;
   } else {
     buyButtonElement.addEventListener("click", () => {
       addOnlineCourseToCart(course);
@@ -106,11 +106,6 @@ function generateRelatedCourseCards(course) {
       true
     );
   });
-}
-
-function getCourseIdFromURL() {
-  const url = new URL(location.href);
-  return url.searchParams.get("id");
 }
 
 function fillCourseDetailPage() {

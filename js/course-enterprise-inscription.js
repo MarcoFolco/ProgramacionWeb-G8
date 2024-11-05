@@ -8,6 +8,18 @@ let inscriptionNumber = 1;
 const courseValue = 20;
 const priceTag = document.querySelector(".form__price-tag");
 
+// Actualizamos titulo de la página
+const titleElement = document.querySelector(
+  ".course-inscription__course-title"
+);
+
+function updateInscriptionTitle() {
+  const course = getCourseFromURL();
+  titleElement.textContent = `${course.name.toUpperCase()}`;
+}
+
+updateInscriptionTitle();
+
 // Agregamos handler a boton de remover del fieldset en el HTML, y al de agregar persona
 
 function calculateTotalPrice() {
@@ -128,15 +140,24 @@ function generateSubscribersArray(formElement) {
 
 inscriptionForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
-  console.log(submitEvent);
-  const totalPrice = calculateTotalPrice();
-  const subscribers = generateSubscribersArray(submitEvent.target);
+  const total = calculateTotalPrice();
+  const participants = generateSubscribersArray(submitEvent.target);
   // Aca va la logica para agregar al carrito, con el curso y el precio total
-  console.log(totalPrice);
-  console.log(subscribers);
+  console.log(total);
+  console.log(participants);
   queueMessage({
     message: "Inscripción completada con éxito",
     severity: "success",
   });
+
+  const course = getCourseFromURL();
+  const cartItem = {
+    course,
+    total,
+    participants,
+    type: "subscription",
+  };
+  addLoggedUserCartItem(cartItem);
+
   inscriptionForm.submit();
 });
