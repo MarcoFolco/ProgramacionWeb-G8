@@ -652,10 +652,19 @@ form button[type="submit"] a {
   position: relative;
 }
 
+.header .header__cart-button-container .fa-cart-shopping {
+  cursor: pointer;
+}
+
 .header .header__cart-button-container .cart-button__badge {
   position: absolute;
   top: -1.2rem;
   right: -1.2rem;
+  display: none;
+}
+
+.header .header__cart-button-container .cart-button__badge.js--visible {
+  display: block;
 }
 
 /* End of shopping cart badge styles */

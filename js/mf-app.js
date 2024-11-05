@@ -656,7 +656,9 @@ function generateCourseCardHTML(course, fromPage = false) {
       ? "add-payment-method"
       : "course-enterprise-inscription"
   }.html"
-                  class="btn btn--primary btn--md"
+                  class="btn btn--primary btn--md js--${
+                    course.modality === "online" ? "buy" : "subscribe"
+                  }-btn"
                   >${
                     course.modality === "online" ? "Comprar" : "Inscribirte"
                   }</a
@@ -818,6 +820,8 @@ loggedUserCanViewPage();
 const forbiddenAnonymousURLs = [
   "/pages/user-profile.html",
   "/pages/gift-card.html",
+  "/pages/add-payment-method.html",
+  "/pages/course-enterprise-inscription.html",
 ];
 
 function anonymousUserCanViewPage() {
@@ -924,3 +928,81 @@ searchBarInput.addEventListener("input", () => {
     searchBarDropdownElement.classList.remove("js--visible");
   }
 });
+
+// Cart functionalities
+const cartButtonElement = document.querySelector(
+  ".header__cart-button-container .fa-cart-shopping"
+);
+const cartButtonItemCounterElement = document.querySelector(
+  ".header__cart-button-container .cart-button__badge"
+);
+
+cartButtonElement.addEventListener("click", () => {
+  if (!userIsLoggedIn()) {
+    queueMessage({
+      message: "Necesitas iniciar sesión primero para ver el carrito",
+      severity: "warn",
+    });
+    location.href = "/pages/login.html";
+  }
+});
+
+function setCartItemCounterBadge(numberOfItems) {
+  cartButtonItemCounterElement.textContent = numberOfItems;
+  if (numberOfItems > 0) {
+    cartButtonItemCounterElement.classList.add("js--visible");
+  } else {
+    cartButtonItemCounterElement.classList.remove("js--visible");
+  }
+}
+
+function initCartButtonBadge() {
+  if (userIsLoggedIn()) {
+    const loggedUser = getLoggedUser();
+    const cartItems = loggedUser.cartItems || [];
+    setCartItemCounterBadge(cartItems.length);
+  }
+}
+
+initCartButtonBadge();
+
+// Agregamos una función que puede ser usada desde cualquier JS para agregar una condición de log-only a todo botón de compra/inscribirse.
+function addBuyBtnElementLoggedInListener(buyButtonElements) {
+  buyButtonElements.forEach((buyButton) => {
+    buyButton.addEventListener("click", (event) => {
+      if (!userIsLoggedIn()) {
+        event.preventDefault();
+        queueMessage({
+          message: "Debes iniciar sesión primero para comprar un curso",
+          severity: "warn",
+        });
+        location.href = "/pages/login.html";
+      }
+    });
+  });
+}
+
+function addSubscribeBtnElementLoggedInListener(subscribeButtonElements) {
+  subscribeButtonElements.forEach((subscribeButton) => {
+    subscribeButton.addEventListener("click", (event) => {
+      if (!userIsLoggedIn()) {
+        event.preventDefault();
+        queueMessage({
+          message: "Debes iniciar sesión primero para inscribirte a un curso",
+          severity: "warn",
+        });
+        location.href = "/pages/login.html";
+      }
+    });
+  });
+}
+
+function applyLogOnlyConditionToAllBuyOrSubscribeBtns() {
+  const buyButtonElements = document.querySelectorAll(".js--buy-btn");
+  const subscribeButtonElements =
+    document.querySelectorAll(".js--subscribe-btn");
+
+  addBuyBtnElementLoggedInListener(buyButtonElements);
+
+  addSubscribeBtnElementLoggedInListener(subscribeButtonElements);
+}

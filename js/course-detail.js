@@ -75,6 +75,9 @@ function fillCourseData(course) {
   durationElement.textContent = `Tiempo de dedicación necesario: ${duration} horas.`;
   buyButtonElement.textContent =
     modality === "online" ? "Comprar" : "Inscribirse";
+  buyButtonElement.classList.add(
+    `js--${course.modality === "online" ? "buy" : "subscribe"}-btn`
+  );
   bannerElement.src = `../images/${image}`;
 }
 
@@ -98,9 +101,13 @@ function generateRelatedCourseCards(course) {
   });
 }
 
-function fillCourseDetailPage() {
+function getCourseIdFromURL() {
   const url = new URL(location.href);
-  const courseId = url.searchParams.get("id");
+  return url.searchParams.get("id");
+}
+
+function fillCourseDetailPage() {
+  const courseId = getCourseIdFromURL();
   if (courseId) {
     const course = getCourseById(courseId);
     if (course) {
@@ -125,3 +132,6 @@ function fillCourseDetailPage() {
 }
 
 fillCourseDetailPage();
+
+// Agregamos una condición de logged only para todos los botones de Comprar e Inscribirte, en cualquier página
+applyLogOnlyConditionToAllBuyOrSubscribeBtns();
