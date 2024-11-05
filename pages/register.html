@@ -27,22 +27,16 @@
         <i class="fa-solid fa-search text text--lg"></i>
         <input
           type="text"
-          placeholder="Busca cualquier cosa"
+          placeholder="Busca entre miles de cursos..."
           class="header__search-bar-input text text--md"
-          list="header-search-bar-options"
         />
-        <datalist id="header-search-bar-options">
-          <option value="JavaScript"></option>
-          <option value="Python"></option>
-          <option value="Java"></option>
-          <option value="C++"></option>
-          <option value="Ruby"></option>
-          <option value="PHP"></option>
-          <option value="Go"></option>
-        </datalist>
-
-        <i class="fa-solid fa-times heading heading--xl"></i>
+        <i
+          class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
+        ></i>
       </form>
+      <nav class="header__search-dropdown">
+        <ul class="header__search-dropdown-list"></ul>
+      </nav>
       <div class="header__main">
         <i class="fa-solid fa-bars header__sidebar-button"></i>
         <a href="../index.html" class="header__logo-link">
@@ -88,7 +82,7 @@
                 >
               </li>
               <li>
-                <a href="./courses-list.html?category=Diseño Web">Diseño</a>
+                <a href="./courses-list.html?category=Diseño Web">Diseño Web</a>
               </li>
             </ul>
           </li>
@@ -197,7 +191,7 @@
                 <a
                   href="./courses-list.html?category=Diseño Web"
                   class="text text--sm"
-                  >Diseño</a
+                  >Diseño Web</a
                 >
               </li>
             </ul>
