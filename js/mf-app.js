@@ -730,7 +730,7 @@ function setUsers(usersArray) {
     localStorage.setItem("users", JSON.stringify(usersArray));
     return true;
   } catch (error) {
-    console.error(error);
+    error(error);
     addUIMessage({
       message: "Ocurrió un error interno, contacte a soporte",
       severity: "error",
@@ -860,3 +860,67 @@ function hideUserProfileButtonIfNotLogged() {
 }
 
 hideUserProfileButtonIfNotLogged();
+
+// Add search functionality
+const searchButtonElement = document.querySelector(".header__search-button");
+const searchCloseButtonElement = document.querySelector(
+  ".header__search-bar-close-btn"
+);
+const searchBarElement = document.querySelector(".header__search-bar-form");
+const searchBarDropdownElement = document.querySelector(
+  ".header__search-dropdown"
+);
+const searchBarInput = document.querySelector(".header__search-bar-input");
+const searchBarDropdownListElement = document.querySelector(
+  ".header__search-dropdown-list"
+);
+
+searchButtonElement.addEventListener("click", () => {
+  searchBarElement.classList.add("js--visible");
+  searchBarInput.focus();
+});
+
+searchCloseButtonElement.addEventListener("click", () => {
+  searchBarElement.classList.remove("js--visible");
+  searchBarDropdownElement.classList.remove("js--visible");
+  searchBarInput.value = "";
+});
+
+function generateSearchDropdownItemsHTML(courses, fromPage = false) {
+  let resultHTML = courses.reduce((innerHTML, course) => {
+    innerHTML += `<li class="header__search-dropdown-item">
+            <a href=".${fromPage ? "" : "/pages"}/course-detail.html?id=${
+      course.id
+    }" class="btn btn--sm btn--secondary heading heading--md"
+              >${course.name}</a
+            >
+          </li>`;
+    return innerHTML;
+  }, "");
+  return resultHTML;
+}
+
+function renderSearchResults(courses) {
+  const url = new URL(location.href);
+  const fromPage = url.pathname.includes("pages");
+  if (courses.length > 0) {
+    const itemsHTML = generateSearchDropdownItemsHTML(courses, fromPage);
+    searchBarDropdownListElement.innerHTML = itemsHTML;
+  } else {
+    searchBarDropdownListElement.innerHTML = `<p class="heading heading--md">No se encontraron resultados...</p>`;
+  }
+}
+
+searchBarInput.addEventListener("input", () => {
+  const searchValue = searchBarInput.value;
+  if (searchValue) {
+    searchBarDropdownElement.classList.add("js--visible");
+    const allCourses = getCourses();
+    const filteredCourses = allCourses.filter((course) =>
+      course.name.toUpperCase().includes(searchValue.toUpperCase())
+    );
+    renderSearchResults(filteredCourses);
+  } else {
+    searchBarDropdownElement.classList.remove("js--visible");
+  }
+});
