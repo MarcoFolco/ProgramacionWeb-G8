@@ -791,15 +791,33 @@ function queueMessage(messageData) {
 
 // Muestra el mensaje en UI.
 // Severity es el color del mensaje: info (azul), success (verde), warn (amarillo), error (rojo)
-function addUIMessage(messageData) {
+function addUIMessage(messageData, permanent = false) {
   const { message, severity } = messageData;
   const messageElement = document.createElement("article");
-  messageElement.classList.add("ui-message", `ui-message--${severity}`);
-  messageElement.innerHTML = `<p class="ui-message--text text text--lg text--primary">${message}</p>`;
+  messageElement.classList.add(
+    "ui-message",
+    `ui-message--${severity}`,
+    ...(permanent ? ["ui-message--permanent"] : ["ui-message--temporal"])
+  );
+  messageElement.innerHTML = `<p class="ui-message--text text text--lg text--primary">${message}</p>${
+    permanent
+      ? "<i class='fa-solid fa-times text text--lg text--primary ui-message__close-btn btn btn--icon btn--paddingless'></i>"
+      : ""
+  }`;
+  if (permanent) {
+    const closeBtnElement = messageElement.querySelector(
+      ".ui-message__close-btn"
+    );
+    closeBtnElement.addEventListener("click", () => {
+      messagesElement.removeChild(messageElement);
+    });
+  }
   messagesElement.appendChild(messageElement);
-  setTimeout(() => {
-    messagesElement.removeChild(messageElement);
-  }, 5000);
+  if (!permanent) {
+    setTimeout(() => {
+      messagesElement.removeChild(messageElement);
+    }, 5000);
+  }
 }
 
 function displayUIMessageQueue() {

@@ -134,7 +134,7 @@
               type="email"
               id="email"
               name="email"
-              placeholder="Ingresa tu email"
+              placeholder="tuemail@ejemplo.com"
               required
             />
 
@@ -143,7 +143,8 @@
               type="tel"
               id="phone"
               name="phone"
-              placeholder="Ingresa tu teléfono"
+              placeholder="XXXX-XXXX (guion opcional)"
+              pattern="^\d{4}-?\d{4}$"
             />
 
             <label for="message">Consulta</label>
@@ -151,8 +152,10 @@
               id="message"
               name="message"
               placeholder="Escribe tu consulta"
+              maxlength="1000"
               required
             ></textarea>
+            <small class="contact-form__message-field-msg"></small>
 
             <button
               type="submit"
@@ -262,5 +265,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/mf-app.js"></script>
+    <script src="../js/contact.js"></script>
   </body>
 </html>

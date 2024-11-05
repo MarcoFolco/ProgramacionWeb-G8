@@ -1066,6 +1066,27 @@ form button[type="submit"] a {
   }
 }
 
+@keyframes messageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+    height: 5rem;
+    margin-bottom: 1rem;
+    padding: 3rem;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    height: 5rem;
+    margin-bottom: 1rem;
+    padding: 3rem;
+  }
+}
+
 section.ui-messages {
   position: fixed;
   bottom: 2rem;
@@ -1087,6 +1108,20 @@ article.ui-message {
   animation: messageFadeInOut 5s ease-in-out forwards;
   overflow: hidden;
   text-align: center;
+}
+
+article.ui-message .ui-message--text {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+article.ui-message.ui-message--permanent {
+  animation: messageFadeIn 5s ease-in forwards;
+  justify-content: space-around;
 }
 
 article.ui-message.ui-message--success {
