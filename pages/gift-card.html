@@ -32,6 +32,22 @@
           class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
         ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+        <p class="cart-sidebar__footer">
+          <span class="cart-sidebar__footer-total heading heading--xl"
+            >Total: $000.-</span
+          >
+          <a
+            class="btn btn--primary btn--md cart-sidebar__footer-pay-btn"
+            href="./add-payment-method.html"
+            >Pagar</a
+          >
+        </p>
+      </div>
       <nav class="header__search-dropdown">
         <ul class="header__search-dropdown-list"></ul>
       </nav>
@@ -111,11 +127,7 @@
             VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN
           </h4>
         </article>
-        <form
-          class="gift-card__form"
-          action="./add-payment-method.html"
-          method="get"
-        >
+        <form class="gift-card__form" action="/" method="GET">
           <h3 class="heading heading--lg">Personalización de Giftcard</h3>
           <label for="name" class="label heading heading--md"
             >Destinatario</label
@@ -207,6 +219,7 @@
               class="input"
               name="amount"
               placeholder="Entre 1 y 1000"
+              step="0.1"
               min="1"
               max="1000"
             />

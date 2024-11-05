@@ -1032,6 +1032,15 @@ function updateLoggedUserCartItem(cartItem, index) {
   renderCartItems();
 }
 
+function updateLoggedUserCartItems(cartItems) {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    loggedUser.cartItems = cartItems;
+    updateLoggedUser(loggedUser);
+  }
+  renderCartItems();
+}
+
 function removeLoggedUserCartItem(index) {
   const loggedUser = getLoggedUser();
   if (loggedUser) {
@@ -1087,7 +1096,7 @@ function generateOnlineCourseCartItem(cartItem, index) {
               ></i>
               <p class="cart-sidebar__item-main-content">
                 <span class="heading heading--sm">${onlineCourse.name}</span>
-                <span class="text text--sm">Cantidad: ${cartItem.quantity}  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add"></i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract"></i></span>
+                <small class="text text--sm">Cantidad: ${cartItem.quantity}  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add"></i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract"></i></small>
               </p>
               <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
               <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
@@ -1177,22 +1186,21 @@ function generatePresentialCourseCartItem(cartItem, index) {
 }
 
 function generateGiftCardCartItem(cartItem, index) {
-  const receiverName = cartItem.receiverName;
+  const { name, email } = cartItem.receiver;
   const liElement = document.createElement("li");
   liElement.classList.add("card");
   liElement.dataset.index = index;
-  liElement.innerHTML = `<li class="card">
-            <div class="cart-sidebar__item">
+  liElement.innerHTML = `<div class="cart-sidebar__item">
               <i
                 class="fa-solid fa-gift text tex--secondary cart-sidebar__item-icon"
               ></i>
               <p class="cart-sidebar__item-main-content">
-                <span class="text text--sm">Gift card para "${receiverName}"</span>
+                <span class="heading heading--sm">Gift card para "${name}"</span>
+                <small class"text text--xs">Email: ${email}</small>
               </p>
               <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
               <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
-            </div>
-          </li>`;
+            </div>`;
   addRemoveCartItemListener(
     liElement.querySelector(".cart-sidebar__item-remove"),
     index
@@ -1200,25 +1208,50 @@ function generateGiftCardCartItem(cartItem, index) {
   return liElement;
 }
 
+const cartTotalLabelElement = document.querySelector(
+  ".cart-sidebar__footer-total"
+);
+const cartPayBtnElement = document.querySelector(
+  ".cart-sidebar__footer-pay-btn"
+);
+
+function getCartTotalPrice() {
+  const cartItems = getLoggedUserCartItems();
+  return cartItems.reduce((total, cartItem) => {
+    return (total += cartItem.total);
+  }, 0);
+}
+
 function renderCartItems() {
   updateCartButtonBadge();
   const cartItems = getLoggedUserCartItems();
   cartItemListElement.innerHTML = "";
-  cartItems.forEach((cartItem, index) => {
-    let itemListElement;
-    switch (cartItem.type) {
-      case "buy":
-        itemListElement = generateOnlineCourseCartItem(cartItem, index);
-        break;
-      case "gift":
-        itemListElement = generateGiftCardCartItem(cartItem, index);
-        break;
-      case "subscription":
-        itemListElement = generatePresentialCourseCartItem(cartItem, index);
-        break;
-    }
-    cartItemListElement.appendChild(itemListElement);
-  });
+  if (cartItems.length > 0) {
+    cartItems.forEach((cartItem, index) => {
+      let itemListElement;
+      switch (cartItem.type) {
+        case "buy":
+          itemListElement = generateOnlineCourseCartItem(cartItem, index);
+          break;
+        case "gift":
+          itemListElement = generateGiftCardCartItem(cartItem, index);
+          break;
+        case "subscription":
+          itemListElement = generatePresentialCourseCartItem(cartItem, index);
+          break;
+      }
+      cartItemListElement.appendChild(itemListElement);
+    });
+  } else {
+    cartItemListElement.innerHTML = `<p class="heading heading--xl" style="text-align: center;">No hay items en el carrito...</p>`;
+  }
+  const totalPrice = getCartTotalPrice();
+  cartTotalLabelElement.textContent = `Total: $${totalPrice}.-`;
+  if (totalPrice > 0) {
+    cartPayBtnElement.classList.add("js--visible");
+  } else {
+    cartPayBtnElement.classList.remove("js--visible");
+  }
 }
 
 renderCartItems();

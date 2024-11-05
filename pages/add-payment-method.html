@@ -34,6 +34,22 @@
           class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
         ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+        <p class="cart-sidebar__footer">
+          <span class="cart-sidebar__footer-total heading heading--xl"
+            >Total: $000.-</span
+          >
+          <a
+            class="btn btn--primary btn--md cart-sidebar__footer-pay-btn"
+            href="./add-payment-method.html"
+            >Pagar</a
+          >
+        </p>
+      </div>
       <nav class="header__search-dropdown">
         <ul class="header__search-dropdown-list"></ul>
       </nav>
@@ -102,7 +118,7 @@
       <section class="payment-section">
         <h2>Ingrese un método para el pago</h2>
         <div class="payment-container">
-          <form class="payment-form" action="../index.html" method="get">
+          <form class="payment-form" action="/" method="get">
             <label class="text text--primary text--md" for="card-name"
               >Nombre en la tarjeta:</label
             >
@@ -252,5 +268,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/mf-app.js"></script>
+    <script src="../js/add-payment-method.js"></script>
   </body>
 </html>

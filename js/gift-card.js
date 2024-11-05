@@ -147,9 +147,14 @@ function saveGiftCard(username, amount) {
 
 giftCardForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
-  const { email: emailField, amount: amountField } = submitEvent.target;
+  const {
+    email: emailField,
+    amount: amountField,
+    name: nameField,
+  } = submitEvent.target;
   const email = emailField.value;
   const amount = amountField.value;
+  const name = nameField.value;
   // Validamos el email, debe existir como username
   if (!isValidUsername(email)) {
     addUIMessage({
@@ -165,15 +170,19 @@ giftCardForm.addEventListener("submit", (submitEvent) => {
     });
     return;
   }
-  saveGiftCard(email, amount);
-  addUIMessage({
-    message: "Gift card enviada con éxito",
+  const cartItem = {
+    type: "gift",
+    total: +amount,
+    receiver: {
+      email,
+      name,
+    },
+  };
+  addLoggedUserCartItem(cartItem);
+  // saveGiftCard(email, amount);
+  queueMessage({
+    message: "Gift card agregada al carrito con éxito",
     severity: "success",
   });
-  giftCardForm.reset();
-  applyInitialState();
-  window.scrollTo({
-    behavior: "smooth",
-    top: 0,
-  });
+  giftCardForm.submit();
 });
