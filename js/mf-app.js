@@ -1156,7 +1156,9 @@ function generatePresentialCourseCartItem(cartItem, index) {
                 class="fa-solid fa-users text tex--secondary cart-sidebar__item-icon"
               ></i>
               <p class="cart-sidebar__item-main-content">
-                <span class="text text--sm">${presentialCourse.name}</span>
+                <span class="heading heading--sm">${
+                  presentialCourse.name
+                }</span>
                 <span class="text text--sm">Participantes: ${
                   cartItem.participants.length
                 }</span>
