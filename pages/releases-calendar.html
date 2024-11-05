@@ -148,25 +148,14 @@
           <p class="heading heading--md calendar-container__cell-day">9</p>
         </div>
 
-        <div class="calendar-container__cell">
+        <div class="calendar-container__cell calendario-celda">
           <h2 class="heading heading--md calendar-container__cell-title">
             MAR
           </h2> 
           <p class="heading heading--md calendar-container__cell-day">10</p>
-          <a class="calendar-container__cell-meet">Desarrollo Web Básico</a>
-
-          <div id="course-popup" class="popup hidden">
-            <div class="popup-content">
-              <span class="close-btn" id="close-popup">&times;</span>
-              <h2 id="popup-course-name"></h2>
-              <p id="popup-description"></p>
-              <p><strong>Duración:</strong> <span id="popup-duration"></span></p>
-              <p><strong>Precio:</strong> $<span id="popup-price"></span></p>
-              <p><strong>Modalidad:</strong> <span id="popup-modality"></span></p>
-            </div>
-          </div>
-
+          <a class="calendar-container__cell-meet curso" onclick="abrirPopupCurso('1')">Desarrollo Web Básico</a>
         </div>
+
         <div class="calendar-container__cell">
           <h2 class="heading heading--md calendar-container__cell-title">
             MIÉ
@@ -206,32 +195,8 @@
             LUN
           </h2>
           <p class="heading heading--md calendar-container__cell-day">16</p>
-          <a class="calendar-container__cell-meet" id="open-popup">Nuevo curso de HTML5</a>
-
-          <div id="course-popup" class="popup hidden">
-            <div class="popup-content">
-              <span class="close-btn" id="close-popup">&times;</span>
-              <h2 id="popup-course-name"></h2>
-              <p id="popup-description"></p>
-              <p><strong>Duración:</strong> <span id="popup-duration"></span></p>
-              <p><strong>Precio:</strong> $<span id="popup-price"></span></p>
-              <p><strong>Modalidad:</strong> <span id="popup-modality"></span></p>
-            </div>
-          </div>
-
-          <a class="calendar-container__cell-meet" id="open-popup">Nuevo curso de CSS</a>
-
-          <div id="course-popup" class="popup hidden">
-            <div class="popup-content">
-              <span class="close-btn" id="close-popup">&times;</span>
-              <h2 id="popup-course-name"></h2>
-              <p id="popup-description"></p>
-              <p><strong>Duración:</strong> <span id="popup-duration"></span></p>
-              <p><strong>Precio:</strong> $<span id="popup-price"></span></p>
-              <p><strong>Modalidad:</strong> <span id="popup-modality"></span></p>
-            </div>
-          </div>
-
+          <a class="calendar-container__cell-meet curso" onclick="abrirPopupCurso('2')">Nuevo Curso HTML 5</a>
+          <a class="calendar-container__cell-meet curso" onclick="abrirPopupCurso('3')">Nuevo Curso de CSS</a>
         </div>
         <div class="calendar-container__cell">
           <h2 class="heading heading--md calendar-container__cell-title">
@@ -352,6 +317,14 @@
           <p class="heading heading--md calendar-container__cell-day">5</p>
         </div>
       </div>
+
+      <div id="popup" class="popup">
+        <span id="closePopup">&times;</span>
+        <h2 id="nombreCurso"></h2>
+        <p id="detalleCurso"></p>
+        <a id="linkCurso" href="" target="_blank">Ir al curso</a>
+      </div>
+
     </main>
     <footer class="footer">
       <div class="footer__group-data">

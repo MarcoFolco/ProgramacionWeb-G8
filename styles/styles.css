@@ -855,3 +855,42 @@ form button[type="submit"] a {
 
 
 /* End of input syles */
+
+.sidebar{
+  height: 100vh;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Oculta la sidebar inicialmente */
+  transition: left 0.3s;
+  padding-top: 20px;
+}
+
+ /* Sidebar visible */
+ .sidebar.active {
+  left: 0;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+     /* Mueve el contenido a la derecha cuando la sidebar está visible */
+     .content.shifted {
+      margin-left: 250px;
+  }
+
+  /* Botón para mostrar/ocultar la sidebar */
+  .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1; /* Asegura que esté sobre el contenido */
+  }

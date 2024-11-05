@@ -1,0 +1,74 @@
+[
+    {
+        "courseId": 1,
+        "courseName": "Desarrollo Web básico",
+        "duration": "4 semanas",
+        "price": 20,
+        "modality": "Online",
+        "description": "Lorem ipsum sarasa",
+        "image": "",
+        "link": "..."
+        
+    },
+
+    {
+        "courseId": 2,
+        "courseName": "Data Science",
+        "duration": "5 semanas",
+        "price": 50,
+        "modality": "Online",
+        "description": "Lorem ipsum sarasa",
+        "image": "",
+        "link": "..."
+        
+    },
+
+    {
+        "courseId": 3,
+        "courseName": "Python básico",
+        "duration": "3 semanas",
+        "price": 15,
+        "modality": "Online",
+        "description": "Lorem ipsum sarasa",
+        "image": "",
+        "link": "..."
+        
+    },
+
+    {
+        "courseId": 4,
+        "courseName": "C++",
+        "duration": "3 semanas",
+        "price": 25,
+        "modality": "Online",
+        "description": "Lorem ipsum sarasa",
+        "image": "",
+        "link": "..."
+        
+    },
+
+    {
+        "courseId": 5,
+        "courseName": "Angular avanzado",
+        "duration": "4 semanas",
+        "price": 30,
+        "modality": "Online",
+        "description": "Lorem ipsum sarasa",
+        "image": "",
+        "link": "..."
+        
+    },
+
+    {
+        "courseId": 6,
+        "courseName": "Data warehouse",
+        "duration": "7 semanas",
+        "price": 55,
+        "modality": "Online",
+        "description": "Lorem ipsum sarasa",
+        "image": "",
+        "link": "..."
+        
+    }
+
+]

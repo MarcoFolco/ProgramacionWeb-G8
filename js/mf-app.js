@@ -159,3 +159,13 @@ function hideUserProfileButtonIfNotLogged() {
 }
 
 hideUserProfileButtonIfNotLogged();
+
+function toggleSidebar() {
+  // Selecciona la sidebar y el contenido
+  const sidebar = document.getElementById('sidebar');
+  const content = document.getElementById('content');
+
+  // Alterna las clases 'active' y 'shifted'
+  sidebar.classList.toggle('active');
+  content.classList.toggle('shifted');
+}
