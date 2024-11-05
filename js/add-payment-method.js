@@ -25,6 +25,41 @@ function initPaymentMethodForm() {
 
 initPaymentMethodForm();
 
+// Agregamos gift codes disponibles al select
+const giftCodeSelectElement = document.querySelector("#giftCode");
+
+function renderUserGiftCodes() {
+  const userGiftCodes = getLoggedUserGiftCodes();
+  userGiftCodes.forEach((giftCode) => {
+    const optionElement = document.createElement("option");
+    optionElement.value = giftCode.code;
+    optionElement.textContent = `${giftCode.code} - $${giftCode.amount}`;
+    giftCodeSelectElement.appendChild(optionElement);
+  });
+}
+
+giftCodeSelectElement.addEventListener("input", () => {
+  const code = giftCodeSelectElement.value;
+  let giftCodeAmount = 0;
+  if (code) {
+    const giftCode = getLoggedUserGiftCodeByCode(giftCodeSelectElement.value);
+    giftCodeAmount = giftCode.amount;
+  }
+  let totalPrice =
+    Math.round((getCartTotalPrice() - giftCodeAmount) * 100) / 100;
+  if (totalPrice <= 0) {
+    addUIMessage({
+      message: "El descuento es mayor al precio total",
+      severity: "error",
+    });
+    totalPrice = getCartTotalPrice();
+    giftCodeSelectElement.value = "";
+  }
+  updateTotalLabelElement(totalPrice);
+});
+
+renderUserGiftCodes();
+
 // Manejamos el submit del formulario
 const paymentMethodForm = document.querySelector(".payment-form");
 
@@ -64,6 +99,18 @@ function addUserGiftCode(username, gift) {
   updateUser(user);
 }
 
+function removeLoggedUserGiftCode(code) {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    const giftCodes = getUserGiftCodes(loggedUser.username);
+    const updatedGiftCodes = giftCodes.filter(
+      (giftCode) => giftCode.code !== code
+    );
+    loggedUser.giftCodes = updatedGiftCodes;
+    updateLoggedUser(loggedUser);
+  }
+}
+
 function sendGiftCard(username, amount) {
   const giftCode = generateNonRepeatedUserGiftCode(username);
   const gift = {
@@ -87,6 +134,10 @@ paymentMethodForm.addEventListener("submit", (submitEvent) => {
   );
   sendGiftCards(giftCardCartItems);
   updateLoggedUserCartItems([]);
+  const usedGiftCode = giftCodeSelectElement.value;
+  if (usedGiftCode) {
+    removeLoggedUserGiftCode(usedGiftCode);
+  }
   queueMessage({
     message: "Pago ejecutado con éxito",
     severity: "success",

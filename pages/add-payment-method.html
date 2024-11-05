@@ -115,42 +115,43 @@
       </nav>
     </header>
     <main class="page-container">
+      <section class="ui-messages"></section>
       <section class="payment-section">
         <h2>Ingrese un método para el pago</h2>
         <div class="payment-container">
           <form class="payment-form" action="/" method="get">
-            <label class="text text--primary text--md" for="card-name"
+            <label class="text text--primary text--md" for="name"
               >Nombre en la tarjeta:</label
             >
             <input
               type="text"
-              id="card-name"
-              name="card-name"
+              id="name"
+              name="name"
               class="input-field"
               placeholder="Nombre completo"
               required
             />
 
-            <label class="text text--primary text--md" for="card-number"
+            <label class="text text--primary text--md" for="cardNumber"
               >Número de la tarjeta:</label
             >
             <input
               type="text"
-              id="card-number"
-              name="card-number"
+              id="cardNumber"
+              name="cardNumber"
               class="input-field"
               placeholder="0000 0000 0000 0000"
               pattern="^\d{4}\s\d{4}\s\d{4}\s\d{4}$"
               required
             />
 
-            <label class="text text--primary text--md" for="expiry-date"
+            <label class="text text--primary text--md" for="expiryDate"
               >Fecha de vencimiento:</label
             >
             <input
               type="text"
-              id="expiry-date"
-              name="expiry-date"
+              id="expiryDate"
+              name="expiryDate"
               class="input-field"
               placeholder="MM/AA"
               pattern="^(0[1-9]|1[0-2])\/\d{2}$"
@@ -168,12 +169,19 @@
               required
             />
 
-            <label class="text text--primary text--md" for="card-type"
+            <label class="text text--primary text--md" for="cardType"
               >Tipo de tarjeta:</label
             >
-            <select id="card-type" name="card-type" class="input-field">
+            <select id="cardType" name="cardType" class="input-field">
               <option value="credit" selected>Crédito</option>
               <option value="debit">Débito</option>
+            </select>
+
+            <label class="text text--primary text--md" for="giftCode"
+              >Código de descuento</label
+            >
+            <select id="giftCode" name="giftCode" class="input-field">
+              <option value="" selected></option>
             </select>
 
             <p

@@ -726,6 +726,19 @@ function getUserGiftCodes(username) {
   return user.giftCodes || [];
 }
 
+function getLoggedUserGiftCodes() {
+  const loggedUser = getLoggedUser();
+  if (loggedUser) {
+    return getUserGiftCodes(loggedUser.username);
+  }
+  return [];
+}
+
+function getLoggedUserGiftCodeByCode(code) {
+  const userGiftCodes = getLoggedUserGiftCodes();
+  return userGiftCodes.find((giftCode) => giftCode.code === code);
+}
+
 function setUsers(usersArray) {
   if (!Array.isArray(usersArray)) {
     return false;
