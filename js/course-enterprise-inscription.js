@@ -4,8 +4,6 @@ const inscriptionRowsContainer = document.querySelector(
 );
 const addPersonButton = document.querySelector(".form__add-button");
 let inscriptionNumber = 1;
-// Esto lo podriamos tomar luego del curso que se haya elegido...
-const courseValue = 20;
 const priceTag = document.querySelector(".form__price-tag");
 
 // Actualizamos titulo de la página
@@ -25,7 +23,11 @@ updateInscriptionTitle();
 function calculateTotalPrice() {
   const fieldsets = document.querySelectorAll(".field-group");
   const numberOfParticipants = fieldsets.length;
-  return courseValue * numberOfParticipants;
+  const course = getCourseFromURL();
+  if (course) {
+    return course.price * numberOfParticipants;
+  }
+  return 0;
 }
 
 function updatePriceTag() {
@@ -143,8 +145,6 @@ inscriptionForm.addEventListener("submit", (submitEvent) => {
   const total = calculateTotalPrice();
   const participants = generateSubscribersArray(submitEvent.target);
   // Aca va la logica para agregar al carrito, con el curso y el precio total
-  console.log(total);
-  console.log(participants);
   queueMessage({
     message: "Inscripción completada con éxito",
     severity: "success",
