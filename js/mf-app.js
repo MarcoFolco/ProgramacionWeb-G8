@@ -938,6 +938,10 @@ const cartButtonElement = document.querySelector(
 const cartButtonItemCounterElement = document.querySelector(
   ".header__cart-button-container .cart-button__badge"
 );
+const cartSidebarElement = document.querySelector(".cart-sidebar");
+const cartSidebarCloseBtnElement = document.querySelector(
+  ".cart-sidebar__close-btn"
+);
 
 cartButtonElement.addEventListener("click", () => {
   if (!userIsLoggedIn()) {
@@ -946,7 +950,13 @@ cartButtonElement.addEventListener("click", () => {
       severity: "warn",
     });
     location.href = "/pages/login.html";
+  } else {
+    cartSidebarElement.classList.add("js--visible");
   }
+});
+
+cartSidebarCloseBtnElement.addEventListener("click", () => {
+  cartSidebarElement.classList.remove("js--visible");
 });
 
 function setCartItemCounterBadge(numberOfItems) {
