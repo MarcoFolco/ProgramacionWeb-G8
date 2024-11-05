@@ -622,7 +622,11 @@ function generateModalityTagHTML(modality) {
               >`;
 }
 
-function generateCourseCardHTML(course, fromPage = false) {
+function generateCourseCardHTML(
+  course,
+  fromPage = false,
+  includeShortDescription = false
+) {
   return `<article class="card card--course">
             <div class="card__img-container">
               <img
@@ -643,6 +647,11 @@ function generateCourseCardHTML(course, fromPage = false) {
                 <h2 class="heading heading--md" title="${course.name}">${
     course.name
   }</h2>
+                ${
+                  includeShortDescription
+                    ? `<small class="text text--sm">${course.shortDescription}</small>`
+                    : ""
+                }
                 <a
                   class="btn btn--ghost btn--sm"
                   href=".${fromPage ? "" : "/pages"}/course-detail.html?id=${
@@ -1123,13 +1132,17 @@ function generateOnlineCourseCartItem(cartItem, index) {
   liElement.dataset.index = index;
   liElement.innerHTML = `<div class="cart-sidebar__item">
               <i
-                class="fa-solid fa-book-open text tex--secondary cart-sidebar__item-icon"
+                class="fa-solid fa-book-open text tex--secondary cart-sidebar__item-icon" title="Curso Online"
               ></i>
               <p class="cart-sidebar__item-main-content">
                 <span class="heading heading--sm">${onlineCourse.name}</span>
-                <small class="text text--sm">Cantidad: ${cartItem.quantity}  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add"></i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract"></i></small>
+                <small class="text text--sm">Cantidad: ${
+                  cartItem.quantity
+                }  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add"></i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract"></i></small>
               </p>
-              <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
+              <p class="tag cart-sidebar__item-price">$${
+                Math.round(cartItem.total * 100) / 100
+              }.-</p>
               <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
             </div>`;
   const addBtn = liElement.querySelector(".cart-sidebar__item-add");
@@ -1171,7 +1184,7 @@ function generatePresentialCourseCartItem(cartItem, index) {
   liElement.dataset.index = index;
   liElement.innerHTML = `<div class="cart-sidebar__item">
               <i
-                class="fa-solid fa-users text tex--secondary cart-sidebar__item-icon"
+                class="fa-solid fa-users text tex--secondary cart-sidebar__item-icon"  title="Curso Presencial"
               ></i>
               <p class="cart-sidebar__item-main-content">
                 <span class="heading heading--sm">${
@@ -1181,7 +1194,9 @@ function generatePresentialCourseCartItem(cartItem, index) {
                   cartItem.participants.length
                 }</span>
               </p>
-              <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
+              <p class="tag cart-sidebar__item-price">$${
+                Math.round(cartItem.total * 100) / 100
+              }.-</p>
               <i
                 class="fa-solid fa-eye cart-sidebar__item-display-participants-btn btn btn--icon btn--paddingless"
               ></i>
@@ -1225,13 +1240,15 @@ function generateGiftCardCartItem(cartItem, index) {
   liElement.dataset.index = index;
   liElement.innerHTML = `<div class="cart-sidebar__item">
               <i
-                class="fa-solid fa-gift text tex--secondary cart-sidebar__item-icon"
+                class="fa-solid fa-gift text tex--secondary cart-sidebar__item-icon" title="Gift Card"
               ></i>
               <p class="cart-sidebar__item-main-content">
                 <span class="heading heading--sm">Gift card para "${name}"</span>
                 <small class"text text--xs">Email: ${email}</small>
               </p>
-              <p class="tag cart-sidebar__item-price">$${cartItem.total}.-</p>
+              <p class="tag cart-sidebar__item-price">$${
+                Math.round(cartItem.total * 100) / 100
+              }.-</p>
               <i class="fa-solid fa-times cart-sidebar__item-remove btn btn--icon btn--paddingless"></i>
             </div>`;
   addRemoveCartItemListener(
@@ -1250,9 +1267,10 @@ const cartPayBtnElement = document.querySelector(
 
 function getCartTotalPrice() {
   const cartItems = getLoggedUserCartItems();
-  return cartItems.reduce((total, cartItem) => {
+  const totalPrice = cartItems.reduce((total, cartItem) => {
     return (total += cartItem.total);
   }, 0);
+  return Math.round(totalPrice * 100) / 100;
 }
 
 function renderCartItems() {

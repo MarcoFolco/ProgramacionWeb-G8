@@ -40,3 +40,6 @@ function loadCourseList() {
 }
 
 loadCourseList();
+
+applyLogOnlyConditionToAllBuyOrSubscribeBtns();
+applyAddToCartBehaviorToAllBuyBtns();

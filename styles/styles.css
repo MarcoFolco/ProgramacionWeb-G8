@@ -490,6 +490,12 @@ form button[type="submit"] a {
   text-overflow: ellipsis;
 }
 
+.card.card--course .course-content .course-content__details > small {
+  text-align: right;
+  max-height: 6rem;
+  overflow-y: auto;
+}
+
 /* End of course card styles */
 
 /* Tag Styles */
