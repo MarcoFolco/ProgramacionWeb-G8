@@ -1280,6 +1280,11 @@ function renderCartItems() {
   }
   const totalPrice = getCartTotalPrice();
   cartTotalLabelElement.textContent = `Total: $${totalPrice}.-`;
+  const url = new URL(location.href);
+  const fromPage = url.pathname.includes("pages");
+  cartPayBtnElement.href = `.${
+    fromPage ? "" : "/pages"
+  }/add-payment-method.html`;
   if (totalPrice > 0) {
     cartPayBtnElement.classList.add("js--visible");
   } else {
