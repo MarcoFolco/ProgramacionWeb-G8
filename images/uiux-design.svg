@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 400">
+  <!-- Fondo principal -->
+  <rect width="1340" height="400" fill="#9C27B0"/>
+  
+  <!-- Elementos decorativos laterales izquierdos -->
+  <g transform="translate(50,100)" fill="#ffffff" fill-opacity="0.1">
+    <rect x="0" y="0" width="120" height="20" rx="2"/>
+    <rect x="0" y="40" width="120" height="20" rx="2"/>
+    <rect x="0" y="80" width="120" height="20" rx="2"/>
+  </g>
+  
+  <!-- Círculo decorativo izquierdo -->
+  <circle cx="250" cy="200" r="100" fill="#7B1FA2" fill-opacity="0.3"/>
+  
+  <!-- Elementos decorativos laterales derechos -->
+  <g transform="translate(1170,100)" fill="#ffffff" fill-opacity="0.1">
+    <rect x="0" y="0" width="120" height="20" rx="2"/>
+    <rect x="0" y="40" width="120" height="20" rx="2"/>
+    <rect x="0" y="80" width="120" height="20" rx="2"/>
+  </g>
+  
+  <!-- Círculo decorativo derecho -->
+  <circle cx="1090" cy="200" r="100" fill="#7B1FA2" fill-opacity="0.3"/>
+  
+  <!-- Icono central - representando UI/UX design -->
+  <g transform="translate(620,80)">
+    <!-- Wireframe/UI elementos -->
+    <rect x="-40" y="0" width="140" height="90" rx="8" fill="#ffffff" fill-opacity="0.9"/>
+    <rect x="-30" y="10" width="120" height="10" rx="2" fill="#9C27B0" fill-opacity="0.3"/>
+    <rect x="-30" y="30" width="60" height="40" rx="2" fill="#9C27B0" fill-opacity="0.3"/>
+    <rect x="40" y="30" width="50" height="40" rx="2" fill="#9C27B0" fill-opacity="0.3"/>
+    <circle cx="30" cy="85" r="12" fill="#ffffff" stroke="#9C27B0" stroke-width="2"/>
+    
+    <!-- Elementos de diseño UX -->
+    <path d="M-60,40 C-40,20 -20,60 0,40" stroke="#ffffff" fill="none" stroke-width="3"/>
+    <path d="M100,40 C120,20 140,60 160,40" stroke="#ffffff" fill="none" stroke-width="3"/>
+  </g>
+  
+  <!-- Texto -->
+  <text x="670" y="280" font-family="Arial, sans-serif" font-size="36" fill="white" text-anchor="middle" font-weight="bold">UI/UX Design Fundamentals</text>
+  <text x="670" y="320" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">Fundamentos de diseño UI/UX</text>
+</svg>

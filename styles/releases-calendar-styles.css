@@ -45,6 +45,19 @@
   width: 97%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar-container__cell-meet-popup {
+  position: absolute;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  max-width: min(50rem, 80vw);
+}
+
+.calendar-container__cell-meet-popup__close-btn {
 }
 
 @media screen and (min-width: 48rem) {

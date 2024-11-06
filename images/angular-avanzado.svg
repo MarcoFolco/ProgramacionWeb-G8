@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 400">
+  <!-- Background -->
+  <rect width="1340" height="400" fill="#1976D2"/>
+  
+  <!-- Angular Logo -->
+  <path d="M670 80 L770 130 L770 230 L670 280 L570 230 L570 130 Z" fill="#DD0031"/>
+  <path d="M670 80 L770 130 L770 230 L670 280 Z" fill="#C3002F"/>
+  <path d="M670 100 L710 220 L670 240 L630 220 Z" fill="white"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="300" cy="200" r="80" fill="#2196F3" opacity="0.6"/>
+  <circle cx="1040" cy="200" r="80" fill="#2196F3" opacity="0.6"/>
+  
+  <!-- Code-like Elements -->
+  <rect x="100" y="150" width="120" height="20" fill="white" opacity="0.7"/>
+  <rect x="100" y="180" width="80" height="20" fill="white" opacity="0.7"/>
+  <rect x="100" y="210" width="100" height="20" fill="white" opacity="0.7"/>
+  
+  <rect x="1120" y="150" width="120" height="20" fill="white" opacity="0.7"/>
+  <rect x="1120" y="180" width="80" height="20" fill="white" opacity="0.7"/>
+  <rect x="1120" y="210" width="100" height="20" fill="white" opacity="0.7"/>
+  
+  <!-- Text -->
+  <text x="670" y="340" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">Advanced Angular Development</text>
+  <text x="670" y="380" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">Master Modern Web Development</text>
+</svg>

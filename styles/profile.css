@@ -1,0 +1,64 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile__user-logo {
+  font-size: 12rem;
+  border-radius: 50%;
+  padding: 4rem;
+  border: 0.5rem solid var(--bg-primary);
+}
+
+.profile .profile__forms {
+  display: grid;
+  grid-template-areas:
+    "user-data"
+    "user-password"
+    "logout-button"
+    "delete-account-button";
+  gap: 2rem;
+}
+
+.profile .profile__forms .profile__user-data {
+  grid-area: user-data;
+}
+
+.profile .profile__forms .profile__user-data-form {
+  border-bottom: 0.5px solid rgba(var(--bg-primary-color), 0.4);
+  padding-bottom: 2rem;
+}
+
+.profile .profile__forms .profile__user-password {
+  grid-area: user-password;
+}
+
+.profile .profile__forms .profile__user-password-form {
+  grid-area: user-password-form;
+}
+
+.profile .profile__forms .profile__delete-account-button {
+  grid-area: delete-account-button;
+}
+
+.profile .profile__forms .profile__logout-button {
+  grid-area: logout-button;
+}
+
+@media screen and (min-width: 48rem) {
+  .profile .profile__forms {
+    grid-template-areas:
+      "user-data user-password"
+      "logout-button logout-button"
+      "delete-account-button delete-account-button";
+  }
+
+  .profile .profile__forms .profile__user-data-form {
+    border-bottom: none;
+    border-right: 0.5px solid rgba(var(--bg-primary-color), 0.4);
+    padding-bottom: 0;
+    padding-right: 2rem;
+  }
+}

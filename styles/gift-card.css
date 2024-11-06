@@ -52,8 +52,6 @@
   .gift-card__preview-image
   .gift-card__preview-price {
   position: absolute;
-  top: 0;
-  right: 0;
 }
 
 @media screen and (min-width: 48rem) {

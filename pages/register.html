@@ -27,22 +27,32 @@
         <i class="fa-solid fa-search text text--lg"></i>
         <input
           type="text"
-          placeholder="Busca cualquier cosa"
+          placeholder="Busca entre miles de cursos..."
           class="header__search-bar-input text text--md"
-          list="header-search-bar-options"
         />
-        <datalist id="header-search-bar-options">
-          <option value="JavaScript"></option>
-          <option value="Python"></option>
-          <option value="Java"></option>
-          <option value="C++"></option>
-          <option value="Ruby"></option>
-          <option value="PHP"></option>
-          <option value="Go"></option>
-        </datalist>
-
-        <i class="fa-solid fa-times heading heading--xl"></i>
+        <i
+          class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
+        ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+        <p class="cart-sidebar__footer">
+          <span class="cart-sidebar__footer-total heading heading--xl"
+            >Total: $000.-</span
+          >
+          <a
+            class="btn btn--primary btn--md cart-sidebar__footer-pay-btn"
+            href="./pages/add-payment-method.html"
+            >Pagar</a
+          >
+        </p>
+      </div>
+      <nav class="header__search-dropdown">
+        <ul class="header__search-dropdown-list"></ul>
+      </nav>
       <div class="header__main">
         <i class="fa-solid fa-bars header__sidebar-button"></i>
         <a href="../index.html" class="header__logo-link">
@@ -58,6 +68,10 @@
             <i class="fa-solid fa-cart-shopping text text--lg"></i>
             <span class="badge cart-button__badge">1</span>
           </div>
+          <a
+            class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
+            href="./user-profile.html"
+          ></a>
         </div>
       </div>
       <nav class="sidebar">
@@ -73,9 +87,19 @@
           <li class="nav-item">
             <span>Categorías</span>
             <ul class="sub-menu">
-              <li><a href="./courses-list.html">Desarrollo Web</a></li>
-              <li><a href="./courses-list.html">Data Science</a></li>
-              <li><a href="./courses-list.html">Diseño</a></li>
+              <li>
+                <a href="./courses-list.html?category=Desarrollo Web"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Data Science"
+                  >Data Science</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Diseño Web">Diseño Web</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -90,17 +114,18 @@
         </ul>
       </nav>
     </header>
-    <div class="page-container">
-      <div class="login-section">
-        <div class="login-image">
+    <main class="page-container">
+      <section class="ui-messages"></section>
+      <section class="login-section">
+        <article class="login-image">
           <img
             src="../images/login-picture.webp"
             alt="Imagen de Inicio de Sesión"
           />
-        </div>
-        <div class="login-container">
-          <h1 class="heading heading--xl">Regístrate y comienza a aprender</h1>
-          <form class="login-form" method="get" action="./login.html">
+        </article>
+        <article class="login-container">
+          <h2 class="heading heading--xl">Regístrate y comienza a aprender</h2>
+          <form class="register-form" method="GET" action="/pages/login.html">
             <label for="email" class="text text--md">Nombre Completo</label>
             <input
               type="text"
@@ -108,6 +133,7 @@
               name="name"
               required
               class="input-field"
+              maxlength="30"
             />
 
             <label for="email" class="text text--md">Correo Electrónico</label>
@@ -128,7 +154,10 @@
               class="input-field"
             />
 
-            <button type="submit" class="btn btn--primary btn--lg">
+            <button
+              type="submit"
+              class="btn btn--primary btn--lg text text--sm"
+            >
               Registrarte
             </button>
             <div class="login-options">
@@ -140,9 +169,9 @@
               >
             </div>
           </form>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
     <footer class="footer">
       <div class="footer__group-data">
         <h2 class="heading heading--lg group-data__title">Integrantes</h2>
@@ -161,17 +190,25 @@
             <span class="text text--md">Categorías</span>
             <ul class="footer__navbar-navlist-item__submenu">
               <li>
-                <a href="./courses-list.html" class="text text--sm"
+                <a
+                  href="./courses-list.html?category=Desarrollo Web"
+                  class="text text--sm"
                   >Desarrollo Web</a
                 >
               </li>
               <li>
-                <a href="./courses-list.html" class="text text--sm"
+                <a
+                  href="./courses-list.html?category=Data Science"
+                  class="text text--sm"
                   >Data Science</a
                 >
               </li>
               <li>
-                <a href="./courses-list.html" class="text text--sm">Diseño</a>
+                <a
+                  href="./courses-list.html?category=Diseño Web"
+                  class="text text--sm"
+                  >Diseño Web</a
+                >
               </li>
             </ul>
           </li>
@@ -210,5 +247,7 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/mf-app.js"></script>
+    <script src="../js/register.js"></script>
   </body>
 </html>

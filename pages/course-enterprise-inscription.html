@@ -28,22 +28,32 @@
         <i class="fa-solid fa-search text text--lg"></i>
         <input
           type="text"
-          placeholder="Busca cualquier cosa"
+          placeholder="Busca entre miles de cursos..."
           class="header__search-bar-input text text--md"
-          list="header-search-bar-options"
         />
-        <datalist id="header-search-bar-options">
-          <option value="JavaScript"></option>
-          <option value="Python"></option>
-          <option value="Java"></option>
-          <option value="C++"></option>
-          <option value="Ruby"></option>
-          <option value="PHP"></option>
-          <option value="Go"></option>
-        </datalist>
-
-        <i class="fa-solid fa-times heading heading--xl"></i>
+        <i
+          class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
+        ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+        <p class="cart-sidebar__footer">
+          <span class="cart-sidebar__footer-total heading heading--xl"
+            >Total: $000.-</span
+          >
+          <a
+            class="btn btn--primary btn--md cart-sidebar__footer-pay-btn"
+            href="./pages/add-payment-method.html"
+            >Pagar</a
+          >
+        </p>
+      </div>
+      <nav class="header__search-dropdown">
+        <ul class="header__search-dropdown-list"></ul>
+      </nav>
       <div class="header__main">
         <i class="fa-solid fa-bars header__sidebar-button"></i>
         <a href="../index.html" class="header__logo-link">
@@ -59,6 +69,10 @@
             <i class="fa-solid fa-cart-shopping text text--lg"></i>
             <span class="badge cart-button__badge">1</span>
           </div>
+          <a
+            class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
+            href="./user-profile.html"
+          ></a>
         </div>
       </div>
       <nav class="sidebar">
@@ -74,9 +88,19 @@
           <li class="nav-item">
             <span>Categorías</span>
             <ul class="sub-menu">
-              <li><a href="./courses-list.html">Desarrollo Web</a></li>
-              <li><a href="./courses-list.html">Data Science</a></li>
-              <li><a href="./courses-list.html">Diseño</a></li>
+              <li>
+                <a href="./courses-list.html?category=Desarrollo Web"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Data Science"
+                  >Data Science</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Diseño Web">Diseño Web</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -92,86 +116,66 @@
       </nav>
     </header>
     <main class="page-container">
+      <section class="ui-messages"></section>
       <section class="section course-inscription">
-        <h2 class="heading heading--lg">TITULO CURSO</h2>
+        <h2 class="heading heading--lg course-inscription__course-title">
+          TITULO CURSO
+        </h2>
         <h3 class="heading heading--md">INSCRIPCIÓN</h3>
-        <form
-          action="./add-payment-method.html"
-          method="get"
-          class="course-inscription__fields"
-        >
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <a class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-              ><i class="fa-solid fa-minus text text--xl"></i
-            ></a>
-          </fieldset>
-          <fieldset class="field-group">
-            <div class="field-group__data">
-              <input type="text" name="email1" placeholder="Email" required />
-              <input
-                type="text"
-                name="firstName1"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="text"
-                name="lastName1"
-                placeholder="Apellido"
-                required
-              />
-            </div>
+        <form action="/" method="GET" class="course-inscription__form">
+          <div class="course-inscription__form-rows">
+            <fieldset class="field-group js--subscriber-1">
+              <div class="field-group__data">
+                <input
+                  type="email"
+                  name="subscribers[0][name]"
+                  id="email1"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="text"
+                  name="fullName1"
+                  id="fullName1"
+                  placeholder="Nombre y apellido"
+                  required
+                />
+                <input
+                  type="text"
+                  name="dni1"
+                  id="dni1"
+                  placeholder="DNI (con puntos)"
+                  pattern="^\d{1,2}\.\d{3}\.\d{3}$"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone1"
+                  id="phone1"
+                  placeholder="Telefono, ej.  4030-2025"
+                  pattern="^\d{4}-?\d{4}$"
+                  required
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn--primary btn--icon btn--icon-round btn--icon-xs field-group__remove-button"
+              >
+                <i class="fa-solid fa-minus text text--xl"></i>
+              </button>
+            </fieldset>
+          </div>
+          <p class="form__add-action heading heading--md">
             <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
-            >
-              <i class="fa-solid fa-minus text text--xl"></i>
-            </button>
-          </fieldset>
-          <p class="fields__add-button heading heading--md">
-            <button
-              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs"
+              type="button"
+              class="btn btn--primary btn--icon btn--icon-round btn--icon-xs form__add-button"
             >
               <i class="fa-solid fa-plus text text--md"></i>
             </button>
             Agregar persona
           </p>
-          <div class="fields__actions">
-            <span class="tag">$15.000.-</span>
+          <div class="form__actions">
+            <span class="tag form__price-tag">$0.000.-</span>
             <button class="btn btn--primary btn--round btn--sm" type="submit">
               Inscribirse
             </button>
@@ -197,17 +201,25 @@
             <span class="text text--md">Categorías</span>
             <ul class="footer__navbar-navlist-item__submenu">
               <li>
-                <a href="./courses-list.html" class="text text--sm"
+                <a
+                  href="./courses-list.html?category=Desarrollo Web"
+                  class="text text--sm"
                   >Desarrollo Web</a
                 >
               </li>
               <li>
-                <a href="./courses-list.html" class="text text--sm"
+                <a
+                  href="./courses-list.html?category=Data Science"
+                  class="text text--sm"
                   >Data Science</a
                 >
               </li>
               <li>
-                <a href="./courses-list.html" class="text text--sm">Diseño</a>
+                <a
+                  href="./courses-list.html?category=Diseño Web"
+                  class="text text--sm"
+                  >Diseño Web</a
+                >
               </li>
             </ul>
           </li>
@@ -246,5 +258,7 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/mf-app.js"></script>
+    <script src="../js/course-enterprise-inscription.js"></script>
   </body>
 </html>

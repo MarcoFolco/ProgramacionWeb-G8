@@ -25,22 +25,32 @@
         <i class="fa-solid fa-search text text--lg"></i>
         <input
           type="text"
-          placeholder="Busca cualquier cosa"
+          placeholder="Busca entre miles de cursos..."
           class="header__search-bar-input text text--md"
-          list="header-search-bar-options"
         />
-        <datalist id="header-search-bar-options">
-          <option value="JavaScript"></option>
-          <option value="Python"></option>
-          <option value="Java"></option>
-          <option value="C++"></option>
-          <option value="Ruby"></option>
-          <option value="PHP"></option>
-          <option value="Go"></option>
-        </datalist>
-
-        <i class="fa-solid fa-times heading heading--xl"></i>
+        <i
+          class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
+        ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+        <p class="cart-sidebar__footer">
+          <span class="cart-sidebar__footer-total heading heading--xl"
+            >Total: $000.-</span
+          >
+          <a
+            class="btn btn--primary btn--md cart-sidebar__footer-pay-btn"
+            href="./pages/add-payment-method.html"
+            >Pagar</a
+          >
+        </p>
+      </div>
+      <nav class="header__search-dropdown">
+        <ul class="header__search-dropdown-list"></ul>
+      </nav>
       <div class="header__main">
         <i class="fa-solid fa-bars header__sidebar-button"></i>
         <a href="../index.html" class="header__logo-link">
@@ -56,6 +66,10 @@
             <i class="fa-solid fa-cart-shopping text text--lg"></i>
             <span class="badge cart-button__badge">1</span>
           </div>
+          <a
+            class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
+            href="./user-profile.html"
+          ></a>
         </div>
       </div>
       <nav class="sidebar">
@@ -71,9 +85,19 @@
           <li class="nav-item">
             <span>Categorías</span>
             <ul class="sub-menu">
-              <li><a href="#">Desarrollo Web</a></li>
-              <li><a href="#">Data Science</a></li>
-              <li><a href="#">Diseño</a></li>
+              <li>
+                <a href="./courses-list.html?category=Desarrollo Web"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Data Science"
+                  >Data Science</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Diseño Web">Diseño Web</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -89,196 +113,10 @@
       </nav>
     </header>
     <main class="page-container">
-      <section class="section">
-        <h1 class="heading heading--lg">CURSOS DE "CATEGORÍA"</h1>
-        <div class="cards course-slider">
-          <article class="card card--course">
-            <div class="card__img-container">
-              <img
-                src="../images/course.jpg"
-                alt="Una imagen representativa del curso."
-                class="img"
-              />
-              <span class="tag course-price">$15.000.-</span>
-              <span class="tag tag--online course-mode heading heading--md"
-                >Online</span
-              >
-            </div>
-            <div class="card__content course-content">
-              <p class="heading heading--xl">
-                <strong>60</strong> <small class="text--md">hs</small>
-              </p>
-              <div class="course-content__details">
-                <h2 class="heading heading--md">Nombre del curso</h2>
-                <a
-                  class="btn btn--ghost btn--sm"
-                  href="./course-detail-online.html"
-                  >Ver Detalle</a
-                >
-                <a
-                  href="./add-payment-method.html"
-                  class="btn btn--primary btn--md"
-                  >Comprar</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="card card--course">
-            <div class="card__img-container">
-              <img
-                src="../images/course.jpg"
-                alt="Una imagen representativa del curso."
-                class="img"
-              />
-              <span class="tag course-price">$15.000.-</span>
-              <span class="tag tag--online course-mode heading heading--md"
-                >Online</span
-              >
-            </div>
-            <div class="card__content course-content">
-              <p class="heading heading--xl">
-                <strong>60</strong> <small class="text--md">hs</small>
-              </p>
-              <div class="course-content__details">
-                <h2 class="heading heading--md">Nombre del curso</h2>
-                <a
-                  class="btn btn--ghost btn--sm"
-                  href="./course-detail-online.html"
-                  >Ver Detalle</a
-                >
-                <a
-                  href="./add-payment-method.html"
-                  class="btn btn--primary btn--md"
-                  >Comprar</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="card card--course">
-            <div class="card__img-container">
-              <img
-                src="../images/course.jpg"
-                alt="Una imagen representativa del curso."
-                class="img"
-              />
-              <span class="tag course-price">$15.000.-</span>
-              <span class="tag tag--online course-mode heading heading--md"
-                >Online</span
-              >
-            </div>
-            <div class="card__content course-content">
-              <p class="heading heading--xl">
-                <strong>60</strong> <small class="text--md">hs</small>
-              </p>
-              <div class="course-content__details">
-                <h2 class="heading heading--md">Nombre del curso</h2>
-                <a
-                  class="btn btn--ghost btn--sm"
-                  href="./course-detail-online.html"
-                  >Ver Detalle</a
-                >
-                <a
-                  href="./add-payment-method.html"
-                  class="btn btn--primary btn--md"
-                  >Comprar</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="card card--course">
-            <div class="card__img-container">
-              <img
-                src="../images/course.jpg"
-                alt="Una imagen representativa del curso."
-                class="img"
-              />
-              <span class="tag course-price">$15.000.-</span>
-              <span class="tag tag--presential course-mode heading heading--md"
-                >Presencial</span
-              >
-            </div>
-            <div class="card__content course-content">
-              <p class="heading heading--xl">
-                <strong>60</strong> <small class="text--md">hs</small>
-              </p>
-              <div class="course-content__details">
-                <h2 class="heading heading--md">Nombre del curso</h2>
-                <a
-                  class="btn btn--ghost btn--sm"
-                  href="./course-detail-presential.html"
-                  >Ver Detalle</a
-                >
-                <a
-                  href="./course-enterprise-inscription.html"
-                  class="btn btn--primary btn--md"
-                  >Inscribirse</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="card card--course">
-            <div class="card__img-container">
-              <img
-                src="../images/course.jpg"
-                alt="Una imagen representativa del curso."
-                class="img"
-              />
-              <span class="tag course-price">$15.000.-</span>
-              <span class="tag tag--presential course-mode heading heading--md"
-                >Presencial</span
-              >
-            </div>
-            <div class="card__content course-content">
-              <p class="heading heading--xl">
-                <strong>60</strong> <small class="text--md">hs</small>
-              </p>
-              <div class="course-content__details">
-                <h2 class="heading heading--md">Nombre del curso</h2>
-                <a
-                  class="btn btn--ghost btn--sm"
-                  href="./course-detail-presential.html"
-                  >Ver Detalle</a
-                >
-                <a
-                  href="./course-enterprise-inscription.html"
-                  class="btn btn--primary btn--md"
-                  >Inscribirse</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="card card--course">
-            <div class="card__img-container">
-              <img
-                src="../images/course.jpg"
-                alt="Una imagen representativa del curso."
-                class="img"
-              />
-              <span class="tag course-price">$15.000.-</span>
-              <span class="tag tag--presential course-mode heading heading--md"
-                >Presencial</span
-              >
-            </div>
-            <div class="card__content course-content">
-              <p class="heading heading--xl">
-                <strong>60</strong> <small class="text--md">hs</small>
-              </p>
-              <div class="course-content__details">
-                <h2 class="heading heading--md">Nombre del curso</h2>
-                <a
-                  class="btn btn--ghost btn--sm"
-                  href="./course-detail-presential.html"
-                  >Ver Detalle</a
-                >
-                <a
-                  href="./course-enterprise-inscription.html"
-                  class="btn btn--primary btn--md"
-                  >Inscribirse</a
-                >
-              </div>
-            </div>
-          </article>
-        </div>
+      <section class="ui-messages"></section>
+      <section class="section courses">
+        <h1 class="heading heading--lg courses__title">CURSOS DE ""</h1>
+        <div class="cards course-slider"></div>
       </section>
     </main>
     <footer class="footer">
@@ -299,13 +137,25 @@
             <span class="text text--md">Categorías</span>
             <ul class="footer__navbar-navlist-item__submenu">
               <li>
-                <a href="#" class="text text--sm">Desarrollo Web</a>
+                <a
+                  href="./courses-list.html?category=Desarrollo Web"
+                  class="text text--sm"
+                  >Desarrollo Web</a
+                >
               </li>
               <li>
-                <a href="#" class="text text--sm">Data Science</a>
+                <a
+                  href="./courses-list.html?category=Data Science"
+                  class="text text--sm"
+                  >Data Science</a
+                >
               </li>
               <li>
-                <a href="#" class="text text--sm">Diseño</a>
+                <a
+                  href="./courses-list.html?category=Diseño Web"
+                  class="text text--sm"
+                  >Diseño Web</a
+                >
               </li>
             </ul>
           </li>
@@ -344,5 +194,7 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/mf-app.js"></script>
+    <script src="../js/courses-list.js"></script>
   </body>
 </html>

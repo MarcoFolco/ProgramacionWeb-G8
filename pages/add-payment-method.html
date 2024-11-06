@@ -27,22 +27,32 @@
         <i class="fa-solid fa-search text text--lg"></i>
         <input
           type="text"
-          placeholder="Busca cualquier cosa"
+          placeholder="Busca entre miles de cursos..."
           class="header__search-bar-input text text--md"
-          list="header-search-bar-options"
         />
-        <datalist id="header-search-bar-options">
-          <option value="JavaScript"></option>
-          <option value="Python"></option>
-          <option value="Java"></option>
-          <option value="C++"></option>
-          <option value="Ruby"></option>
-          <option value="PHP"></option>
-          <option value="Go"></option>
-        </datalist>
-
-        <i class="fa-solid fa-times heading heading--xl"></i>
+        <i
+          class="fa-solid fa-times heading heading--xl header__search-bar-close-btn"
+        ></i>
       </form>
+      <div class="cart-sidebar">
+        <i
+          class="fa-solid fa-times cart-sidebar__close-btn btn btn--icon text text--xl btn--paddingless"
+        ></i>
+        <ul class="cart-sidebar__item-list"></ul>
+        <p class="cart-sidebar__footer">
+          <span class="cart-sidebar__footer-total heading heading--xl"
+            >Total: $000.-</span
+          >
+          <a
+            class="btn btn--primary btn--md cart-sidebar__footer-pay-btn"
+            href="./add-payment-method.html"
+            >Pagar</a
+          >
+        </p>
+      </div>
+      <nav class="header__search-dropdown">
+        <ul class="header__search-dropdown-list"></ul>
+      </nav>
       <div class="header__main">
         <i class="fa-solid fa-bars header__sidebar-button"></i>
         <a href="../index.html" class="header__logo-link">
@@ -58,6 +68,10 @@
             <i class="fa-solid fa-cart-shopping text text--lg"></i>
             <span class="badge cart-button__badge">1</span>
           </div>
+          <a
+            class="fa-solid fa-user text text--lg text--secondary header__user-profile-button"
+            href="./user-profile.html"
+          ></a>
         </div>
       </div>
       <nav class="sidebar">
@@ -73,9 +87,19 @@
           <li class="nav-item">
             <span>Categorías</span>
             <ul class="sub-menu">
-              <li><a href="./courses-list.html">Desarrollo Web</a></li>
-              <li><a href="./courses-list.html">Data Science</a></li>
-              <li><a href="./courses-list.html">Diseño</a></li>
+              <li>
+                <a href="./courses-list.html?category=Desarrollo Web"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Data Science"
+                  >Data Science</a
+                >
+              </li>
+              <li>
+                <a href="./courses-list.html?category=Diseño Web">Diseño Web</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -90,44 +114,47 @@
         </ul>
       </nav>
     </header>
-    <div class="page-container">
+    <main class="page-container">
+      <section class="ui-messages"></section>
       <section class="payment-section">
-        <h2>Agregue un método para el pago</h2>
+        <h2>Ingrese un método para el pago</h2>
         <div class="payment-container">
-          <form class="payment-form" action="../index.html" method="get">
-            <label class="text text--primary text--md" for="card-name"
+          <form class="payment-form" action="/" method="get">
+            <label class="text text--primary text--md" for="name"
               >Nombre en la tarjeta:</label
             >
             <input
               type="text"
-              id="card-name"
-              name="card-name"
+              id="name"
+              name="name"
               class="input-field"
               placeholder="Nombre completo"
               required
             />
 
-            <label class="text text--primary text--md" for="card-number"
+            <label class="text text--primary text--md" for="cardNumber"
               >Número de la tarjeta:</label
             >
             <input
               type="text"
-              id="card-number"
-              name="card-number"
+              id="cardNumber"
+              name="cardNumber"
               class="input-field"
               placeholder="0000 0000 0000 0000"
+              pattern="^\d{4}\s\d{4}\s\d{4}\s\d{4}$"
               required
             />
 
-            <label class="text text--primary text--md" for="expiry-date"
+            <label class="text text--primary text--md" for="expiryDate"
               >Fecha de vencimiento:</label
             >
             <input
               type="text"
-              id="expiry-date"
-              name="expiry-date"
+              id="expiryDate"
+              name="expiryDate"
               class="input-field"
               placeholder="MM/AA"
+              pattern="^(0[1-9]|1[0-2])\/\d{2}$"
               required
             />
 
@@ -138,15 +165,23 @@
               name="cvv"
               class="input-field"
               placeholder="123"
+              pattern="^\d{3}$"
               required
             />
 
-            <label class="text text--primary text--md" for="card-type"
+            <label class="text text--primary text--md" for="cardType"
               >Tipo de tarjeta:</label
             >
-            <select id="card-type" name="card-type" class="input-field">
-              <option value="credit">Crédito</option>
+            <select id="cardType" name="cardType" class="input-field">
+              <option value="credit" selected>Crédito</option>
               <option value="debit">Débito</option>
+            </select>
+
+            <label class="text text--primary text--md" for="giftCode"
+              >Código de descuento</label
+            >
+            <select id="giftCode" name="giftCode" class="input-field">
+              <option value="" selected></option>
             </select>
 
             <p
@@ -164,7 +199,7 @@
           </form>
         </div>
       </section>
-    </div>
+    </main>
     <footer class="footer">
       <div class="footer__group-data">
         <h2 class="heading heading--lg group-data__title">Integrantes</h2>
@@ -183,17 +218,25 @@
             <span class="text text--md">Categorías</span>
             <ul class="footer__navbar-navlist-item__submenu">
               <li>
-                <a href="./courses-list.html" class="text text--sm"
+                <a
+                  href="./courses-list.html?category=Desarrollo Web"
+                  class="text text--sm"
                   >Desarrollo Web</a
                 >
               </li>
               <li>
-                <a href="./courses-list.html" class="text text--sm"
+                <a
+                  href="./courses-list.html?category=Data Science"
+                  class="text text--sm"
                   >Data Science</a
                 >
               </li>
               <li>
-                <a href="./courses-list.html" class="text text--sm">Diseño</a>
+                <a
+                  href="./courses-list.html?category=Diseño Web"
+                  class="text text--sm"
+                  >Diseño Web</a
+                >
               </li>
             </ul>
           </li>
@@ -232,5 +275,7 @@
       src="https://kit.fontawesome.com/0ea2f29246.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/mf-app.js"></script>
+    <script src="../js/add-payment-method.js"></script>
   </body>
 </html>

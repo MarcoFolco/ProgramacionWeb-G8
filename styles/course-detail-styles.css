@@ -19,13 +19,22 @@
     align-items: flex-start;
   }
 
-  .course-presentation .img {
+  .course-presentation .course-presentation__banner {
     flex: 0 0 35%;
     min-width: 0;
+    align-self: center;
   }
 
-  .course-presentation .course-presentation__subscribe-btn {
+  .course-presentation .course-presentation__buy-btn {
     width: fit-content;
+  }
+
+  .teacher-info .card__img-container {
+    max-width: 25%;
+  }
+
+  .teacher-info .teacher-data {
+    flex: 1 1 0;
   }
 }
 

@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1340 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="1340" height="400" fill="#1a202c"/>
+  
+  <!-- Logo de TensorFlow estilizado -->
+  <g transform="translate(670,200)">
+    <path d="M-50,-50 L0,-25 L50,-50 L0,-75 Z" fill="#ff6f00"/>
+    <path d="M-50,50 L0,75 L50,50 L0,25 Z" fill="#ff6f00"/>
+    <path d="M-50,-50 L-50,50 L0,25 L0,-25 Z" fill="#ff9800"/>
+    <path d="M50,-50 L50,50 L0,25 L0,-25 Z" fill="#ff9800"/>
+  </g>
+  
+  <!-- Ondas de datos -->
+  <path d="M100,200 C200,150 300,250 400,200 C500,150 600,250 700,200" 
+        stroke="#ff6f00" fill="none" stroke-width="2"/>
+  
+  <!-- Texto -->
+  <text x="100" y="180" fill="white" font-family="Arial" font-size="48" font-weight="bold">Deep Learning con TensorFlow</text>
+  <text x="100" y="230" fill="#a0aec0" font-family="Arial" font-size="24">Redes Neuronales Avanzadas</text>
+</svg>
