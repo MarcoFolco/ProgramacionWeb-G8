@@ -22,13 +22,6 @@
   <!-- Círculo decorativo derecho -->
   <circle cx="1090" cy="200" r="100" fill="#F50057" fill-opacity="0.3"/>
   
-  <!-- Puntos decorativos superiores -->
-  <g fill="#ffffff">
-    <circle cx="650" cy="30" r="5"/>
-    <circle cx="670" cy="30" r="5"/>
-    <circle cx="690" cy="30" r="5"/>
-  </g>
-  
   <!-- Icono central - representando motion design -->
   <g transform="translate(620,100)">
     <circle cx="50" cy="40" r="40" fill="#ffffff" fill-opacity="0.9"/>
