@@ -92,6 +92,44 @@ form button[type="submit"] a {
 
 /* End of temporal style */
 
+/* Modal Styles */
+
+.modal[open] {
+  margin: auto;
+  max-height: 50vh;
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+.modal .modal__header {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.modal .modal__footer {
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.modal .modal__footer--actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal .modal__content {
+  flex: 1 1 0;
+  padding: 1rem 2rem;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* End of modal Styles */
+
 /* Button styles */
 .btn {
   position: relative;

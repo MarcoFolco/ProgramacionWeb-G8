@@ -5,6 +5,12 @@ const messageField = document.getElementById("message");
 const messageMsgField = document.querySelector(
   ".contact-form__message-field-msg"
 );
+const modal = document.querySelector("#modal");
+const modalCancelBtn = document.querySelector(".modal__footer-btn-cancel");
+
+modalCancelBtn.addEventListener("click", () => {
+  modal.close();
+});
 
 contactForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
@@ -16,13 +22,7 @@ contactForm.addEventListener("submit", (submitEvent) => {
   } else {
     contactForm.reset();
     updateCharacterCount();
-    addUIMessage(
-      {
-        message: `Consulta enviada<a class="btn btn--primary btn--md" href="/">Aceptar</a>`,
-        severity: "success",
-      },
-      true
-    );
+    modal.showModal();
   }
 });
 
