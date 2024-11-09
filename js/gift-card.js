@@ -145,44 +145,82 @@ function saveGiftCard(username, amount) {
   addUserGiftCode(username, gift);
 }
 
+// Form validation
+const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const nameMsgElement = document.querySelector("#name ~ .input-status-msg");
+const emailMsgElement = document.querySelector("#email ~ .input-status-msg");
+const amountMsgElement = document.querySelector(
+  "div:has(#amount) ~ .input-status-msg"
+);
+
+function validateGiftCardForm(fieldValues) {
+  const { name, email, amount } = fieldValues;
+  let result = true;
+  if (!name) {
+    result = false;
+    nameMsgElement.classList.add("js--visible");
+  } else {
+    nameMsgElement.classList.remove("js--visible");
+  }
+  if (!email) {
+    result = false;
+    emailMsgElement.classList.add("js--visible");
+    emailMsgElement.textContent = "Este campo es requerido";
+  } else if (!regexEmail.test(email)) {
+    result = false;
+    emailMsgElement.classList.add("js--visible");
+    emailMsgElement.textContent = "El email no es válido";
+  } else if (isLoggedUsername(email)) {
+    result = false;
+    emailMsgElement.textContent = "No puedes ingresar tu propio email";
+    emailMsgElement.classList.add("js--visible");
+  } else if (!isValidUsername(email)) {
+    result = false;
+    emailMsgElement.textContent =
+      "El email debe pertenecer a un usuario existente";
+    emailMsgElement.classList.add("js--visible");
+  } else {
+    emailMsgElement.textContent = "";
+    emailMsgElement.classList.remove("js--visible");
+  }
+  if (!amount) {
+    result = false;
+    amountMsgElement.classList.add("js--visible");
+  } else {
+    amountMsgElement.textContent = "";
+    amountMsgElement.classList.remove("js--visible");
+  }
+  return result;
+}
+
 giftCardForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
   const {
-    email: emailField,
-    amount: amountField,
-    name: nameField,
+    name: { value: name },
+    email: { value: email },
+    amount: { value: amount },
   } = submitEvent.target;
-  const email = emailField.value;
-  const amount = amountField.value;
-  const name = nameField.value;
-  // Validamos el email, debe existir como username
-  if (!isValidUsername(email)) {
+  const valid = validateGiftCardForm({ name, email, amount });
+  if (valid) {
+    const cartItem = {
+      type: "gift",
+      total: +amount,
+      receiver: {
+        email,
+        name,
+      },
+    };
+    addLoggedUserCartItem(cartItem);
+    // saveGiftCard(email, amount);
+    queueMessage({
+      message: "Gift card agregada al carrito con éxito",
+      severity: "success",
+    });
+    giftCardForm.submit();
+  } else {
     addUIMessage({
-      message: "No existe un usuario con ese mail",
+      message: "Verifique los campos del formulario",
       severity: "error",
     });
-    return;
   }
-  if (isLoggedUsername(email)) {
-    addUIMessage({
-      message: "No puedes enviarte una gift card a ti mismo",
-      severity: "error",
-    });
-    return;
-  }
-  const cartItem = {
-    type: "gift",
-    total: +amount,
-    receiver: {
-      email,
-      name,
-    },
-  };
-  addLoggedUserCartItem(cartItem);
-  // saveGiftCard(email, amount);
-  queueMessage({
-    message: "Gift card agregada al carrito con éxito",
-    severity: "success",
-  });
-  giftCardForm.submit();
 });

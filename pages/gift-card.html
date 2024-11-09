@@ -137,19 +137,23 @@
             placeholder="Nombre Destinatario"
             class="input"
             maxlength="30"
-            required
             name="name"
             id="name"
           />
-          <label for="name" class="label heading heading--md">Email</label>
+          <small class="text text--sm text--danger input-status-msg"
+            >Este campo es requerido</small
+          >
+          <label for="name" class="label heading heading--md"
+            >Email destinatario</label
+          >
           <input
             type="email"
             placeholder="Email del destinatario"
             class="input"
-            required
             name="email"
             id="email"
           />
+          <small class="text text--sm text--danger input-status-msg"></small>
           <p class="heading heading--sm label">Color</p>
           <div class="radio-selector radio-selector__font-color">
             <div class="radio-option">
@@ -215,7 +219,6 @@
             <input
               id="amount"
               type="number"
-              required
               class="input"
               name="amount"
               placeholder="Entre 1 y 1000"
@@ -224,6 +227,9 @@
               max="1000"
             />
           </div>
+          <small class="text text--sm text--danger input-status-msg"
+            >Este campo es requerido</small
+          >
           <p class="heading heading--md label">Ubicación</p>
           <div class="radio-selector radio-selector__position">
             <div class="radio-option">

@@ -81,6 +81,11 @@ contactForm.addEventListener("submit", (submitEvent) => {
     contactForm.reset();
     updateCharacterCount();
     modal.showModal();
+  } else {
+    addUIMessage({
+      message: "Verifique los campos del formulario",
+      severity: "error",
+    });
   }
 });
 
