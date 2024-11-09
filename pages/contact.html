@@ -126,8 +126,10 @@
               id="name"
               name="name"
               placeholder="Ingresa tu nombre"
-              required
             />
+            <small class="text text--sm text--danger input-status-msg">
+              Este campo es requerido
+            </small>
 
             <label for="email">Correo Electrónico</label>
             <input
@@ -135,8 +137,8 @@
               id="email"
               name="email"
               placeholder="tuemail@ejemplo.com"
-              required
             />
+            <small class="text text--sm text--danger input-status-msg"></small>
 
             <label for="phone">Teléfono (opcional)</label>
             <input
@@ -144,8 +146,8 @@
               id="phone"
               name="phone"
               placeholder="XXXX-XXXX (guion opcional)"
-              pattern="^\d{4}-?\d{4}$"
             />
+            <small class="text text--sm text--danger input-status-msg"></small>
 
             <label for="message">Consulta</label>
             <textarea
@@ -153,8 +155,10 @@
               name="message"
               placeholder="Escribe tu consulta"
               maxlength="1000"
-              required
             ></textarea>
+            <small class="text text--sm text--danger input-status-msg"
+              >Este campo es requerido</small
+            >
             <small class="contact-form__message-field-msg"></small>
 
             <button

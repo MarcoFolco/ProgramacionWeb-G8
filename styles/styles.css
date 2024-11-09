@@ -345,6 +345,10 @@ form button[type="submit"] a {
   color: var(--secondary);
 }
 
+.text--danger {
+  color: #dc3545;
+}
+
 /* End of text styles */
 
 /* Carousel styles */
@@ -1077,6 +1081,14 @@ form button[type="submit"] a {
 
 .inline-field input {
   flex: 1 1 0;
+}
+
+.input-status-msg {
+  display: none;
+}
+
+.input-status-msg.js--visible {
+  display: block;
 }
 
 /* End of input syles */
