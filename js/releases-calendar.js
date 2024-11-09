@@ -15,21 +15,14 @@ function generateCalendarPopupHTML(eventElement, course) {
   const popupElement = document.createElement("div");
   popupElement.classList.add("calendar-container__cell-meet-popup");
   positionPopup(popupElement, eventElement);
-  window.addEventListener("resize", () =>
-    positionPopup(popupElement, eventElement)
-  );
-  const closeBtn = document.createElement("i");
-  closeBtn.classList.add(
-    "fa-solid",
-    "fa-times",
-    "btn",
-    "btn--icon",
-    "calendar-container__cell-meet-popup__close-btn"
-  );
-  popupElement.appendChild(closeBtn);
-  closeBtn.addEventListener("click", () => {
-    console.log("xd");
-  });
+  const positionPopupHandler = () => {
+    if (popupElement.parentNode) {
+      positionPopup(popupElement, eventElement);
+    } else {
+      window.removeEventListener("resize", positionPopupHandler);
+    }
+  };
+  window.addEventListener("resize", positionPopupHandler);
   popupElement.innerHTML += generateCourseCardHTML(course, true, true);
   mainElement.appendChild(popupElement);
   return popupElement;
@@ -41,6 +34,20 @@ function populateCalendarEvents() {
   const numberOfCourses = courses.length;
   const numberOfEventsToRender =
     numberOfEvents < numberOfCourses ? numberOfEvents : numberOfCourses;
+  let eventPopup = null;
+  let renderedCourseId = null;
+  window.addEventListener("click", (clickEvent) => {
+    const target = clickEvent.target;
+    if (
+      eventPopup &&
+      !eventPopup.contains(target) &&
+      !target.classList.contains("calendar-container__cell-meet")
+    ) {
+      eventPopup.parentNode.removeChild(eventPopup);
+      eventPopup = null;
+      renderedCourseId = null;
+    }
+  });
   for (let index = 0; index < numberOfEventsToRender; index++) {
     const eventElement = calendarEventElements[index];
     const course = courses[index];
@@ -48,11 +55,14 @@ function populateCalendarEvents() {
     eventElement.textContent = course.name;
     eventElement.title = course.name;
 
-    let eventPopup = null;
-
     eventElement.addEventListener("click", () => {
-      if (!eventPopup) {
+      if (!eventPopup || (eventPopup && renderedCourseId !== course.id)) {
+        if (eventPopup && renderedCourseId !== course.id) {
+          eventPopup.parentNode.removeChild(eventPopup);
+          eventPopup = null;
+        }
         eventPopup = generateCalendarPopupHTML(eventElement, course);
+        renderedCourseId = course.id;
         if (course.modality === "online") {
           const buyBtnElement = eventPopup.querySelector(".js--buy-btn");
           addBuyBtnElementsLoggedInListener([buyBtnElement]);
@@ -65,6 +75,7 @@ function populateCalendarEvents() {
       } else {
         eventPopup.parentNode.removeChild(eventPopup);
         eventPopup = null;
+        renderedCourseId = null;
       }
     });
   }
