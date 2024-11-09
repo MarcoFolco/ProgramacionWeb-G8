@@ -15,7 +15,8 @@ const amountLabel = document.querySelector(".gift-card__preview-price");
 function validateAmountValue(amountValue) {
   const minValue = +amountField.min;
   const maxValue = +amountField.max;
-
+  amountValue = Math.floor(amountValue * 10) / 10;
+  amountField.value = amountValue;
   if (amountValue < minValue || amountValue > maxValue) {
     addUIMessage({
       message: "El monto debe estar entre $1 y $1000",
