@@ -36,6 +36,7 @@ function generateCalendarPopupHTML(eventElement, course) {
 }
 
 function populateCalendarEvents() {
+  const courses = getCourses();
   const numberOfEvents = calendarEventElements.length;
   const numberOfCourses = courses.length;
   const numberOfEventsToRender =

@@ -5,12 +5,16 @@ const messageField = document.getElementById("message");
 const messageMsgField = document.querySelector(
   ".contact-form__message-field-msg"
 );
+
+// Lógica para el modal
 const modal = document.querySelector("#modal");
 const modalCancelBtn = document.querySelector(".modal__footer-btn-cancel");
 
 modalCancelBtn.addEventListener("click", () => {
   modal.close();
 });
+
+// Lógica de validación del formulario
 
 contactForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
