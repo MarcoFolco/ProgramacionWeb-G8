@@ -64,6 +64,22 @@ function fillCourseContents(course) {
   });
 }
 
+const modalElement = document.querySelector("#modal");
+const modalCourseTitleElement = document.querySelector(
+  ".modal-success__course-title"
+);
+const modalCourseValueElement = document.querySelector(
+  ".modal-success__course-value"
+);
+const modalCourseDedicationTimeElement = document.querySelector(
+  ".modal-success__course-dedication-time"
+);
+const modalCloseBtnElement = document.querySelector(
+  ".modal__footer-btn-cancel"
+);
+
+modalCloseBtnElement.addEventListener("click", () => modalElement.close());
+
 function fillCourseData(course) {
   const { name, modality, price, duration, description, image, category } =
     course;
@@ -77,15 +93,20 @@ function fillCourseData(course) {
     modality === "online" ? "Comprar" : "Inscribirse";
   if (modality === "presencial") {
     buyButtonElement.href = `./course-enterprise-inscription.html?id=${course.id}`;
+    buyButtonElement.classList.add("js--subscribe-btn");
   } else {
+    addBuyBtnElementsLoggedInListener([buyButtonElement]);
     buyButtonElement.addEventListener("click", () => {
-      addOnlineCourseToCart(course, false);
+      const result = addOnlineCourseToCart(course, false);
       // Mostrar el modal aca
+      if (result) {
+        modalCourseTitleElement.innerHTML = `Usted ha agregado al carrito el curso de <b>${course.name}</b>`;
+        modalCourseValueElement.innerHTML = `<b>Valor:</b> $${course.price}.- USD`;
+        modalCourseDedicationTimeElement.innerHTML = `<b>Tiempo de dedicacion requerido:</b> ${course.duration} horas.`;
+        modalElement.showModal();
+      }
     });
   }
-  buyButtonElement.classList.add(
-    `js--${course.modality === "online" ? "buy" : "subscribe"}-btn`
-  );
   bannerElement.src = `../images/${image}`;
 }
 

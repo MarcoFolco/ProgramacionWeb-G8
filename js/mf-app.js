@@ -485,8 +485,10 @@ function removeLoggedUserCartItem(index) {
     const cartItems = loggedUser.cartItems;
     cartItems.splice(index, 1);
     updateLoggedUser(loggedUser);
+    renderCartItems();
+    return true;
   }
-  renderCartItems();
+  return false;
 }
 
 // Esto solo aplica para cursos online
@@ -496,30 +498,40 @@ function addCartItemQuantity(cartItem, index) {
   cartItem.total = cartItem.quantity * cartItem.course.price;
   updateLoggedUserCartItem(cartItem, index);
   addUIMessage({
-    message: "Item actualizado exitosamente",
+    message: "Item actualizado exitosamente en el carrito",
     severity: "success",
   });
+  return true;
 }
 
 // Esto solo aplica para cursos online
 
 function substractCartItemQuantity(cartItem, index) {
   cartItem.quantity--;
+  let message = "";
   if (cartItem.quantity > 0) {
     cartItem.total = cartItem.quantity * cartItem.course.price;
     updateLoggedUserCartItem(cartItem, index);
+    message = "Item actualizado exitosamente en el carrito";
   } else {
     removeLoggedUserCartItem(index);
+    message = "Item removido exitosamente del carrito";
   }
   addUIMessage({
-    message: "Item actualizado exitosamente",
+    message,
     severity: "success",
   });
 }
 
 function addRemoveCartItemListener(removeBtnElement, itemIndex) {
   removeBtnElement.addEventListener("click", () => {
-    removeLoggedUserCartItem(itemIndex);
+    const result = removeLoggedUserCartItem(itemIndex);
+    if (result) {
+      addUIMessage({
+        message: "Item removido exitosamente del carrito",
+        severity: "success",
+      });
+    }
   });
 }
 
@@ -767,6 +779,7 @@ function addLoggedUserCartItem(newCartItem, displayResultMessage = true) {
     });
   }
   renderCartItems();
+  return true;
 }
 
 function addOnlineCourseToCart(onlineCourse, displayResultMessage = true) {
@@ -780,7 +793,7 @@ function addOnlineCourseToCart(onlineCourse, displayResultMessage = true) {
       const existingItemIndex = cartItems.findIndex(
         (item) => item.type === "buy" && item.course.id === onlineCourse.id
       );
-      addCartItemQuantity(existingItem, existingItemIndex);
+      return addCartItemQuantity(existingItem, existingItemIndex);
     } else {
       const newCartItem = {
         type: "buy",
@@ -788,9 +801,10 @@ function addOnlineCourseToCart(onlineCourse, displayResultMessage = true) {
         quantity: 1,
         total: onlineCourse.price,
       };
-      addLoggedUserCartItem(newCartItem, displayResultMessage);
+      return addLoggedUserCartItem(newCartItem, displayResultMessage);
     }
   }
+  return false;
 }
 
 function addBuyBtnElementsAddToCartListener(buyButtonElements) {

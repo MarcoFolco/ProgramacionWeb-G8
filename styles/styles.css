@@ -120,8 +120,9 @@ form button[type="submit"] a {
 }
 
 .modal .modal__content {
-  flex: 1 1 0;
+  flex-grow: 1;
   padding: 1rem 2rem;
+  overflow-y: auto;
 }
 
 .modal::backdrop {
