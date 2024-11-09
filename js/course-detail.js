@@ -78,7 +78,10 @@ function fillCourseData(course) {
   if (modality === "presencial") {
     buyButtonElement.href = `./course-enterprise-inscription.html?id=${course.id}`;
   } else {
-    buyButtonElement.dataset.courseId = course.id;
+    buyButtonElement.addEventListener("click", () => {
+      addOnlineCourseToCart(course, false);
+      // Mostrar el modal aca
+    });
   }
   buyButtonElement.classList.add(
     `js--${course.modality === "online" ? "buy" : "subscribe"}-btn`

@@ -1356,20 +1356,22 @@ function applyLogOnlyConditionToAllBuyOrSubscribeBtns() {
 // Agregamos una función que puede ser usada desde cualquier JS para que el botón comprar de las cards agregue al carrito.
 
 // Esta función puede ser usada en otros JS que permitan comprar cursos online, como el detalle de curso
-function addLoggedUserCartItem(newCartItem) {
+function addLoggedUserCartItem(newCartItem, displayResultMessage = true) {
   const loggedUser = getLoggedUser();
   const cartItems = loggedUser.cartItems || [];
   cartItems.push(newCartItem);
   loggedUser.cartItems = cartItems;
   updateLoggedUser(loggedUser);
-  addUIMessage({
-    message: "Elemento agregado al carrito exitosamente",
-    severity: "success",
-  });
+  if (displayResultMessage) {
+    addUIMessage({
+      message: "Elemento agregado al carrito exitosamente",
+      severity: "success",
+    });
+  }
   renderCartItems();
 }
 
-function addOnlineCourseToCart(onlineCourse) {
+function addOnlineCourseToCart(onlineCourse, displayResultMessage = true) {
   const loggedUser = getLoggedUser();
   if (loggedUser) {
     const cartItems = loggedUser.cartItems || [];
@@ -1388,7 +1390,7 @@ function addOnlineCourseToCart(onlineCourse) {
         quantity: 1,
         total: onlineCourse.price,
       };
-      addLoggedUserCartItem(newCartItem);
+      addLoggedUserCartItem(newCartItem, displayResultMessage);
     }
   }
 }
