@@ -100,7 +100,7 @@ function fillCourseData(course) {
       const result = addOnlineCourseToCart(course, false);
       // Mostrar el modal aca
       if (result) {
-        modalCourseTitleElement.innerHTML = `Usted ha agregado al carrito el curso de <b>${course.name}</b>`;
+        modalCourseTitleElement.innerHTML = `Usted ha agregado al carrito el curso de "<b>${course.name}</b>"`;
         modalCourseValueElement.innerHTML = `<b>Valor:</b> $${course.price}.- USD`;
         modalCourseDedicationTimeElement.innerHTML = `<b>Tiempo de dedicacion requerido:</b> ${course.duration} horas.`;
         modalElement.showModal();

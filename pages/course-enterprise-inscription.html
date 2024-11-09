@@ -128,7 +128,7 @@
               <div class="field-group__data">
                 <input
                   type="email"
-                  name="subscribers[0][name]"
+                  name="email1"
                   id="email1"
                   placeholder="Email"
                   required
@@ -159,9 +159,10 @@
               </div>
               <button
                 type="button"
+                title="Limpiar campos"
                 class="btn btn--primary btn--icon btn--icon-round btn--icon-xs field-group__remove-button"
               >
-                <i class="fa-solid fa-minus text text--xl"></i>
+                <i class="fa-solid fa-times text text--xl"></i>
               </button>
             </fieldset>
           </div>
@@ -182,6 +183,30 @@
           </div>
         </form>
       </section>
+      <dialog id="modal" class="modal modal-inscription-summary">
+        <div class="modal__header">
+          <p class="heading heading--md">¡Felicitaciones!</p>
+        </div>
+        <div class="modal__content">
+          <p class="text text--md modal-success__course-title">
+            Usted ha agregado al carrito la inscripción para el curso de "Titulo
+            curso"
+          </p>
+          <p class="text text--md modal-success__course-value">
+            Valor total: $"valor".- USD
+          </p>
+          <p class="heading heading--md">Participantes:</p>
+          <ul class="modal-inscription-summary__participants-list"></ul>
+          <p class="text text--md"><b>Será redirigido al inicio</b></p>
+        </div>
+        <div class="modal__footer modal__footer--actions">
+          <a
+            class="btn btn--md btn--primary text text--md modal-inscription-summary__accept-btn"
+            href="/"
+            >Aceptar</a
+          >
+        </div>
+      </dialog>
     </main>
     <footer class="footer">
       <div class="footer__group-data">

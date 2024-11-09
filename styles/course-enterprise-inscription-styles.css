@@ -9,6 +9,11 @@
   margin-top: 2rem;
 }
 
+.course-inscription__form-rows {
+  max-height: 50rem;
+  overflow-y: auto;
+}
+
 .course-inscription .course-inscription__form .field-group {
   display: flex;
   flex-wrap: wrap;
@@ -50,6 +55,16 @@
   margin-top: 2.5rem;
 }
 
+.modal-inscription-summary__participants-list {
+  max-height: 18rem;
+  overflow-y: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
 @media screen and (min-width: 48rem) {
   .course-inscription
     .course-inscription__form
@@ -59,7 +74,3 @@
   }
 }
 /* End of inscription styles */
-
-/* Fieldset styles */
-
-/* End of fieldset styles */

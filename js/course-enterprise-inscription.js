@@ -13,7 +13,7 @@ const titleElement = document.querySelector(
 
 function updateInscriptionTitle() {
   const course = getCourseFromURL();
-  titleElement.textContent = `${course.name.toUpperCase()}`;
+  titleElement.textContent = `INSCRIPCIÓN A "${course.name.toUpperCase()}"`;
 }
 
 updateInscriptionTitle();
@@ -25,7 +25,7 @@ function calculateTotalPrice() {
   const numberOfParticipants = fieldsets.length;
   const course = getCourseFromURL();
   if (course) {
-    return course.price * numberOfParticipants;
+    return Math.floor(course.price * numberOfParticipants * 100) / 100;
   }
   return 0;
 }
@@ -47,19 +47,13 @@ function addRemoveButtonListener(removeButton, fieldsetElement) {
   });
 }
 
-function addInitialHandlers() {
-  addPersonButton.addEventListener("click", () => {
-    addInscriptionFieldset();
-  });
-  const firstFieldset = document.querySelector(".field-group");
-  const firstRemoveButton = document.querySelector(
-    ".field-group__remove-button"
-  );
-  addRemoveButtonListener(firstRemoveButton, firstFieldset);
-}
-
-addInitialHandlers();
-updatePriceTag();
+const firstSubscriptionRow = document.querySelector(
+  ".field-group.js--subscriber-1"
+);
+const firstRemoveButton = document.querySelector(
+  ".field-group.js--subscriber-1 .field-group__remove-button"
+);
+const firstRowInputs = firstSubscriptionRow.querySelectorAll("input");
 
 function addInscriptionFieldset() {
   inscriptionNumber += 1;
@@ -101,18 +95,31 @@ function addInscriptionFieldset() {
             <button
               type="button"
               class="btn btn--primary btn--icon btn--icon-round btn--icon-xs field-group__remove-button"
+              title="Remover participante"
             >
               <i class="fa-solid fa-minus text text--xl"></i>
             </button>
     `;
   fieldset.innerHTML = fieldsetInnerHTML;
-  inscriptionRowsContainer.appendChild(fieldset);
+  firstSubscriptionRow.after(fieldset);
   const removeButton = fieldset.querySelector(".field-group__remove-button");
   addRemoveButtonListener(removeButton, fieldset);
   updatePriceTag();
 }
 
-function generateSubscribersArray(formElement) {
+function addInitialHandlers() {
+  addPersonButton.addEventListener("click", () => {
+    addInscriptionFieldset();
+  });
+  firstRemoveButton.addEventListener("click", () => {
+    firstRowInputs.forEach((input) => (input.value = ""));
+  });
+}
+
+addInitialHandlers();
+updatePriceTag();
+
+function generateSubscribersArray() {
   const subscribers = [];
   for (
     let subscriberIndex = 1;
@@ -140,16 +147,41 @@ function generateSubscribersArray(formElement) {
   return subscribers;
 }
 
+// Mostrar modal con data de la inscripción
+const modalElement = document.querySelector("#modal");
+const modalCourseTitleElement = document.querySelector(
+  ".modal-success__course-title"
+);
+const modalCourseValueElement = document.querySelector(
+  ".modal-success__course-value"
+);
+const modalParticipantsUlElement = document.querySelector(
+  ".modal-inscription-summary__participants-list"
+);
+const modalAcceptBtnElement = document.querySelector(
+  ".modal-inscription-summary__accept-btn"
+);
+
+modalAcceptBtnElement.addEventListener("click", () => {
+  inscriptionForm.submit();
+});
+
+function displayInscriptionSummaryModal(course, participants, totalPrice) {
+  modalCourseTitleElement.innerHTML = `Usted ha agregado al carrito la inscripción para el curso de "<b>${course.name}</b>"`;
+  modalCourseValueElement.innerHTML = `<b>Valor total:</b> $${totalPrice}.- USD`;
+  modalParticipantsUlElement.innerHTML = participants.reduce(
+    (participantsHTML, participant) => {
+      return participantsHTML + generateParticipantCardHTML(participant);
+    },
+    ""
+  );
+  modalElement.showModal();
+}
+
 inscriptionForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
   const total = calculateTotalPrice();
   const participants = generateSubscribersArray(submitEvent.target);
-  // Aca va la logica para agregar al carrito, con el curso y el precio total
-  queueMessage({
-    message: "Inscripción completada con éxito",
-    severity: "success",
-  });
-
   const course = getCourseFromURL();
   const cartItem = {
     course,
@@ -158,6 +190,5 @@ inscriptionForm.addEventListener("submit", (submitEvent) => {
     type: "subscription",
   };
   addLoggedUserCartItem(cartItem);
-
-  inscriptionForm.submit();
+  displayInscriptionSummaryModal(course, participants, total);
 });
