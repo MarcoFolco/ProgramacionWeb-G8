@@ -1143,7 +1143,8 @@ section.ui-messages {
 }
 
 article.ui-message {
-  width: 100%;
+  max-width: 100%;
+  min-width: 30rem;
   border-radius: 2rem;
   background-color: var(--bg-primary);
   display: flex;
