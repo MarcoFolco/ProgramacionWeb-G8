@@ -105,6 +105,15 @@ logoutUserButton.addEventListener("click", () => {
 const deleteAccountButton = document.querySelector(
   ".profile__delete-account-button"
 );
+const modalElement = document.querySelector("#modal");
+const modalCloseBtnElement = document.querySelector(
+  ".modal__footer-btn-cancel"
+);
+const modalAcceptBtnElement = document.querySelector(
+  ".modal-confirm-delete .modal__footer-btn-accept"
+);
+
+modalCloseBtnElement.addEventListener("click", () => modalElement.close());
 
 function removeLoggedUser() {
   const loggedUser = getLoggedUser();
@@ -114,11 +123,14 @@ function removeLoggedUser() {
   logoutUser();
 }
 
-deleteAccountButton.addEventListener("click", () => {
+modalAcceptBtnElement.addEventListener("click", () => {
   removeLoggedUser();
   queueMessage({
     message: "Cuenta eliminada con éxito",
     severity: "success",
   });
-  window.location.href = "/";
+});
+
+deleteAccountButton.addEventListener("click", () => {
+  modalElement.showModal();
 });
