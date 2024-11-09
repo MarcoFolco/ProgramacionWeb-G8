@@ -704,7 +704,7 @@ function renderCartItems() {
       cartItemListElement.appendChild(itemListElement);
     });
   } else {
-    cartItemListElement.innerHTML = `<p class="heading heading--xl" style="text-align: center;">No hay items en el carrito...</p>`;
+    cartItemListElement.innerHTML = `<p class="heading heading--xl" style="text-align: center;">Todavía no se obtuvieron cursos...</p>`;
   }
   const totalPrice = getCartTotalPrice();
   cartTotalLabelElement.textContent = `Total: $${totalPrice}.-`;
