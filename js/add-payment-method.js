@@ -126,21 +126,108 @@ function sendGiftCards(giftCardCartItems) {
   });
 }
 
+// Validar form
+const nameMsgElement = document.querySelector("#name ~ .input-status-msg");
+const cardNumberMsgElement = document.querySelector(
+  "#cardNumber ~ .input-status-msg"
+);
+const expiryDateMsgElement = document.querySelector(
+  "#expiryDate ~ .input-status-msg"
+);
+const cvvMsgElement = document.querySelector("#cvv ~ .input-status-msg");
+
+const regexCardNumber = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
+const regexExpiryDateNumberFormat = /^\d{2}\/\d{2}$/;
+const regexExpiryDateValidFormat = /^(0[1-9]|1[0-2])\/\d{2}$/;
+const regexCvv = /^\d{3}$/;
+
+function validatePaymentMethodForm(fieldValues) {
+  const { name, cardNumber, expiryDate, cvv } = fieldValues;
+  let result = true;
+  if (!name) {
+    result = false;
+    nameMsgElement.classList.add("js--visible");
+  } else {
+    nameMsgElement.classList.remove("js--visible");
+  }
+  if (!cardNumber) {
+    result = false;
+    cardNumberMsgElement.classList.add("js--visible");
+    cardNumberMsgElement.textContent = "Este campo es requerido";
+  } else if (!regexCardNumber.test(cardNumber)) {
+    result = false;
+    cardNumberMsgElement.classList.add("js--visible");
+    cardNumberMsgElement.textContent =
+      "Utilice el formato de 16 números XXXX XXXX XXXX XXXX, respetando espacios en blanco";
+  } else {
+    cardNumberMsgElement.classList.remove("js--visible");
+    cardNumberMsgElement.textContent = "";
+  }
+  if (!expiryDate) {
+    result = false;
+    expiryDateMsgElement.classList.add("js--visible");
+    expiryDateMsgElement.textContent = "Este campo es requerido";
+  } else if (!regexExpiryDateNumberFormat.test(expiryDate)) {
+    result = false;
+    expiryDateMsgElement.classList.add("js--visible");
+    expiryDateMsgElement.textContent = "Respete el formato de MM/AA";
+  } else if (!regexExpiryDateValidFormat.test(expiryDate)) {
+    result = false;
+    expiryDateMsgElement.classList.add("js--visible");
+    expiryDateMsgElement.textContent = "Ingrese una fecha válida";
+  } else {
+    expiryDateMsgElement.classList.remove("js--visible");
+    expiryDateMsgElement.textContent = "";
+  }
+  if (!cvv) {
+    result = false;
+    cvvMsgElement.classList.add("js--visible");
+    cvvMsgElement.textContent = "Este campo es requerido";
+  } else if (!regexCvv.test(cvv)) {
+    result = false;
+    cvvMsgElement.classList.add("js--visible");
+    cvvMsgElement.textContent = "Respete el formato de 3 números XXX";
+  } else {
+    cvvMsgElement.classList.remove("js--visible");
+    cvvMsgElement.textContent = "";
+  }
+  return result;
+}
+
 paymentMethodForm.addEventListener("submit", (submitEvent) => {
   submitEvent.preventDefault();
-  const cartItems = getLoggedUserCartItems();
-  const giftCardCartItems = cartItems.filter(
-    (cartItem) => cartItem.type === "gift"
-  );
-  sendGiftCards(giftCardCartItems);
-  updateLoggedUserCartItems([]);
-  const usedGiftCode = giftCodeSelectElement.value;
-  if (usedGiftCode) {
-    removeLoggedUserGiftCode(usedGiftCode);
-  }
-  queueMessage({
-    message: "Pago ejecutado con éxito",
-    severity: "success",
+  const {
+    name: { value: name },
+    cardNumber: { value: cardNumber },
+    expiryDate: { value: expiryDate },
+    cvv: { value: cvv },
+  } = submitEvent.target;
+  const valid = validatePaymentMethodForm({
+    name,
+    cardNumber,
+    expiryDate,
+    cvv,
   });
-  paymentMethodForm.submit();
+  if (valid) {
+    const cartItems = getLoggedUserCartItems();
+    const giftCardCartItems = cartItems.filter(
+      (cartItem) => cartItem.type === "gift"
+    );
+    sendGiftCards(giftCardCartItems);
+    updateLoggedUserCartItems([]);
+    const usedGiftCode = giftCodeSelectElement.value;
+    if (usedGiftCode) {
+      removeLoggedUserGiftCode(usedGiftCode);
+    }
+    queueMessage({
+      message: "Pago ejecutado con éxito",
+      severity: "success",
+    });
+    paymentMethodForm.submit();
+  } else {
+    addUIMessage({
+      message: "Verifique los campos del formulario",
+      severity: "error",
+    });
+  }
 });

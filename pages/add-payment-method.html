@@ -129,8 +129,10 @@
               name="name"
               class="input-field"
               placeholder="Nombre completo"
-              required
             />
+            <small class="text text--sm text--danger input-status-msg">
+              Este campo es requerido
+            </small>
 
             <label class="text text--primary text--md" for="cardNumber"
               >Número de la tarjeta:</label
@@ -141,9 +143,8 @@
               name="cardNumber"
               class="input-field"
               placeholder="0000 0000 0000 0000"
-              pattern="^\d{4}\s\d{4}\s\d{4}\s\d{4}$"
-              required
             />
+            <small class="text text--sm text--danger input-status-msg"> </small>
 
             <label class="text text--primary text--md" for="expiryDate"
               >Fecha de vencimiento:</label
@@ -154,9 +155,8 @@
               name="expiryDate"
               class="input-field"
               placeholder="MM/AA"
-              pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-              required
             />
+            <small class="text text--sm text--danger input-status-msg"> </small>
 
             <label class="text text--primary text--md" for="cvv">CVV:</label>
             <input
@@ -165,9 +165,8 @@
               name="cvv"
               class="input-field"
               placeholder="123"
-              pattern="^\d{3}$"
-              required
             />
+            <small class="text text--sm text--danger input-status-msg"></small>
 
             <label class="text text--primary text--md" for="cardType"
               >Tipo de tarjeta:</label
