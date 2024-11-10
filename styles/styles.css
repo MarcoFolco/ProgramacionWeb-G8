@@ -97,7 +97,7 @@ form button[type="submit"] a {
 .modal[open] {
   margin: auto;
   max-height: 50vh;
-  max-width: 50vw;
+  max-width: 90vw;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
@@ -127,6 +127,18 @@ form button[type="submit"] a {
 
 .modal::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 48rem) {
+  .modal[open] {
+    max-width: 85vw;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .modal[open] {
+    max-width: 75vw;
+  }
 }
 
 /* End of modal Styles */
@@ -861,13 +873,12 @@ form button[type="submit"] a {
   padding-top: 2rem;
   border-right: 1px solid rgba(var(--bg-primary-color), 0.2);
   z-index: 2;
-  display: none;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in;
 }
 
-.header .header__main:has(.header__sidebar-button:hover) ~ .sidebar,
-.sidebar:hover,
-.sidebar:has(*:hover) {
-  display: block;
+.sidebar.js--visible {
+  transform: translateX(0);
 }
 
 .sidebar .nav-list.login-register-buttons {
@@ -891,6 +902,7 @@ form button[type="submit"] a {
   color: var(--secondary);
   font-weight: bold;
   border-bottom: 1px solid rgba(var(--bg-primary-color), 0.2);
+  cursor: pointer;
 }
 
 .nav-item:first-child > a {
@@ -907,9 +919,7 @@ form button[type="submit"] a {
   background-color: #f1f3f5;
 }
 
-.nav-item:hover .sub-menu,
-.sub-menu:hover,
-.sub-menu:has(*:hover) {
+.sub-menu.js--visible {
   display: block;
 }
 

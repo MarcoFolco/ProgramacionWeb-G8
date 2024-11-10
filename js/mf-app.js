@@ -330,6 +330,13 @@ searchCloseButtonElement.addEventListener("click", () => {
   searchBarInput.value = "";
 });
 
+document.addEventListener("click", (clickEvent) => {
+  const { target } = clickEvent;
+  if (!searchBarElement.contains(target) && target !== searchButtonElement) {
+    searchBarElement.classList.remove("js--visible");
+  }
+});
+
 function generateSearchDropdownItemsHTML(courses, fromPage = false) {
   let resultHTML = courses.reduce((innerHTML, course) => {
     innerHTML += `<li class="header__search-dropdown-item">
@@ -431,6 +438,13 @@ cartSidebarCloseBtnElement.addEventListener("click", () => {
   cartSidebarElement.classList.remove("js--visible");
 });
 
+document.addEventListener("click", (clickEvent) => {
+  const { target } = clickEvent;
+  if (!cartSidebarElement.contains(target) && target !== cartButtonElement) {
+    cartSidebarElement.classList.remove("js--visible");
+  }
+});
+
 function setCartItemCounterBadge(numberOfItems) {
   cartButtonItemCounterElement.textContent = numberOfItems;
   if (numberOfItems > 0) {
@@ -524,7 +538,8 @@ function substractCartItemQuantity(cartItem, index) {
 }
 
 function addRemoveCartItemListener(removeBtnElement, itemIndex) {
-  removeBtnElement.addEventListener("click", () => {
+  removeBtnElement.addEventListener("click", (clickEvent) => {
+    clickEvent.stopPropagation();
     const result = removeLoggedUserCartItem(itemIndex);
     if (result) {
       addUIMessage({
@@ -557,10 +572,12 @@ function generateOnlineCourseCartItem(cartItem, index) {
             </div>`;
   const addBtn = liElement.querySelector(".cart-sidebar__item-add");
   const substractBtn = liElement.querySelector(".cart-sidebar__item-substract");
-  addBtn.addEventListener("click", () => {
+  addBtn.addEventListener("click", (clickEvent) => {
+    clickEvent.stopPropagation();
     addCartItemQuantity(cartItem, index);
   });
-  substractBtn.addEventListener("click", () => {
+  substractBtn.addEventListener("click", (clickEvent) => {
+    clickEvent.stopPropagation();
     substractCartItemQuantity(cartItem, index);
   });
   addRemoveCartItemListener(
@@ -828,3 +845,29 @@ function applyAddToCartBehaviorToAllBuyBtns() {
   const buyButtonElements = document.querySelectorAll(".js--buy-btn");
   addBuyBtnElementsAddToCartListener(buyButtonElements);
 }
+
+// Sidebar nav
+const sidebarBtnElement = document.querySelector(".header__sidebar-button");
+const sidebarElement = document.querySelector(".header nav.sidebar");
+
+sidebarBtnElement.addEventListener("click", () => {
+  sidebarElement.classList.add("js--visible");
+});
+
+const sidebarSubMenuElements = document.querySelectorAll(
+  ".header .sidebar .nav-list .nav-item .sub-menu"
+);
+
+sidebarSubMenuElements.forEach((subMenuElement) => {
+  const menuElement = subMenuElement.parentElement;
+  menuElement.addEventListener("click", () => {
+    subMenuElement.classList.toggle("js--visible");
+  });
+});
+
+document.addEventListener("click", (clickEvent) => {
+  const { target } = clickEvent;
+  if (!sidebarElement.contains(target) && target !== sidebarBtnElement) {
+    sidebarElement.classList.remove("js--visible");
+  }
+});
