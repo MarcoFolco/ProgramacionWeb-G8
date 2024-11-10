@@ -870,7 +870,6 @@ form button[type="submit"] a {
   left: 0;
   top: 0;
   overflow-y: auto;
-  padding-top: 2rem;
   border-right: 1px solid rgba(var(--bg-primary-color), 0.2);
   z-index: 2;
   transform: translateX(-100%);
@@ -879,6 +878,15 @@ form button[type="submit"] a {
 
 .sidebar.js--visible {
   transform: translateX(0);
+}
+
+.sidebar__close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar__close-btn {
+  margin: 1rem;
 }
 
 .sidebar .nav-list.login-register-buttons {

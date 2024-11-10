@@ -849,9 +849,14 @@ function applyAddToCartBehaviorToAllBuyBtns() {
 // Sidebar nav
 const sidebarBtnElement = document.querySelector(".header__sidebar-button");
 const sidebarElement = document.querySelector(".header nav.sidebar");
+const sidebarCloseBtnElement = document.querySelector(".sidebar__close-btn");
 
 sidebarBtnElement.addEventListener("click", () => {
   sidebarElement.classList.add("js--visible");
+});
+
+sidebarCloseBtnElement.addEventListener("click", () => {
+  sidebarElement.classList.remove("js--visible");
 });
 
 const sidebarSubMenuElements = document.querySelectorAll(
