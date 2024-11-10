@@ -560,10 +560,14 @@ function generateOnlineCourseCartItem(cartItem, index) {
                 class="fa-solid fa-book-open text tex--secondary cart-sidebar__item-icon" title="Curso Online"
               ></i>
               <p class="cart-sidebar__item-main-content">
-                <span class="heading heading--sm">${onlineCourse.name}</span>
-                <small class="text text--sm">Cantidad: ${
-                  cartItem.quantity
-                }  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add"></i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract"></i></small>
+                <span class="heading heading--sm" title="${
+                  onlineCourse.name
+                }">${onlineCourse.name}</span>
+                <small class="text text--sm">
+                  <i class="fa-solid fa-plus btn btn--icon btn--paddingless cart-sidebar__item-add" title="Agregar unidad">
+                  </i>  <i class="fa-solid fa-minus btn btn--icon btn--paddingless cart-sidebar__item-substract" title="Quitar unidad"></i> Cantidad: ${
+                    cartItem.quantity
+                  }</small>
               </p>
               <p class="tag cart-sidebar__item-price">$${
                 Math.round(cartItem.total * 100) / 100
@@ -614,9 +618,9 @@ function generatePresentialCourseCartItem(cartItem, index) {
                 class="fa-solid fa-users text tex--secondary cart-sidebar__item-icon"  title="Curso Presencial"
               ></i>
               <p class="cart-sidebar__item-main-content">
-                <span class="heading heading--sm">${
+                <span class="heading heading--sm" title="${
                   presentialCourse.name
-                }</span>
+                }">${presentialCourse.name}</span>
                 <span class="text text--sm">Participantes: ${
                   cartItem.participants.length
                 }</span>
@@ -670,7 +674,7 @@ function generateGiftCardCartItem(cartItem, index) {
                 class="fa-solid fa-gift text tex--secondary cart-sidebar__item-icon" title="Gift Card"
               ></i>
               <p class="cart-sidebar__item-main-content">
-                <span class="heading heading--sm">Gift card para "${name}"</span>
+                <span class="heading heading--sm" title='Gift card para "${name}"'>Gift card para "${name}"</span>
                 <small class"text text--xs">Email: ${email}</small>
               </p>
               <p class="tag cart-sidebar__item-price">$${

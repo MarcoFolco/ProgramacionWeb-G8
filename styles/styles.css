@@ -96,7 +96,7 @@ form button[type="submit"] a {
 
 .modal[open] {
   margin: auto;
-  max-height: 50vh;
+  max-height: 60vh;
   max-width: 90vw;
   display: flex;
   flex-direction: column;
@@ -816,7 +816,8 @@ form button[type="submit"] a {
   justify-content: center;
 }
 
-.cart-sidebar__item-main-content span {
+.cart-sidebar__item-main-content span,
+.cart-sidebar__item-main-content small {
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -847,14 +848,14 @@ form button[type="submit"] a {
 
 @media screen and (min-width: 48rem) {
   .cart-sidebar {
-    width: 45vw;
+    width: 50vw;
     border-left: 1px solid rgba(var(--bg-primary-color), 0.2);
   }
 }
 
 @media screen and (min-width: 64rem) {
   .cart-sidebar {
-    width: 35vw;
+    width: 40vw;
   }
 }
 

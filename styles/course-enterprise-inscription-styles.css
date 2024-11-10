@@ -10,7 +10,7 @@
 }
 
 .course-inscription__form-rows {
-  max-height: 50rem;
+  max-height: 40rem;
   overflow-y: auto;
 }
 
